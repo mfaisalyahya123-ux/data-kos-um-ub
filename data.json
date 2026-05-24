@@ -1,0 +1,3013 @@
+{
+  "project": "Kos UM/UB",
+  "start_date": "2025-01-01",
+  "rooms": [
+    {
+      "room_number": 1,
+      "current_tenant": "Resti",
+      "current_rate": 700,
+      "payments": [
+        {
+          "id": 1,
+          "date": "14 Januari 2025",
+          "room_number": 1,
+          "tenant_name": "Resti",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 15,
+          "date": "10 Februari 2025",
+          "room_number": 1,
+          "tenant_name": "Resti",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 23,
+          "date": "14 Maret 2025",
+          "room_number": 1,
+          "tenant_name": "Resti",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 29,
+          "date": "11 April 2025",
+          "room_number": 1,
+          "tenant_name": "Resti",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 39,
+          "date": "09 Mei 2025",
+          "room_number": 1,
+          "tenant_name": "Resti",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 50,
+          "date": "12 Juni 2025",
+          "room_number": 1,
+          "tenant_name": "Resti",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 59,
+          "date": "01 Juli 2025",
+          "room_number": 1,
+          "tenant_name": "Resti",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 77,
+          "date": "15 Agustus 2025",
+          "room_number": 1,
+          "tenant_name": "Resti",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 88,
+          "date": "12 September 2025",
+          "room_number": 1,
+          "tenant_name": "Resti",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 94,
+          "date": "09 Oktober 2025",
+          "room_number": 1,
+          "tenant_name": "Resti",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        }
+      ]
+    },
+    {
+      "room_number": 2,
+      "current_tenant": "Meisya Syafira",
+      "current_rate": 700,
+      "payments": [
+        {
+          "id": 2,
+          "date": "05 Februari 2025",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 3,
+          "date": "05 Februari 2025",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 21,
+          "date": "10 Maret 2025",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 35,
+          "date": "27 April 2025",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 51,
+          "date": "07 Juni 2025",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 56,
+          "date": "04 Juli 2025",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 67,
+          "date": "02 Agustus 2025",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 86,
+          "date": "31 Agustus 2025",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "cash"
+        },
+        {
+          "id": 92,
+          "date": "06 Oktober 2025",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 99,
+          "date": "02 November 2025",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 111,
+          "date": "14 Desember 2025",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 127,
+          "date": "24 Januari 2026",
+          "room_number": 2,
+          "tenant_name": "Meisya Syafira",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        }
+      ]
+    },
+    {
+      "room_number": 3,
+      "current_tenant": "Shefiratul Rohma",
+      "current_rate": 700,
+      "payments": [
+        {
+          "id": 4,
+          "date": "28 Januari 2025",
+          "room_number": 3,
+          "tenant_name": "Shefiratul Rohma",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 18,
+          "date": "28 Februari 2025",
+          "room_number": 3,
+          "tenant_name": "Shefiratul Rohma",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 26,
+          "date": "24 Maret 2025",
+          "room_number": 3,
+          "tenant_name": "Shefiratul Rohma",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 37,
+          "date": "27 April 2025",
+          "room_number": 3,
+          "tenant_name": "Shefiratul Rohma",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 43,
+          "date": "28 Mei 2025",
+          "room_number": 3,
+          "tenant_name": "Shefiratul Rohma",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 54,
+          "date": "29 Juni 2025",
+          "room_number": 3,
+          "tenant_name": "Shefiratul Rohma",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 64,
+          "date": "29 Juli 2025",
+          "room_number": 3,
+          "tenant_name": "Shefiratul Rohma",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        }
+      ]
+    },
+    {
+      "room_number": 4,
+      "current_tenant": "Erliz Rizqiyani",
+      "current_rate": 700,
+      "payments": [
+        {
+          "id": 5,
+          "date": "12 Januari 2025",
+          "room_number": 4,
+          "tenant_name": "Erliz Rizqiyani",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 16,
+          "date": "13 Februari 2025",
+          "room_number": 4,
+          "tenant_name": "Erliz Rizqiyani",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 25,
+          "date": "12 Maret 2025",
+          "room_number": 4,
+          "tenant_name": "Erliz Rizqiyani",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 33,
+          "date": "14 April 2025",
+          "room_number": 4,
+          "tenant_name": "Erliz Rizqiyani",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 44,
+          "date": "14 Mei 2025",
+          "room_number": 4,
+          "tenant_name": "Erliz Rizqiyani",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 52,
+          "date": "12 Juni 2025",
+          "room_number": 4,
+          "tenant_name": "Erliz Rizqiyani",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 62,
+          "date": "13 Juli 2025",
+          "room_number": 4,
+          "tenant_name": "Erliz Rizqiyani",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        }
+      ]
+    },
+    {
+      "room_number": 5,
+      "current_tenant": "Puspita Wulandari",
+      "current_rate": 700,
+      "payments": [
+        {
+          "id": 6,
+          "date": "12 Januari 2025",
+          "room_number": 5,
+          "tenant_name": "Puspita Wulandari",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 7,
+          "date": "12 Februari 2025",
+          "room_number": 5,
+          "tenant_name": "Puspita Wulandari",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 24,
+          "date": "12 Maret 2025",
+          "room_number": 5,
+          "tenant_name": "Puspita Wulandari",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 31,
+          "date": "11 April 2025",
+          "room_number": 5,
+          "tenant_name": "Puspita Wulandari",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 40,
+          "date": "12 Mei 2025",
+          "room_number": 5,
+          "tenant_name": "Puspita Wulandari",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 53,
+          "date": "11 Juni 2025",
+          "room_number": 5,
+          "tenant_name": "Puspita Wulandari",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 61,
+          "date": "11 Juli 2025",
+          "room_number": 5,
+          "tenant_name": "Puspita Wulandari",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        }
+      ]
+    },
+    {
+      "room_number": 6,
+      "current_tenant": "Feby",
+      "current_rate": 700,
+      "payments": [
+        {
+          "id": 8,
+          "date": "29 Januari 2025",
+          "room_number": 6,
+          "tenant_name": "Feby",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "cash"
+        },
+        {
+          "id": 9,
+          "date": "29 Januari 2025",
+          "room_number": 6,
+          "tenant_name": "Feby",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "cash"
+        },
+        {
+          "id": 27,
+          "date": "09 April 2025",
+          "room_number": 6,
+          "tenant_name": "Feby",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 36,
+          "date": "02 Mei 2025",
+          "room_number": 6,
+          "tenant_name": "Feby",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 47,
+          "date": "03 Juni 2025",
+          "room_number": 6,
+          "tenant_name": "Feby",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        }
+      ]
+    },
+    {
+      "room_number": 7,
+      "current_tenant": "Halizza",
+      "current_rate": 700,
+      "payments": [
+        {
+          "id": 10,
+          "date": "08 Januari 2025",
+          "room_number": 7,
+          "tenant_name": "Halizza",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 11,
+          "date": "11 Februari 2025",
+          "room_number": 7,
+          "tenant_name": "Halizza",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 22,
+          "date": "13 Maret 2025",
+          "room_number": 7,
+          "tenant_name": "Halizza",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 32,
+          "date": "17 April 2025",
+          "room_number": 7,
+          "tenant_name": "Halizza",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 45,
+          "date": "22 Mei 2025",
+          "room_number": 7,
+          "tenant_name": "Halizza",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 60,
+          "date": "10 Juli 2025",
+          "room_number": 7,
+          "tenant_name": "Halizza",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 69,
+          "date": "04 Agustus 2025",
+          "room_number": 7,
+          "tenant_name": "Halizza",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 78,
+          "date": "04 Agustus 2025",
+          "room_number": 7,
+          "tenant_name": "Halizza",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 90,
+          "date": "26 September 2025",
+          "room_number": 7,
+          "tenant_name": "Halizza",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 96,
+          "date": "28 Oktober 2025",
+          "room_number": 7,
+          "tenant_name": "Halizza",
+          "amount": 1,
+          "payment_method": "000",
+          "period": "000 \""
+        }
+      ]
+    },
+    {
+      "room_number": 8,
+      "current_tenant": "Giska Putri",
+      "current_rate": 700,
+      "payments": [
+        {
+          "id": 12,
+          "date": "03 Februari 2025",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 19,
+          "date": "04 Maret 2025",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 34,
+          "date": "14 April 2025",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 41,
+          "date": "06 Mei 2025",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 48,
+          "date": "04 Juni 2025",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 57,
+          "date": "03 Juli 2025",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 68,
+          "date": "09 Agustus 2025",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 87,
+          "date": "07 September 2025",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 93,
+          "date": "07 Oktober 2025",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 101,
+          "date": "04 November 2025",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 109,
+          "date": "12 Desember 2025",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 125,
+          "date": "11 Januari 2026",
+          "room_number": 8,
+          "tenant_name": "Giska Putri",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        }
+      ]
+    },
+    {
+      "room_number": 9,
+      "current_tenant": "Viona Wahyu",
+      "current_rate": 700,
+      "payments": [
+        {
+          "id": 13,
+          "date": "04 Februari 2025",
+          "room_number": 9,
+          "tenant_name": "Viona Wahyu",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 20,
+          "date": "06 Maret 2025",
+          "room_number": 9,
+          "tenant_name": "Viona Wahyu",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "cash"
+        },
+        {
+          "id": 30,
+          "date": "05 April 2025",
+          "room_number": 9,
+          "tenant_name": "Viona Wahyu",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 42,
+          "date": "06 Mei 2025",
+          "room_number": 9,
+          "tenant_name": "Viona Wahyu",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 49,
+          "date": "04 Juni 2025",
+          "room_number": 9,
+          "tenant_name": "Viona Wahyu",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 58,
+          "date": "08 Juli 2025",
+          "room_number": 9,
+          "tenant_name": "Viona Wahyu",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 66,
+          "date": "07 Agustus 2025",
+          "room_number": 9,
+          "tenant_name": "Viona Wahyu",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        }
+      ]
+    },
+    {
+      "room_number": 10,
+      "current_tenant": "Maritza",
+      "current_rate": 700,
+      "payments": [
+        {
+          "id": 14,
+          "date": "28 Januari 2025",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 17,
+          "date": "28 Februari 2025",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 28,
+          "date": "29 Maret 2025",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 38,
+          "date": "29 April 2025",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 46,
+          "date": "28 Mei 2025",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 700,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 55,
+          "date": "28 Juni 2025",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 63,
+          "date": "28 Juli 2025",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 79,
+          "date": "28 Agustus 2025",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 91,
+          "date": "29 September 2025",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 97,
+          "date": "28 Oktober 2025",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 103,
+          "date": "28 November 2025",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 124,
+          "date": "29 Desember 2026",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 129,
+          "date": "28 Januari 2026",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 138,
+          "date": "28 Februari 2026",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 153,
+          "date": "30 Maret 2026",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 157,
+          "date": "28 April 2026",
+          "room_number": 10,
+          "tenant_name": "Maritza",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        }
+      ]
+    },
+    {
+      "room_number": 11,
+      "current_tenant": "Maulidita",
+      "current_rate": 800,
+      "payments": [
+        {
+          "id": 65,
+          "date": "07 Juli 2025",
+          "room_number": 11,
+          "tenant_name": "Maulidita",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 76,
+          "date": "16 Agustus 2025",
+          "room_number": 11,
+          "tenant_name": "Maulidita",
+          "amount": 800,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 89,
+          "date": "10 September 2025",
+          "room_number": 11,
+          "tenant_name": "Maulidita",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 95,
+          "date": "10 Oktober 2025",
+          "room_number": 11,
+          "tenant_name": "Maulidita",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 102,
+          "date": "13 November 2025",
+          "room_number": 11,
+          "tenant_name": "Maulidita",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 112,
+          "date": "17 Desember 2025",
+          "room_number": 11,
+          "tenant_name": "Maulidita",
+          "amount": 900,
+          "payment_method": "000 \"",
+          "period": "tf"
+        },
+        {
+          "id": 126,
+          "date": "13 Januari 2026",
+          "room_number": 11,
+          "tenant_name": "Maulidita",
+          "amount": 1,
+          "payment_method": "100",
+          "period": "000 \""
+        },
+        {
+          "id": 131,
+          "date": "18 Februari 2026",
+          "room_number": 11,
+          "tenant_name": "Maulidita",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 150,
+          "date": "16 Maret 2026",
+          "room_number": 11,
+          "tenant_name": "Maulidita",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 154,
+          "date": "12 April 2026",
+          "room_number": 11,
+          "tenant_name": "Maulidita",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 159,
+          "date": "16 Mei 2026",
+          "room_number": 11,
+          "tenant_name": "Maulidita",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        }
+      ]
+    },
+    {
+      "room_number": 12,
+      "current_tenant": "Al Naina",
+      "current_rate": 1,
+      "payments": [
+        {
+          "id": 73,
+          "date": "06 Agustus 2025",
+          "room_number": 12,
+          "tenant_name": "Al Naina",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 74,
+          "date": "06 Agustus 2025",
+          "room_number": 12,
+          "tenant_name": "Al Naina",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 75,
+          "date": "06 Agustus 2025",
+          "room_number": 12,
+          "tenant_name": "Al Naina",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 100,
+          "date": "29 November 2025",
+          "room_number": 12,
+          "tenant_name": "Al Naina",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 110,
+          "date": "27 Desember 2025",
+          "room_number": 12,
+          "tenant_name": "Al Naina",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 116,
+          "date": "10 Januari 2026",
+          "room_number": 12,
+          "tenant_name": "Al Naina",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 130,
+          "date": "14 Februari 2026",
+          "room_number": 12,
+          "tenant_name": "Al Naina",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 149,
+          "date": "14 Maret 2026",
+          "room_number": 12,
+          "tenant_name": "Al Naina",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 156,
+          "date": "05 Mei 2026",
+          "room_number": 12,
+          "tenant_name": "Al Naina",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        }
+      ]
+    },
+    {
+      "room_number": 13,
+      "current_tenant": "Ridha Maghfirah Amin",
+      "current_rate": 1,
+      "payments": [
+        {
+          "id": 70,
+          "date": "12 Agustus 2025",
+          "room_number": 13,
+          "tenant_name": "Ridha Maghfirah Amin",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 71,
+          "date": "12 Agustus 2025",
+          "room_number": 13,
+          "tenant_name": "Ridha Maghfirah Amin",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 72,
+          "date": "12 Agustus 2025",
+          "room_number": 13,
+          "tenant_name": "Ridha Maghfirah Amin",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 98,
+          "date": "30 Oktober 2025",
+          "room_number": 13,
+          "tenant_name": "Ridha Maghfirah Amin",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 108,
+          "date": "01 Desember 2025",
+          "room_number": 13,
+          "tenant_name": "Ridha Maghfirah Amin",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 123,
+          "date": "01 Januari 2026",
+          "room_number": 13,
+          "tenant_name": "Ridha Maghfirah Amin",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 128,
+          "date": "10 Februari 2026",
+          "room_number": 13,
+          "tenant_name": "Ridha Maghfirah Amin",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 148,
+          "date": "02 Maret 2026",
+          "room_number": 13,
+          "tenant_name": "Ridha Maghfirah Amin",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 155,
+          "date": "02 April 2026",
+          "room_number": 13,
+          "tenant_name": "Ridha Maghfirah Amin",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 158,
+          "date": "02 Mei 2026",
+          "room_number": 13,
+          "tenant_name": "Ridha Maghfirah Amin",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        }
+      ]
+    },
+    {
+      "room_number": 14,
+      "current_tenant": "Danila Mutiara",
+      "current_rate": 1,
+      "payments": [
+        {
+          "id": 80,
+          "date": "31 Agustus 2025",
+          "room_number": 14,
+          "tenant_name": "Danila Mutiara",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 81,
+          "date": "31 Agustus 2025",
+          "room_number": 14,
+          "tenant_name": "Danila Mutiara",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 82,
+          "date": "31 Agustus 2025",
+          "room_number": 14,
+          "tenant_name": "Danila Mutiara",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 104,
+          "date": "27 November 2025",
+          "room_number": 14,
+          "tenant_name": "Danila Mutiara",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 120,
+          "date": "30 Desember 2025",
+          "room_number": 14,
+          "tenant_name": "Danila Mutiara",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 121,
+          "date": "30 Desember 2025",
+          "room_number": 14,
+          "tenant_name": "Danila Mutiara",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 122,
+          "date": "30 Desember 2025",
+          "room_number": 14,
+          "tenant_name": "Danila Mutiara",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 151,
+          "date": "29 Maret 2026",
+          "room_number": 14,
+          "tenant_name": "Danila Mutiara",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 152,
+          "date": "29 Maret 2026",
+          "room_number": 14,
+          "tenant_name": "Danila Mutiara",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        }
+      ]
+    },
+    {
+      "room_number": 15,
+      "current_tenant": "Louise Valenza Asbi",
+      "current_rate": 1,
+      "payments": [
+        {
+          "id": 83,
+          "date": "31 Agustus 2025",
+          "room_number": 15,
+          "tenant_name": "Louise Valenza Asbi",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 84,
+          "date": "31 Agustus 2025",
+          "room_number": 15,
+          "tenant_name": "Louise Valenza Asbi",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 85,
+          "date": "31 Agustus 2025",
+          "room_number": 15,
+          "tenant_name": "Louise Valenza Asbi",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 105,
+          "date": "30 November 2025",
+          "room_number": 15,
+          "tenant_name": "Louise Valenza Asbi",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 106,
+          "date": "30 November 2025",
+          "room_number": 15,
+          "tenant_name": "Louise Valenza Asbi",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 107,
+          "date": "30 November 2025",
+          "room_number": 15,
+          "tenant_name": "Louise Valenza Asbi",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 142,
+          "date": "08 Maret 2026",
+          "room_number": 15,
+          "tenant_name": "Louise Valenza Asbi",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 143,
+          "date": "08 Maret 2026",
+          "room_number": 15,
+          "tenant_name": "Louise Valenza Asbi",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 144,
+          "date": "08 Maret 2026",
+          "room_number": 15,
+          "tenant_name": "Louise Valenza Asbi",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        }
+      ]
+    },
+    {
+      "room_number": 16,
+      "current_tenant": "Nur Qomaria",
+      "current_rate": 1,
+      "payments": [
+        {
+          "id": 113,
+          "date": "27 November 2025",
+          "room_number": 16,
+          "tenant_name": "Nur Qomaria",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 114,
+          "date": "27 November 2025",
+          "room_number": 16,
+          "tenant_name": "Nur Qomaria",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 115,
+          "date": "27 November 2025",
+          "room_number": 16,
+          "tenant_name": "Nur Qomaria",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 132,
+          "date": "02 Maret 2026",
+          "room_number": 16,
+          "tenant_name": "Nur Qomaria",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 133,
+          "date": "02 Maret 2026",
+          "room_number": 16,
+          "tenant_name": "Nur Qomaria",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 134,
+          "date": "02 Maret 2026",
+          "room_number": 16,
+          "tenant_name": "Nur Qomaria",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        }
+      ]
+    },
+    {
+      "room_number": 17,
+      "current_tenant": "Aniela Nabila",
+      "current_rate": 1,
+      "payments": [
+        {
+          "id": 117,
+          "date": "01 Desember 2025",
+          "room_number": 17,
+          "tenant_name": "Aniela Nabila",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 118,
+          "date": "01 Desember 2025",
+          "room_number": 17,
+          "tenant_name": "Aniela Nabila",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 119,
+          "date": "01 Desember 2025",
+          "room_number": 17,
+          "tenant_name": "Aniela Nabila",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 135,
+          "date": "04 Maret 2026",
+          "room_number": 17,
+          "tenant_name": "Aniela Nabila",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 136,
+          "date": "04 Maret 2026",
+          "room_number": 17,
+          "tenant_name": "Aniela Nabila",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 137,
+          "date": "04 Maret 2026",
+          "room_number": 17,
+          "tenant_name": "Aniela Nabila",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        }
+      ]
+    },
+    {
+      "room_number": 18,
+      "current_tenant": "Adinda Suci Nurhidaya",
+      "current_rate": 1,
+      "payments": [
+        {
+          "id": 145,
+          "date": "09 Maret 2026",
+          "room_number": 18,
+          "tenant_name": "Adinda Suci Nurhidaya",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 146,
+          "date": "09 Maret 2026",
+          "room_number": 18,
+          "tenant_name": "Adinda Suci Nurhidaya",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 147,
+          "date": "09 Maret 2026",
+          "room_number": 18,
+          "tenant_name": "Adinda Suci Nurhidaya",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        }
+      ]
+    },
+    {
+      "room_number": 19,
+      "current_tenant": "Nailah Resendriya Maheswari",
+      "current_rate": 1,
+      "payments": [
+        {
+          "id": 139,
+          "date": "03 Maret 2026",
+          "room_number": 19,
+          "tenant_name": "Nailah Resendriya Maheswari",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 140,
+          "date": "03 Maret 2026",
+          "room_number": 19,
+          "tenant_name": "Nailah Resendriya Maheswari",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        },
+        {
+          "id": 141,
+          "date": "03 Maret 2026",
+          "room_number": 19,
+          "tenant_name": "Nailah Resendriya Maheswari",
+          "amount": 1,
+          "payment_method": "200",
+          "period": "000 \""
+        }
+      ]
+    }
+  ],
+  "payments": [
+    {
+      "id": 38,
+      "date": "29 April 2025",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 35,
+      "date": "27 April 2025",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 37,
+      "date": "27 April 2025",
+      "room_number": 3,
+      "tenant_name": "Shefiratul Rohma",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 32,
+      "date": "17 April 2025",
+      "room_number": 7,
+      "tenant_name": "Halizza",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 33,
+      "date": "14 April 2025",
+      "room_number": 4,
+      "tenant_name": "Erliz Rizqiyani",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 34,
+      "date": "14 April 2025",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 29,
+      "date": "11 April 2025",
+      "room_number": 1,
+      "tenant_name": "Resti",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 31,
+      "date": "11 April 2025",
+      "room_number": 5,
+      "tenant_name": "Puspita Wulandari",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 27,
+      "date": "09 April 2025",
+      "room_number": 6,
+      "tenant_name": "Feby",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 30,
+      "date": "05 April 2025",
+      "room_number": 9,
+      "tenant_name": "Viona Wahyu",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 28,
+      "date": "29 Maret 2025",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 26,
+      "date": "24 Maret 2025",
+      "room_number": 3,
+      "tenant_name": "Shefiratul Rohma",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 23,
+      "date": "14 Maret 2025",
+      "room_number": 1,
+      "tenant_name": "Resti",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 22,
+      "date": "13 Maret 2025",
+      "room_number": 7,
+      "tenant_name": "Halizza",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 24,
+      "date": "12 Maret 2025",
+      "room_number": 5,
+      "tenant_name": "Puspita Wulandari",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 25,
+      "date": "12 Maret 2025",
+      "room_number": 4,
+      "tenant_name": "Erliz Rizqiyani",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 21,
+      "date": "10 Maret 2025",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 20,
+      "date": "06 Maret 2025",
+      "room_number": 9,
+      "tenant_name": "Viona Wahyu",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "cash"
+    },
+    {
+      "id": 19,
+      "date": "04 Maret 2025",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 17,
+      "date": "28 Februari 2025",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 18,
+      "date": "28 Februari 2025",
+      "room_number": 3,
+      "tenant_name": "Shefiratul Rohma",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 16,
+      "date": "13 Februari 2025",
+      "room_number": 4,
+      "tenant_name": "Erliz Rizqiyani",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 7,
+      "date": "12 Februari 2025",
+      "room_number": 5,
+      "tenant_name": "Puspita Wulandari",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 11,
+      "date": "11 Februari 2025",
+      "room_number": 7,
+      "tenant_name": "Halizza",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 15,
+      "date": "10 Februari 2025",
+      "room_number": 1,
+      "tenant_name": "Resti",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 2,
+      "date": "05 Februari 2025",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 3,
+      "date": "05 Februari 2025",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 13,
+      "date": "04 Februari 2025",
+      "room_number": 9,
+      "tenant_name": "Viona Wahyu",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 12,
+      "date": "03 Februari 2025",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 8,
+      "date": "29 Januari 2025",
+      "room_number": 6,
+      "tenant_name": "Feby",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "cash"
+    },
+    {
+      "id": 9,
+      "date": "29 Januari 2025",
+      "room_number": 6,
+      "tenant_name": "Feby",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "cash"
+    },
+    {
+      "id": 4,
+      "date": "28 Januari 2025",
+      "room_number": 3,
+      "tenant_name": "Shefiratul Rohma",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 14,
+      "date": "28 Januari 2025",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 1,
+      "date": "14 Januari 2025",
+      "room_number": 1,
+      "tenant_name": "Resti",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 5,
+      "date": "12 Januari 2025",
+      "room_number": 4,
+      "tenant_name": "Erliz Rizqiyani",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 6,
+      "date": "12 Januari 2025",
+      "room_number": 5,
+      "tenant_name": "Puspita Wulandari",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 10,
+      "date": "08 Januari 2025",
+      "room_number": 7,
+      "tenant_name": "Halizza",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 36,
+      "date": "02 Mei 2025",
+      "room_number": 6,
+      "tenant_name": "Feby",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 39,
+      "date": "09 Mei 2025",
+      "room_number": 1,
+      "tenant_name": "Resti",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 40,
+      "date": "12 Mei 2025",
+      "room_number": 5,
+      "tenant_name": "Puspita Wulandari",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 41,
+      "date": "06 Mei 2025",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 42,
+      "date": "06 Mei 2025",
+      "room_number": 9,
+      "tenant_name": "Viona Wahyu",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 43,
+      "date": "28 Mei 2025",
+      "room_number": 3,
+      "tenant_name": "Shefiratul Rohma",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 44,
+      "date": "14 Mei 2025",
+      "room_number": 4,
+      "tenant_name": "Erliz Rizqiyani",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 45,
+      "date": "22 Mei 2025",
+      "room_number": 7,
+      "tenant_name": "Halizza",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 46,
+      "date": "28 Mei 2025",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 64,
+      "date": "29 Juli 2025",
+      "room_number": 3,
+      "tenant_name": "Shefiratul Rohma",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 63,
+      "date": "28 Juli 2025",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 62,
+      "date": "13 Juli 2025",
+      "room_number": 4,
+      "tenant_name": "Erliz Rizqiyani",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 61,
+      "date": "11 Juli 2025",
+      "room_number": 5,
+      "tenant_name": "Puspita Wulandari",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 60,
+      "date": "10 Juli 2025",
+      "room_number": 7,
+      "tenant_name": "Halizza",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 58,
+      "date": "08 Juli 2025",
+      "room_number": 9,
+      "tenant_name": "Viona Wahyu",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 65,
+      "date": "07 Juli 2025",
+      "room_number": 11,
+      "tenant_name": "Maulidita",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 56,
+      "date": "04 Juli 2025",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 57,
+      "date": "03 Juli 2025",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 59,
+      "date": "01 Juli 2025",
+      "room_number": 1,
+      "tenant_name": "Resti",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 54,
+      "date": "29 Juni 2025",
+      "room_number": 3,
+      "tenant_name": "Shefiratul Rohma",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 55,
+      "date": "28 Juni 2025",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 50,
+      "date": "12 Juni 2025",
+      "room_number": 1,
+      "tenant_name": "Resti",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 52,
+      "date": "12 Juni 2025",
+      "room_number": 4,
+      "tenant_name": "Erliz Rizqiyani",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 53,
+      "date": "11 Juni 2025",
+      "room_number": 5,
+      "tenant_name": "Puspita Wulandari",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 51,
+      "date": "07 Juni 2025",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 48,
+      "date": "04 Juni 2025",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 49,
+      "date": "04 Juni 2025",
+      "room_number": 9,
+      "tenant_name": "Viona Wahyu",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 47,
+      "date": "03 Juni 2025",
+      "room_number": 6,
+      "tenant_name": "Feby",
+      "amount": 700,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 66,
+      "date": "07 Agustus 2025",
+      "room_number": 9,
+      "tenant_name": "Viona Wahyu",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 67,
+      "date": "02 Agustus 2025",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 68,
+      "date": "09 Agustus 2025",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 69,
+      "date": "04 Agustus 2025",
+      "room_number": 7,
+      "tenant_name": "Halizza",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 70,
+      "date": "12 Agustus 2025",
+      "room_number": 13,
+      "tenant_name": "Ridha Maghfirah Amin",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 71,
+      "date": "12 Agustus 2025",
+      "room_number": 13,
+      "tenant_name": "Ridha Maghfirah Amin",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 72,
+      "date": "12 Agustus 2025",
+      "room_number": 13,
+      "tenant_name": "Ridha Maghfirah Amin",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 73,
+      "date": "06 Agustus 2025",
+      "room_number": 12,
+      "tenant_name": "Al Naina",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 74,
+      "date": "06 Agustus 2025",
+      "room_number": 12,
+      "tenant_name": "Al Naina",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 75,
+      "date": "06 Agustus 2025",
+      "room_number": 12,
+      "tenant_name": "Al Naina",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 76,
+      "date": "16 Agustus 2025",
+      "room_number": 11,
+      "tenant_name": "Maulidita",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 77,
+      "date": "15 Agustus 2025",
+      "room_number": 1,
+      "tenant_name": "Resti",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 78,
+      "date": "04 Agustus 2025",
+      "room_number": 7,
+      "tenant_name": "Halizza",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 79,
+      "date": "28 Agustus 2025",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 80,
+      "date": "31 Agustus 2025",
+      "room_number": 14,
+      "tenant_name": "Danila Mutiara",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 81,
+      "date": "31 Agustus 2025",
+      "room_number": 14,
+      "tenant_name": "Danila Mutiara",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 82,
+      "date": "31 Agustus 2025",
+      "room_number": 14,
+      "tenant_name": "Danila Mutiara",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 83,
+      "date": "31 Agustus 2025",
+      "room_number": 15,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 84,
+      "date": "31 Agustus 2025",
+      "room_number": 15,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 85,
+      "date": "31 Agustus 2025",
+      "room_number": 15,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 86,
+      "date": "31 Agustus 2025",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "cash"
+    },
+    {
+      "id": 116,
+      "date": "10 Januari 2026",
+      "room_number": 12,
+      "tenant_name": "Al Naina",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 105,
+      "date": "30 November 2025",
+      "room_number": 15,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 106,
+      "date": "30 November 2025",
+      "room_number": 15,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 107,
+      "date": "30 November 2025",
+      "room_number": 15,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 100,
+      "date": "29 November 2025",
+      "room_number": 12,
+      "tenant_name": "Al Naina",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 103,
+      "date": "28 November 2025",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 104,
+      "date": "27 November 2025",
+      "room_number": 14,
+      "tenant_name": "Danila Mutiara",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 113,
+      "date": "27 November 2025",
+      "room_number": 16,
+      "tenant_name": "Nur Qomaria",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 114,
+      "date": "27 November 2025",
+      "room_number": 16,
+      "tenant_name": "Nur Qomaria",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 115,
+      "date": "27 November 2025",
+      "room_number": 16,
+      "tenant_name": "Nur Qomaria",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 102,
+      "date": "13 November 2025",
+      "room_number": 11,
+      "tenant_name": "Maulidita",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 101,
+      "date": "04 November 2025",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 99,
+      "date": "02 November 2025",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 91,
+      "date": "29 September 2025",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 90,
+      "date": "26 September 2025",
+      "room_number": 7,
+      "tenant_name": "Halizza",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 88,
+      "date": "12 September 2025",
+      "room_number": 1,
+      "tenant_name": "Resti",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 89,
+      "date": "10 September 2025",
+      "room_number": 11,
+      "tenant_name": "Maulidita",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 87,
+      "date": "07 September 2025",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 92,
+      "date": "06 Oktober 2025",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 93,
+      "date": "07 Oktober 2025",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 94,
+      "date": "09 Oktober 2025",
+      "room_number": 1,
+      "tenant_name": "Resti",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 95,
+      "date": "10 Oktober 2025",
+      "room_number": 11,
+      "tenant_name": "Maulidita",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 96,
+      "date": "28 Oktober 2025",
+      "room_number": 7,
+      "tenant_name": "Halizza",
+      "amount": 1,
+      "payment_method": "000",
+      "period": "000 \""
+    },
+    {
+      "id": 97,
+      "date": "28 Oktober 2025",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 98,
+      "date": "30 Oktober 2025",
+      "room_number": 13,
+      "tenant_name": "Ridha Maghfirah Amin",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 108,
+      "date": "01 Desember 2025",
+      "room_number": 13,
+      "tenant_name": "Ridha Maghfirah Amin",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 109,
+      "date": "12 Desember 2025",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 110,
+      "date": "27 Desember 2025",
+      "room_number": 12,
+      "tenant_name": "Al Naina",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 111,
+      "date": "14 Desember 2025",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 112,
+      "date": "17 Desember 2025",
+      "room_number": 11,
+      "tenant_name": "Maulidita",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 117,
+      "date": "01 Desember 2025",
+      "room_number": 17,
+      "tenant_name": "Aniela Nabila",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 118,
+      "date": "01 Desember 2025",
+      "room_number": 17,
+      "tenant_name": "Aniela Nabila",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 119,
+      "date": "01 Desember 2025",
+      "room_number": 17,
+      "tenant_name": "Aniela Nabila",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 120,
+      "date": "30 Desember 2025",
+      "room_number": 14,
+      "tenant_name": "Danila Mutiara",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 121,
+      "date": "30 Desember 2025",
+      "room_number": 14,
+      "tenant_name": "Danila Mutiara",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 122,
+      "date": "30 Desember 2025",
+      "room_number": 14,
+      "tenant_name": "Danila Mutiara",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 157,
+      "date": "28 April 2026",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 154,
+      "date": "12 April 2026",
+      "room_number": 11,
+      "tenant_name": "Maulidita",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 155,
+      "date": "02 April 2026",
+      "room_number": 13,
+      "tenant_name": "Ridha Maghfirah Amin",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 153,
+      "date": "30 Maret 2026",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 151,
+      "date": "29 Maret 2026",
+      "room_number": 14,
+      "tenant_name": "Danila Mutiara",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 152,
+      "date": "29 Maret 2026",
+      "room_number": 14,
+      "tenant_name": "Danila Mutiara",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 150,
+      "date": "16 Maret 2026",
+      "room_number": 11,
+      "tenant_name": "Maulidita",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 149,
+      "date": "14 Maret 2026",
+      "room_number": 12,
+      "tenant_name": "Al Naina",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 145,
+      "date": "09 Maret 2026",
+      "room_number": 18,
+      "tenant_name": "Adinda Suci Nurhidaya",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 146,
+      "date": "09 Maret 2026",
+      "room_number": 18,
+      "tenant_name": "Adinda Suci Nurhidaya",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 147,
+      "date": "09 Maret 2026",
+      "room_number": 18,
+      "tenant_name": "Adinda Suci Nurhidaya",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 142,
+      "date": "08 Maret 2026",
+      "room_number": 15,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 143,
+      "date": "08 Maret 2026",
+      "room_number": 15,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 144,
+      "date": "08 Maret 2026",
+      "room_number": 15,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 135,
+      "date": "04 Maret 2026",
+      "room_number": 17,
+      "tenant_name": "Aniela Nabila",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 136,
+      "date": "04 Maret 2026",
+      "room_number": 17,
+      "tenant_name": "Aniela Nabila",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 137,
+      "date": "04 Maret 2026",
+      "room_number": 17,
+      "tenant_name": "Aniela Nabila",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 139,
+      "date": "03 Maret 2026",
+      "room_number": 19,
+      "tenant_name": "Nailah Resendriya Maheswari",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 140,
+      "date": "03 Maret 2026",
+      "room_number": 19,
+      "tenant_name": "Nailah Resendriya Maheswari",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 141,
+      "date": "03 Maret 2026",
+      "room_number": 19,
+      "tenant_name": "Nailah Resendriya Maheswari",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 132,
+      "date": "02 Maret 2026",
+      "room_number": 16,
+      "tenant_name": "Nur Qomaria",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 133,
+      "date": "02 Maret 2026",
+      "room_number": 16,
+      "tenant_name": "Nur Qomaria",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 134,
+      "date": "02 Maret 2026",
+      "room_number": 16,
+      "tenant_name": "Nur Qomaria",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 148,
+      "date": "02 Maret 2026",
+      "room_number": 13,
+      "tenant_name": "Ridha Maghfirah Amin",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 138,
+      "date": "28 Februari 2026",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 131,
+      "date": "18 Februari 2026",
+      "room_number": 11,
+      "tenant_name": "Maulidita",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 130,
+      "date": "14 Februari 2026",
+      "room_number": 12,
+      "tenant_name": "Al Naina",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 128,
+      "date": "10 Februari 2026",
+      "room_number": 13,
+      "tenant_name": "Ridha Maghfirah Amin",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 129,
+      "date": "28 Januari 2026",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 127,
+      "date": "24 Januari 2026",
+      "room_number": 2,
+      "tenant_name": "Meisya Syafira",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 126,
+      "date": "13 Januari 2026",
+      "room_number": 11,
+      "tenant_name": "Maulidita",
+      "amount": 1,
+      "payment_method": "100",
+      "period": "000 \""
+    },
+    {
+      "id": 123,
+      "date": "01 Januari 2026",
+      "room_number": 13,
+      "tenant_name": "Ridha Maghfirah Amin",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 124,
+      "date": "29 Desember 2026",
+      "room_number": 10,
+      "tenant_name": "Maritza",
+      "amount": 800,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 125,
+      "date": "11 Januari 2026",
+      "room_number": 8,
+      "tenant_name": "Giska Putri",
+      "amount": 900,
+      "payment_method": "000 \"",
+      "period": "tf"
+    },
+    {
+      "id": 156,
+      "date": "05 Mei 2026",
+      "room_number": 12,
+      "tenant_name": "Al Naina",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 158,
+      "date": "02 Mei 2026",
+      "room_number": 13,
+      "tenant_name": "Ridha Maghfirah Amin",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    },
+    {
+      "id": 159,
+      "date": "16 Mei 2026",
+      "room_number": 11,
+      "tenant_name": "Maulidita",
+      "amount": 1,
+      "payment_method": "200",
+      "period": "000 \""
+    }
+  ],
+  "summary": {
+    "total_rooms": 19,
+    "occupied_rooms": 19,
+    "total_income": 72865,
+    "by_month": {
+      "tf": 69800,
+      "cash": 3000,
+      "000 \"": 65
+    }
+  }
+}
