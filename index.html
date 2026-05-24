@@ -235,6 +235,68 @@
       color: white;
     }
     
+    .status-table-wrapper {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+    
+    .status-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      font-size: 0.9em;
+    }
+    
+    .status-table th,
+    .status-table td {
+      padding: 10px 8px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    
+    .status-table th {
+      background: #667eea;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .status-table tbody tr:hover {
+      background: #f8f9fa;
+    }
+    
+    .status-table .room-col {
+      font-weight: bold;
+      color: #667eea;
+    }
+    
+    .status-table .name-col {
+      text-align: left;
+      font-weight: bold;
+    }
+    
+    .status-table .date-col {
+      color: #666;
+    }
+    
+    .status-table .status-col {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    
+    .status-table .status-col.paid {
+      background: #d4edda;
+      color: #28a745;
+    }
+    
+    .status-table .status-col.unpaid {
+      background: #f8d7da;
+      color: #dc3545;
+    }
+    
     .payment-table-wrapper {
       overflow-x: auto;
       margin: 20px 0;
@@ -413,6 +475,581 @@
               <div class="payment-schedule">Bayar setiap tanggal 28</div>
             </div>
             
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <div class="section-title" onclick="toggleSection('status')">
+        <span>📊 Status Pembayaran 2026</span>
+        <span class="toggle-icon" id="status-icon">▼</span>
+      </div>
+      <div class="section-content" id="status-content">
+        <div class="status-table-wrapper">
+          <table class="status-table">
+            <thead>
+              <tr>
+                <th>No Kamar</th>
+                <th>Nama Penghuni</th>
+                <th>Tgl Tagihan</th>
+                <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th>
+                <th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                  <tr>
+                    <td class="room-col">1</td>
+                    <td class="name-col">Nur Qomaria</td>
+                    <td class="date-col">30</td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="room-col">2</td>
+                    <td class="name-col">Adinda Suci Nurhidaya</td>
+                    <td class="date-col">05</td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="room-col">3</td>
+                    <td class="name-col">Aniela Nabila</td>
+                    <td class="date-col">30</td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="room-col">4</td>
+                    <td class="name-col">Louise Valenza Asbi</td>
+                    <td class="date-col">30</td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="room-col">5</td>
+                    <td class="name-col">Al Naina</td>
+                    <td class="date-col">06</td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="room-col">6</td>
+                    <td class="name-col">Maulidita</td>
+                    <td class="date-col">07</td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="room-col">7</td>
+                    <td class="name-col">Danila Mutiara</td>
+                    <td class="date-col">30</td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="room-col">8</td>
+                    <td class="name-col">Nailah Resendriya Maheswari</td>
+                    <td class="date-col">05</td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="room-col">9</td>
+                    <td class="name-col">Ridha Maghfirah Amin</td>
+                    <td class="date-col">12</td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="room-col">10</td>
+                    <td class="name-col">Maritza</td>
+                    <td class="date-col">28</td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col paid">
+                        ✓
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                      <td class="status-col unpaid">
+                        -
+                      </td>
+                    
+                  </tr>
+                
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
