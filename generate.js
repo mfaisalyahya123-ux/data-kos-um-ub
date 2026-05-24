@@ -253,6 +253,34 @@ const html = `<!DOCTYPE html>
       color: white;
     }
     
+    .year-toggle {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .year-btn {
+      padding: 10px 20px;
+      background: #f8f9fa;
+      color: #333;
+      border: 2px solid #667eea;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .year-btn:hover {
+      background: #667eea;
+      color: white;
+    }
+    
+    .year-btn.active {
+      background: #667eea;
+      color: white;
+    }
+    
     .status-table-wrapper {
       overflow-x: auto;
       margin: 20px 0;
@@ -442,10 +470,15 @@ const html = `<!DOCTYPE html>
     
     <div class="section">
       <div class="section-title" onclick="toggleSection('status')">
-        <span>📊 Status Pembayaran 2026</span>
+        <span>📋 Tabel Pembayaran <span id="statusYear">2026</span></span>
         <span class="toggle-icon" id="status-icon">▼</span>
       </div>
       <div class="section-content" id="status-content">
+        <div class="year-toggle">
+          <button onclick="switchYear(2025)" class="year-btn" id="year-2025">2025</button>
+          <button onclick="switchYear(2026)" class="year-btn active" id="year-2026">2026</button>
+        </div>
+        
         <div class="status-table-wrapper">
           <table class="status-table">
             <thead>
@@ -457,9 +490,9 @@ const html = `<!DOCTYPE html>
                 <th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="statusTableBody">
               ${(() => {
-                // Build payment status for 2026
+                // Build payment status for 2026 (default)
                 const paymentStatus = {};
                 const monthMap = {
                   'januari': 1, 'februari': 2, 'maret': 3, 'april': 4, 'mei': 5, 'juni': 6,
@@ -495,12 +528,12 @@ const html = `<!DOCTYPE html>
                 });
                 
                 return Object.values(paymentStatus).sort((a, b) => a.room_number - b.room_number).map(room => `
-                  <tr>
+                  <tr data-room="${room.room_number}">
                     <td class="room-col">${room.room_number}</td>
                     <td class="name-col">${room.tenant_name}</td>
                     <td class="date-col">${room.payment_date}</td>
                     ${[1,2,3,4,5,6,7,8,9,10,11,12].map(month => `
-                      <td class="status-col ${room.months[month] ? 'paid' : 'unpaid'}">
+                      <td class="status-col ${room.months[month] ? 'paid' : 'unpaid'}" data-month="${month}">
                         ${room.months[month] ? '✓' : '-'}
                       </td>
                     `).join('')}
@@ -602,6 +635,11 @@ const html = `<!DOCTYPE html>
   
   <script>
     let currentPeriodMonths = 4; // Default 4 bulan
+    let currentYear = 2026; // Default year
+    
+    // Embed payment data
+    const paymentsData = ${JSON.stringify(data.payments)};
+    const roomsData = ${JSON.stringify(data.rooms)};
     
     function toggleSection(sectionId) {
       const content = document.getElementById(sectionId + '-content');
@@ -609,6 +647,77 @@ const html = `<!DOCTYPE html>
       
       content.classList.toggle('collapsed');
       icon.classList.toggle('collapsed');
+    }
+    
+    function switchYear(year) {
+      currentYear = year;
+      
+      // Update title
+      document.getElementById('statusYear').textContent = year;
+      
+      // Update active button
+      document.querySelectorAll('.year-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById('year-' + year).classList.add('active');
+      
+      // Rebuild table
+      rebuildStatusTable(year);
+    }
+    
+    function rebuildStatusTable(year) {
+      const monthMap = {
+        'januari': 1, 'februari': 2, 'maret': 3, 'april': 4, 'mei': 5, 'juni': 6,
+        'juli': 7, 'agustus': 8, 'september': 9, 'oktober': 10, 'november': 11, 'desember': 12
+      };
+      
+      const paymentStatus = {};
+      
+      // Initialize for active tenants
+      roomsData.forEach(room => {
+        if (room.current_tenant) {
+          const currentTenant = room.tenants.find(t => t.status === 'aktif');
+          if (currentTenant) {
+            const paymentDate = currentTenant.move_in.split('/')[0];
+            paymentStatus[room.room_number] = {
+              room_number: room.room_number,
+              tenant_name: room.current_tenant,
+              payment_date: paymentDate,
+              months: { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false,
+                        7: false, 8: false, 9: false, 10: false, 11: false, 12: false }
+            };
+          }
+        }
+      });
+      
+      // Mark paid months for selected year
+      paymentsData.forEach(payment => {
+        if (payment.date.includes(year.toString())) {
+          const room = paymentStatus[payment.room_number];
+          if (room) {
+            const month = monthMap[payment.period.toLowerCase()];
+            if (month) room.months[month] = true;
+          }
+        }
+      });
+      
+      // Rebuild table body
+      const tbody = document.getElementById('statusTableBody');
+      const rows = Object.values(paymentStatus).sort((a, b) => a.room_number - b.room_number).map(room => {
+        const monthCells = [1,2,3,4,5,6,7,8,9,10,11,12].map(month => {
+          const isPaid = room.months[month];
+          return '<td class="status-col ' + (isPaid ? 'paid' : 'unpaid') + '" data-month="' + month + '">' + (isPaid ? '✓' : '-') + '</td>';
+        }).join('');
+        
+        return '<tr data-room="' + room.room_number + '">' +
+          '<td class="room-col">' + room.room_number + '</td>' +
+          '<td class="name-col">' + room.tenant_name + '</td>' +
+          '<td class="date-col">' + room.payment_date + '</td>' +
+          monthCells +
+          '</tr>';
+      }).join('');
+      
+      tbody.innerHTML = rows;
     }
     
     function filterPayments() {
