@@ -167,32 +167,14 @@ const html = `<!DOCTYPE html>
       margin-bottom: 10px;
     }
     
-    .room-income {
-      font-size: 0.9em;
-      color: #28a745;
-      font-weight: bold;
-    }
-    
-    .tenant-history {
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid #ddd;
+    .payment-schedule {
       font-size: 0.85em;
-    }
-    
-    .tenant-item {
-      padding: 5px 0;
-      color: #666;
-    }
-    
-    .tenant-item.active {
-      color: #28a745;
+      color: #667eea;
       font-weight: bold;
-    }
-    
-    .tenant-item.inactive {
-      color: #999;
-      text-decoration: line-through;
+      background: #e8eaf6;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-top: 5px;
     }
     
     .payment-list {
@@ -300,24 +282,20 @@ const html = `<!DOCTYPE html>
       </div>
       <div class="section-content" id="rooms-content">
         <div class="room-grid">
-          ${data.rooms.map(room => `
+          ${data.rooms.map(room => {
+            // Get current tenant info
+            const currentTenant = room.tenants.find(t => t.status === 'aktif');
+            const paymentDate = currentTenant ? currentTenant.move_in.split('/')[0] : '-';
+            
+            return `
             <div class="room-card ${room.current_tenant ? '' : 'vacant'}">
               <div class="room-number">Kamar ${room.room_number}</div>
               <div class="room-tenant">${room.current_tenant || 'Kosong'}</div>
               <div class="room-rate">${room.current_rate ? formatRupiah(room.current_rate) + '/bulan' : '-'}</div>
-              <div class="room-income">Total: ${formatRupiah(room.total_income)}</div>
-              ${room.tenants.length > 1 ? `
-                <div class="tenant-history">
-                  <strong>Riwayat Penghuni:</strong>
-                  ${room.tenants.map(t => `
-                    <div class="tenant-item ${t.status === 'aktif' ? 'active' : 'inactive'}">
-                      ${t.name} (${t.move_in}${t.move_out ? ' - ' + t.move_out : ''})
-                    </div>
-                  `).join('')}
-                </div>
-              ` : ''}
+              ${currentTenant ? `<div class="payment-schedule">Bayar setiap tanggal ${paymentDate}</div>` : ''}
             </div>
-          `).join('')}
+            `;
+          }).join('')}
         </div>
       </div>
     </div>
