@@ -506,12 +506,18 @@ const html = `<!DOCTYPE html>
                 };
                 const year = 2026;
                 
+                // Get current date
+                const now = new Date();
+                const currentYear = now.getFullYear();
+                const currentMonth = now.getMonth() + 1;
+                const currentDay = now.getDate();
+                
                 // Initialize for active tenants
                 data.rooms.forEach(room => {
                   if (room.current_tenant) {
                     const currentTenant = room.tenants.find(t => t.status === 'aktif');
                     if (currentTenant) {
-                      const paymentDate = currentTenant.move_in.split('/')[0];
+                      const paymentDate = parseInt(currentTenant.move_in.split('/')[0]);
                       
                       // Parse move-in date
                       const moveInParts = currentTenant.move_in.split('/');
@@ -526,7 +532,20 @@ const html = `<!DOCTYPE html>
                         } else if (year === moveInYear && m < moveInMonth) {
                           months[m] = null;
                         } else {
-                          months[m] = false;
+                          // Check if due date has passed
+                          if (year === currentYear) {
+                            if (m > currentMonth) {
+                              months[m] = 'not-due';
+                            } else if (m === currentMonth && currentDay < paymentDate) {
+                              months[m] = 'not-due';
+                            } else {
+                              months[m] = false;
+                            }
+                          } else if (year > currentYear) {
+                            months[m] = 'not-due';
+                          } else {
+                            months[m] = false;
+                          }
                         }
                       }
                       
@@ -546,7 +565,11 @@ const html = `<!DOCTYPE html>
                     const room = paymentStatus[payment.room_number];
                     if (room) {
                       const month = monthMap[payment.period.toLowerCase()];
-                      if (month && room.months[month] !== null) room.months[month] = true;
+                      if (month && room.months[month] !== null && room.months[month] !== 'not-due') {
+                        room.months[month] = true;
+                      } else if (month && room.months[month] === 'not-due') {
+                        room.months[month] = true;
+                      }
                     }
                   }
                 });
@@ -575,6 +598,8 @@ const html = `<!DOCTYPE html>
                       const status = room.months[month];
                       if (status === null) {
                         return '<td class="status-col not-applicable" data-month="' + month + '">-</td>';
+                      } else if (status === 'not-due') {
+                        return '<td class="status-col not-due" data-month="' + month + '">-</td>';
                       } else if (status === true) {
                         return '<td class="status-col paid" data-month="' + month + '">✓</td>';
                       } else {
