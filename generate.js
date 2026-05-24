@@ -177,6 +177,48 @@ const html = `<!DOCTYPE html>
       margin-top: 5px;
     }
     
+    .filter-controls {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-controls label {
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .filter-controls select {
+      padding: 8px 12px;
+      border: 2px solid #667eea;
+      border-radius: 5px;
+      font-size: 0.9em;
+      background: white;
+      cursor: pointer;
+    }
+    
+    .filter-controls select:focus {
+      outline: none;
+      border-color: #764ba2;
+    }
+    
+    .reset-btn {
+      padding: 8px 16px;
+      background: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .reset-btn:hover {
+      background: #c82333;
+    }
+    
     .payment-table-wrapper {
       overflow-x: auto;
       margin: 20px 0;
@@ -308,6 +350,35 @@ const html = `<!DOCTYPE html>
         <span class="toggle-icon" id="payments-icon">▼</span>
       </div>
       <div class="section-content" id="payments-content">
+        <div class="filter-controls">
+          <label for="filterTenant">Filter Penghuni:</label>
+          <select id="filterTenant" onchange="filterPayments()">
+            <option value="all">Semua Penghuni</option>
+            ${data.tenants.sort((a, b) => a.tenant_number - b.tenant_number).map(tenant => `
+              <option value="${tenant.tenant_number}">${tenant.tenant_number} - ${tenant.name}</option>
+            `).join('')}
+          </select>
+          
+          <label for="filterMonth">Filter Bulan:</label>
+          <select id="filterMonth" onchange="filterPayments()">
+            <option value="all">Semua Bulan</option>
+            <option value="januari">Januari</option>
+            <option value="februari">Februari</option>
+            <option value="maret">Maret</option>
+            <option value="april">April</option>
+            <option value="mei">Mei</option>
+            <option value="juni">Juni</option>
+            <option value="juli">Juli</option>
+            <option value="agustus">Agustus</option>
+            <option value="september">September</option>
+            <option value="oktober">Oktober</option>
+            <option value="november">November</option>
+            <option value="desember">Desember</option>
+          </select>
+          
+          <button onclick="resetFilters()" class="reset-btn">Reset Filter</button>
+        </div>
+        
         <div class="payment-table-wrapper">
           <table class="payment-history-table">
             <thead>
@@ -320,9 +391,9 @@ const html = `<!DOCTYPE html>
                 <th>Metode Bayar</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="paymentTableBody">
               ${data.payments.map(payment => `
-                <tr>
+                <tr data-tenant="${payment.tenant_number}" data-month="${payment.period.toLowerCase()}">
                   <td>${formatDate(payment.date)}</td>
                   <td>${payment.tenant_number}</td>
                   <td>${payment.tenant_name}</td>
@@ -345,6 +416,32 @@ const html = `<!DOCTYPE html>
       
       content.classList.toggle('collapsed');
       icon.classList.toggle('collapsed');
+    }
+    
+    function filterPayments() {
+      const tenantFilter = document.getElementById('filterTenant').value;
+      const monthFilter = document.getElementById('filterMonth').value;
+      const rows = document.querySelectorAll('#paymentTableBody tr');
+      
+      rows.forEach(row => {
+        const tenant = row.getAttribute('data-tenant');
+        const month = row.getAttribute('data-month');
+        
+        const tenantMatch = tenantFilter === 'all' || tenant === tenantFilter;
+        const monthMatch = monthFilter === 'all' || month === monthFilter;
+        
+        if (tenantMatch && monthMatch) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+    
+    function resetFilters() {
+      document.getElementById('filterTenant').value = 'all';
+      document.getElementById('filterMonth').value = 'all';
+      filterPayments();
     }
   </script>
 </body>
