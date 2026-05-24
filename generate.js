@@ -177,52 +177,48 @@ const html = `<!DOCTYPE html>
       margin-top: 5px;
     }
     
-    .payment-list {
-      display: grid;
-      gap: 10px;
+    .payment-table-wrapper {
+      overflow-x: auto;
+      margin: 20px 0;
     }
     
-    .payment-item {
+    .payment-history-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      font-size: 0.9em;
+    }
+    
+    .payment-history-table th,
+    .payment-history-table td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    
+    .payment-history-table th {
+      background: #667eea;
+      color: white;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .payment-history-table tbody tr:hover {
       background: #f8f9fa;
-      border-radius: 8px;
-      padding: 15px;
-      display: grid;
-      grid-template-columns: auto 1fr auto auto;
-      gap: 15px;
-      align-items: center;
     }
     
-    .payment-date {
-      font-weight: bold;
-      color: #667eea;
-    }
-    
-    .payment-info {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    
-    .payment-tenant {
-      font-weight: bold;
-      color: #333;
-    }
-    
-    .payment-period {
-      font-size: 0.9em;
-      color: #666;
-    }
-    
-    .payment-amount {
-      font-size: 1.2em;
-      font-weight: bold;
+    .payment-history-table td.amount {
+      text-align: right;
       color: #28a745;
+      font-weight: bold;
     }
     
-    .payment-method {
-      font-size: 0.9em;
+    .payment-history-table td.method {
+      text-align: center;
       color: #666;
-      text-transform: uppercase;
+      font-size: 0.85em;
     }
     
     @media (max-width: 768px) {
@@ -234,9 +230,13 @@ const html = `<!DOCTYPE html>
         grid-template-columns: 1fr 1fr;
       }
       
-      .payment-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
+      .payment-history-table {
+        font-size: 0.75em;
+      }
+      
+      .payment-history-table th,
+      .payment-history-table td {
+        padding: 8px 4px;
       }
     }
   </style>
@@ -306,18 +306,31 @@ const html = `<!DOCTYPE html>
         <span class="toggle-icon" id="payments-icon">▼</span>
       </div>
       <div class="section-content" id="payments-content">
-        <div class="payment-list">
-          ${data.payments.map(payment => `
-            <div class="payment-item">
-              <div class="payment-date">${formatDate(payment.date)}</div>
-              <div class="payment-info">
-                <div class="payment-tenant">Kamar ${payment.room_number} - ${payment.tenant_name}</div>
-                <div class="payment-period">Periode: ${payment.period} | Penghuni #${payment.tenant_number}</div>
-              </div>
-              <div class="payment-amount">${formatRupiah(payment.amount)}</div>
-              <div class="payment-method">${payment.payment_method}</div>
-            </div>
-          `).join('')}
+        <div class="payment-table-wrapper">
+          <table class="payment-history-table">
+            <thead>
+              <tr>
+                <th>Tgl Bayar</th>
+                <th>Penghuni No</th>
+                <th>Nama Penghuni</th>
+                <th>Untuk Periode</th>
+                <th>Jumlah</th>
+                <th>Metode Bayar</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${data.payments.map(payment => `
+                <tr>
+                  <td>${formatDate(payment.date)}</td>
+                  <td>${payment.tenant_number}</td>
+                  <td>${payment.tenant_name}</td>
+                  <td>${payment.period.charAt(0).toUpperCase() + payment.period.slice(1)}</td>
+                  <td class="amount">${formatRupiah(payment.amount)}</td>
+                  <td class="method">${payment.payment_method.toUpperCase()}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
