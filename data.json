@@ -111,7 +111,7 @@
       ],
       "current_tenant": "Al Naina",
       "current_rate": 1200000,
-      "total_income": 15900000
+      "total_income": 17100000
     },
     {
       "room_number": 6,
@@ -372,6 +372,16 @@
     }
   ],
   "payments": [
+    {
+      "id": 172,
+      "date": "20 Mei 2026",
+      "tenant_number": 12,
+      "room_number": 5,
+      "tenant_name": "Al Naina",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "mei"
+    },
     {
       "id": 158,
       "date": "16 Mei 2026",
@@ -2088,9 +2098,9 @@
     "occupied_rooms": 10,
     "total_tenants": 19,
     "active_tenants": 10,
-    "total_income": 164900000,
+    "total_income": 166100000,
     "by_month": {
-      "mei": 13000000,
+      "mei": 14200000,
       "april": 19000000,
       "maret": 19000000,
       "februari": 26200000,
@@ -2108,7 +2118,7 @@
       "2": 13100000,
       "3": 16100000,
       "4": 19500000,
-      "5": 15900000,
+      "5": 17100000,
       "6": 14600000,
       "7": 22200000,
       "8": 13400000,
