@@ -22,8 +22,8 @@
         }
       ],
       "current_tenant": "Nur Qomaria",
-      "current_rate": 1,
-      "total_income": 7606
+      "current_rate": 1200000,
+      "total_income": 14800000
     },
     {
       "room_number": 2,
@@ -44,8 +44,8 @@
         }
       ],
       "current_tenant": "Adinda Suci Nurhidaya",
-      "current_rate": 1,
-      "total_income": 9503
+      "current_rate": 1200000,
+      "total_income": 13100000
     },
     {
       "room_number": 3,
@@ -66,8 +66,8 @@
         }
       ],
       "current_tenant": "Aniela Nabila",
-      "current_rate": 1,
-      "total_income": 5306
+      "current_rate": 1200000,
+      "total_income": 12500000
     },
     {
       "room_number": 4,
@@ -88,8 +88,8 @@
         }
       ],
       "current_tenant": "Louise Valenza Asbi",
-      "current_rate": 1,
-      "total_income": 5109
+      "current_rate": 1200000,
+      "total_income": 15900000
     },
     {
       "room_number": 5,
@@ -110,8 +110,8 @@
         }
       ],
       "current_tenant": "Al Naina",
-      "current_rate": 1,
-      "total_income": 5109
+      "current_rate": 1200000,
+      "total_income": 15900000
     },
     {
       "room_number": 6,
@@ -132,8 +132,8 @@
         }
       ],
       "current_tenant": "Maulidita",
-      "current_rate": 1,
-      "total_income": 8705
+      "current_rate": 1200000,
+      "total_income": 14600000
     },
     {
       "room_number": 7,
@@ -154,8 +154,8 @@
         }
       ],
       "current_tenant": "Danila Mutiara",
-      "current_rate": 1,
-      "total_income": 6810
+      "current_rate": 1200000,
+      "total_income": 18600000
     },
     {
       "room_number": 8,
@@ -176,8 +176,8 @@
         }
       ],
       "current_tenant": "Nailah Resendriya Maheswari",
-      "current_rate": 1,
-      "total_income": 9803
+      "current_rate": 1200000,
+      "total_income": 13400000
     },
     {
       "room_number": 9,
@@ -198,8 +198,8 @@
         }
       ],
       "current_tenant": "Ridha Maghfirah Amin",
-      "current_rate": 1,
-      "total_income": 5310
+      "current_rate": 1200000,
+      "total_income": 17300000
     },
     {
       "room_number": 10,
@@ -213,8 +213,8 @@
         }
       ],
       "current_tenant": "Maritza",
-      "current_rate": 1,
-      "total_income": 9604
+      "current_rate": 1200000,
+      "total_income": 14400000
     }
   ],
   "tenants": [
@@ -378,9 +378,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 35,
@@ -388,9 +388,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 37,
@@ -398,9 +398,9 @@
       "tenant_number": 3,
       "room_number": 3,
       "tenant_name": "Shefiratul Rohma",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 32,
@@ -408,9 +408,9 @@
       "tenant_number": 7,
       "room_number": 7,
       "tenant_name": "Halizza",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 33,
@@ -418,9 +418,9 @@
       "tenant_number": 4,
       "room_number": 4,
       "tenant_name": "Erliz Rizqiyani",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 34,
@@ -428,9 +428,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 29,
@@ -438,9 +438,9 @@
       "tenant_number": 1,
       "room_number": 1,
       "tenant_name": "Resti",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 31,
@@ -448,9 +448,9 @@
       "tenant_number": 5,
       "room_number": 5,
       "tenant_name": "Puspita Wulandari",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 27,
@@ -458,9 +458,9 @@
       "tenant_number": 6,
       "room_number": 6,
       "tenant_name": "Feby",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 30,
@@ -468,9 +468,9 @@
       "tenant_number": 9,
       "room_number": 9,
       "tenant_name": "Viona Wahyu",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 28,
@@ -478,9 +478,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 26,
@@ -488,9 +488,9 @@
       "tenant_number": 3,
       "room_number": 3,
       "tenant_name": "Shefiratul Rohma",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 23,
@@ -498,9 +498,9 @@
       "tenant_number": 1,
       "room_number": 1,
       "tenant_name": "Resti",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 22,
@@ -508,9 +508,9 @@
       "tenant_number": 7,
       "room_number": 7,
       "tenant_name": "Halizza",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 24,
@@ -518,9 +518,9 @@
       "tenant_number": 5,
       "room_number": 5,
       "tenant_name": "Puspita Wulandari",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 25,
@@ -528,9 +528,9 @@
       "tenant_number": 4,
       "room_number": 4,
       "tenant_name": "Erliz Rizqiyani",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 21,
@@ -538,9 +538,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 20,
@@ -548,9 +548,9 @@
       "tenant_number": 9,
       "room_number": 9,
       "tenant_name": "Viona Wahyu",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "cash"
+      "amount": 700000,
+      "payment_method": "cash",
+      "period": "maret"
     },
     {
       "id": 19,
@@ -558,9 +558,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 17,
@@ -568,9 +568,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 18,
@@ -578,9 +578,9 @@
       "tenant_number": 3,
       "room_number": 3,
       "tenant_name": "Shefiratul Rohma",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 16,
@@ -588,9 +588,9 @@
       "tenant_number": 4,
       "room_number": 4,
       "tenant_name": "Erliz Rizqiyani",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 7,
@@ -598,9 +598,9 @@
       "tenant_number": 5,
       "room_number": 5,
       "tenant_name": "Puspita Wulandari",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 11,
@@ -608,9 +608,9 @@
       "tenant_number": 7,
       "room_number": 7,
       "tenant_name": "Halizza",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 15,
@@ -618,9 +618,9 @@
       "tenant_number": 1,
       "room_number": 1,
       "tenant_name": "Resti",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 2,
@@ -628,9 +628,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 3,
@@ -638,9 +638,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 13,
@@ -648,9 +648,9 @@
       "tenant_number": 9,
       "room_number": 9,
       "tenant_name": "Viona Wahyu",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 12,
@@ -658,9 +658,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 8,
@@ -668,9 +668,9 @@
       "tenant_number": 6,
       "room_number": 6,
       "tenant_name": "Feby",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "cash"
+      "amount": 700000,
+      "payment_method": "cash",
+      "period": "januari"
     },
     {
       "id": 9,
@@ -678,9 +678,9 @@
       "tenant_number": 6,
       "room_number": 6,
       "tenant_name": "Feby",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "cash"
+      "amount": 700000,
+      "payment_method": "cash",
+      "period": "februari"
     },
     {
       "id": 4,
@@ -688,9 +688,9 @@
       "tenant_number": 3,
       "room_number": 3,
       "tenant_name": "Shefiratul Rohma",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 14,
@@ -698,9 +698,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 1,
@@ -708,9 +708,9 @@
       "tenant_number": 1,
       "room_number": 1,
       "tenant_name": "Resti",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 5,
@@ -718,9 +718,9 @@
       "tenant_number": 4,
       "room_number": 4,
       "tenant_name": "Erliz Rizqiyani",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 6,
@@ -728,9 +728,9 @@
       "tenant_number": 5,
       "room_number": 5,
       "tenant_name": "Puspita Wulandari",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 10,
@@ -738,9 +738,9 @@
       "tenant_number": 7,
       "room_number": 7,
       "tenant_name": "Halizza",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 36,
@@ -748,9 +748,9 @@
       "tenant_number": 6,
       "room_number": 6,
       "tenant_name": "Feby",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 39,
@@ -758,9 +758,9 @@
       "tenant_number": 1,
       "room_number": 1,
       "tenant_name": "Resti",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 40,
@@ -768,9 +768,9 @@
       "tenant_number": 5,
       "room_number": 5,
       "tenant_name": "Puspita Wulandari",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 41,
@@ -778,9 +778,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 42,
@@ -788,9 +788,9 @@
       "tenant_number": 9,
       "room_number": 9,
       "tenant_name": "Viona Wahyu",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 43,
@@ -798,9 +798,9 @@
       "tenant_number": 3,
       "room_number": 3,
       "tenant_name": "Shefiratul Rohma",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 44,
@@ -808,9 +808,9 @@
       "tenant_number": 4,
       "room_number": 4,
       "tenant_name": "Erliz Rizqiyani",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 45,
@@ -818,9 +818,9 @@
       "tenant_number": 7,
       "room_number": 7,
       "tenant_name": "Halizza",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 46,
@@ -828,9 +828,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 64,
@@ -838,9 +838,9 @@
       "tenant_number": 3,
       "room_number": 3,
       "tenant_name": "Shefiratul Rohma",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "juli"
     },
     {
       "id": 63,
@@ -848,9 +848,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "juli"
     },
     {
       "id": 62,
@@ -858,9 +858,9 @@
       "tenant_number": 4,
       "room_number": 4,
       "tenant_name": "Erliz Rizqiyani",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "juli"
     },
     {
       "id": 61,
@@ -868,9 +868,9 @@
       "tenant_number": 5,
       "room_number": 5,
       "tenant_name": "Puspita Wulandari",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "juli"
     },
     {
       "id": 60,
@@ -878,9 +878,9 @@
       "tenant_number": 7,
       "room_number": 7,
       "tenant_name": "Halizza",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "juni"
     },
     {
       "id": 58,
@@ -888,9 +888,9 @@
       "tenant_number": 9,
       "room_number": 9,
       "tenant_name": "Viona Wahyu",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "juli"
     },
     {
       "id": 65,
@@ -898,9 +898,9 @@
       "tenant_number": 11,
       "room_number": 6,
       "tenant_name": "Maulidita",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "juli"
     },
     {
       "id": 56,
@@ -908,9 +908,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "juli"
     },
     {
       "id": 57,
@@ -918,9 +918,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "juli"
     },
     {
       "id": 59,
@@ -928,9 +928,9 @@
       "tenant_number": 1,
       "room_number": 1,
       "tenant_name": "Resti",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "juli"
     },
     {
       "id": 54,
@@ -938,9 +938,9 @@
       "tenant_number": 3,
       "room_number": 3,
       "tenant_name": "Shefiratul Rohma",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "juni"
     },
     {
       "id": 55,
@@ -948,9 +948,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "juni"
     },
     {
       "id": 50,
@@ -958,9 +958,9 @@
       "tenant_number": 1,
       "room_number": 1,
       "tenant_name": "Resti",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "juni"
     },
     {
       "id": 52,
@@ -968,9 +968,9 @@
       "tenant_number": 4,
       "room_number": 4,
       "tenant_name": "Erliz Rizqiyani",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "juni"
     },
     {
       "id": 53,
@@ -978,9 +978,9 @@
       "tenant_number": 5,
       "room_number": 5,
       "tenant_name": "Puspita Wulandari",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "juni"
     },
     {
       "id": 51,
@@ -988,9 +988,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "juni"
     },
     {
       "id": 48,
@@ -998,9 +998,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "juni"
     },
     {
       "id": 49,
@@ -1008,9 +1008,9 @@
       "tenant_number": 9,
       "room_number": 9,
       "tenant_name": "Viona Wahyu",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "juni"
     },
     {
       "id": 47,
@@ -1018,9 +1018,9 @@
       "tenant_number": 6,
       "room_number": 6,
       "tenant_name": "Feby",
-      "amount": 700,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 700000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 66,
@@ -1028,9 +1028,9 @@
       "tenant_number": 9,
       "room_number": 9,
       "tenant_name": "Viona Wahyu",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "agustus"
     },
     {
       "id": 67,
@@ -1038,9 +1038,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "agustus"
     },
     {
       "id": 68,
@@ -1048,9 +1048,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "agustus"
     },
     {
       "id": 69,
@@ -1058,9 +1058,9 @@
       "tenant_number": 7,
       "room_number": 7,
       "tenant_name": "Halizza",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "juli"
     },
     {
       "id": 70,
@@ -1068,9 +1068,9 @@
       "tenant_number": 13,
       "room_number": 9,
       "tenant_name": "Ridha Maghfirah Amin",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "cash",
+      "period": "agustus"
     },
     {
       "id": 71,
@@ -1078,9 +1078,9 @@
       "tenant_number": 13,
       "room_number": 9,
       "tenant_name": "Ridha Maghfirah Amin",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "cash",
+      "period": "september"
     },
     {
       "id": 72,
@@ -1088,9 +1088,9 @@
       "tenant_number": 13,
       "room_number": 9,
       "tenant_name": "Ridha Maghfirah Amin",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "cash",
+      "period": "oktober"
     },
     {
       "id": 73,
@@ -1098,9 +1098,9 @@
       "tenant_number": 12,
       "room_number": 5,
       "tenant_name": "Al Naina",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "agustus"
     },
     {
       "id": 74,
@@ -1108,9 +1108,9 @@
       "tenant_number": 12,
       "room_number": 5,
       "tenant_name": "Al Naina",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "september"
     },
     {
       "id": 75,
@@ -1118,9 +1118,9 @@
       "tenant_number": 12,
       "room_number": 5,
       "tenant_name": "Al Naina",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "oktober"
     },
     {
       "id": 76,
@@ -1128,9 +1128,9 @@
       "tenant_number": 11,
       "room_number": 6,
       "tenant_name": "Maulidita",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "agustus"
     },
     {
       "id": 77,
@@ -1138,9 +1138,9 @@
       "tenant_number": 1,
       "room_number": 1,
       "tenant_name": "Resti",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "agustus"
     },
     {
       "id": 78,
@@ -1148,9 +1148,9 @@
       "tenant_number": 7,
       "room_number": 7,
       "tenant_name": "Halizza",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "agustus"
     },
     {
       "id": 79,
@@ -1158,9 +1158,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "agustus"
     },
     {
       "id": 80,
@@ -1168,9 +1168,9 @@
       "tenant_number": 14,
       "room_number": 7,
       "tenant_name": "Danila Mutiara",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "agustus"
     },
     {
       "id": 81,
@@ -1178,9 +1178,9 @@
       "tenant_number": 14,
       "room_number": 7,
       "tenant_name": "Danila Mutiara",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "september"
     },
     {
       "id": 82,
@@ -1188,9 +1188,9 @@
       "tenant_number": 14,
       "room_number": 7,
       "tenant_name": "Danila Mutiara",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "oktober"
     },
     {
       "id": 83,
@@ -1198,9 +1198,9 @@
       "tenant_number": 15,
       "room_number": 4,
       "tenant_name": "Louise Valenza Asbi",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "agustus"
     },
     {
       "id": 84,
@@ -1208,9 +1208,9 @@
       "tenant_number": 15,
       "room_number": 4,
       "tenant_name": "Louise Valenza Asbi",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "september"
     },
     {
       "id": 85,
@@ -1218,9 +1218,9 @@
       "tenant_number": 15,
       "room_number": 4,
       "tenant_name": "Louise Valenza Asbi",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "oktober"
     },
     {
       "id": 86,
@@ -1228,9 +1228,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "cash"
+      "amount": 900000,
+      "payment_method": "cash",
+      "period": "september"
     },
     {
       "id": 116,
@@ -1238,9 +1238,9 @@
       "tenant_number": 12,
       "room_number": 5,
       "tenant_name": "Al Naina",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 105,
@@ -1248,9 +1248,9 @@
       "tenant_number": 15,
       "room_number": 4,
       "tenant_name": "Louise Valenza Asbi",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "november"
     },
     {
       "id": 106,
@@ -1258,9 +1258,9 @@
       "tenant_number": 15,
       "room_number": 4,
       "tenant_name": "Louise Valenza Asbi",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "desember"
     },
     {
       "id": 107,
@@ -1268,9 +1268,9 @@
       "tenant_number": 15,
       "room_number": 4,
       "tenant_name": "Louise Valenza Asbi",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 100,
@@ -1278,9 +1278,9 @@
       "tenant_number": 12,
       "room_number": 5,
       "tenant_name": "Al Naina",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "november"
     },
     {
       "id": 103,
@@ -1288,9 +1288,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "november"
     },
     {
       "id": 104,
@@ -1298,9 +1298,9 @@
       "tenant_number": 14,
       "room_number": 7,
       "tenant_name": "Danila Mutiara",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "november"
     },
     {
       "id": 113,
@@ -1308,9 +1308,9 @@
       "tenant_number": 16,
       "room_number": 1,
       "tenant_name": "Nur Qomaria",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "november"
     },
     {
       "id": 114,
@@ -1318,9 +1318,9 @@
       "tenant_number": 16,
       "room_number": 1,
       "tenant_name": "Nur Qomaria",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "desember"
     },
     {
       "id": 115,
@@ -1328,9 +1328,9 @@
       "tenant_number": 16,
       "room_number": 1,
       "tenant_name": "Nur Qomaria",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 102,
@@ -1338,9 +1338,9 @@
       "tenant_number": 11,
       "room_number": 6,
       "tenant_name": "Maulidita",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "november"
     },
     {
       "id": 101,
@@ -1348,9 +1348,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "november"
     },
     {
       "id": 99,
@@ -1358,9 +1358,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "november"
     },
     {
       "id": 91,
@@ -1368,9 +1368,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "september"
     },
     {
       "id": 90,
@@ -1378,9 +1378,9 @@
       "tenant_number": 7,
       "room_number": 7,
       "tenant_name": "Halizza",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "september"
     },
     {
       "id": 88,
@@ -1388,9 +1388,9 @@
       "tenant_number": 1,
       "room_number": 1,
       "tenant_name": "Resti",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "september"
     },
     {
       "id": 89,
@@ -1398,9 +1398,9 @@
       "tenant_number": 11,
       "room_number": 6,
       "tenant_name": "Maulidita",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "september"
     },
     {
       "id": 87,
@@ -1408,9 +1408,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "september"
     },
     {
       "id": 92,
@@ -1418,9 +1418,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "oktober"
     },
     {
       "id": 93,
@@ -1428,9 +1428,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "oktober"
     },
     {
       "id": 94,
@@ -1438,9 +1438,9 @@
       "tenant_number": 1,
       "room_number": 1,
       "tenant_name": "Resti",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "oktober"
     },
     {
       "id": 95,
@@ -1448,9 +1448,9 @@
       "tenant_number": 11,
       "room_number": 6,
       "tenant_name": "Maulidita",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "oktober"
     },
     {
       "id": 96,
@@ -1458,9 +1458,9 @@
       "tenant_number": 7,
       "room_number": 7,
       "tenant_name": "Halizza",
-      "amount": 1,
-      "payment_method": "000",
-      "period": "000 \""
+      "amount": 1000000,
+      "payment_method": "tf",
+      "period": "oktober"
     },
     {
       "id": 97,
@@ -1468,9 +1468,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "oktober"
     },
     {
       "id": 98,
@@ -1478,9 +1478,9 @@
       "tenant_number": 13,
       "room_number": 9,
       "tenant_name": "Ridha Maghfirah Amin",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "november"
     },
     {
       "id": 108,
@@ -1488,9 +1488,9 @@
       "tenant_number": 13,
       "room_number": 9,
       "tenant_name": "Ridha Maghfirah Amin",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "desember"
     },
     {
       "id": 109,
@@ -1498,9 +1498,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "desember"
     },
     {
       "id": 110,
@@ -1508,9 +1508,9 @@
       "tenant_number": 12,
       "room_number": 5,
       "tenant_name": "Al Naina",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "desember"
     },
     {
       "id": 111,
@@ -1518,9 +1518,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "desember"
     },
     {
       "id": 112,
@@ -1528,9 +1528,9 @@
       "tenant_number": 11,
       "room_number": 6,
       "tenant_name": "Maulidita",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "desember"
     },
     {
       "id": 117,
@@ -1538,9 +1538,9 @@
       "tenant_number": 17,
       "room_number": 3,
       "tenant_name": "Aniela Nabila",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "desember"
     },
     {
       "id": 118,
@@ -1548,9 +1548,9 @@
       "tenant_number": 17,
       "room_number": 3,
       "tenant_name": "Aniela Nabila",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 119,
@@ -1558,9 +1558,9 @@
       "tenant_number": 17,
       "room_number": 3,
       "tenant_name": "Aniela Nabila",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 120,
@@ -1568,9 +1568,9 @@
       "tenant_number": 14,
       "room_number": 7,
       "tenant_name": "Danila Mutiara",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "desember"
     },
     {
       "id": 121,
@@ -1578,9 +1578,9 @@
       "tenant_number": 14,
       "room_number": 7,
       "tenant_name": "Danila Mutiara",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 122,
@@ -1588,9 +1588,9 @@
       "tenant_number": 14,
       "room_number": 7,
       "tenant_name": "Danila Mutiara",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 157,
@@ -1598,9 +1598,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 154,
@@ -1608,9 +1608,9 @@
       "tenant_number": 11,
       "room_number": 6,
       "tenant_name": "Maulidita",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 155,
@@ -1618,9 +1618,9 @@
       "tenant_number": 13,
       "room_number": 9,
       "tenant_name": "Ridha Maghfirah Amin",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 153,
@@ -1628,9 +1628,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 151,
@@ -1638,9 +1638,9 @@
       "tenant_number": 14,
       "room_number": 7,
       "tenant_name": "Danila Mutiara",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 152,
@@ -1648,9 +1648,9 @@
       "tenant_number": 14,
       "room_number": 7,
       "tenant_name": "Danila Mutiara",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 150,
@@ -1658,9 +1658,9 @@
       "tenant_number": 11,
       "room_number": 6,
       "tenant_name": "Maulidita",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 149,
@@ -1668,9 +1668,9 @@
       "tenant_number": 12,
       "room_number": 5,
       "tenant_name": "Al Naina",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 145,
@@ -1678,9 +1678,9 @@
       "tenant_number": 18,
       "room_number": 2,
       "tenant_name": "Adinda Suci Nurhidaya",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 146,
@@ -1688,9 +1688,9 @@
       "tenant_number": 18,
       "room_number": 2,
       "tenant_name": "Adinda Suci Nurhidaya",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 147,
@@ -1698,9 +1698,9 @@
       "tenant_number": 18,
       "room_number": 2,
       "tenant_name": "Adinda Suci Nurhidaya",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 142,
@@ -1708,9 +1708,9 @@
       "tenant_number": 15,
       "room_number": 4,
       "tenant_name": "Louise Valenza Asbi",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 143,
@@ -1718,9 +1718,9 @@
       "tenant_number": 15,
       "room_number": 4,
       "tenant_name": "Louise Valenza Asbi",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 144,
@@ -1728,9 +1728,9 @@
       "tenant_number": 15,
       "room_number": 4,
       "tenant_name": "Louise Valenza Asbi",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 135,
@@ -1738,9 +1738,9 @@
       "tenant_number": 17,
       "room_number": 3,
       "tenant_name": "Aniela Nabila",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 136,
@@ -1748,9 +1748,9 @@
       "tenant_number": 17,
       "room_number": 3,
       "tenant_name": "Aniela Nabila",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 137,
@@ -1758,9 +1758,9 @@
       "tenant_number": 17,
       "room_number": 3,
       "tenant_name": "Aniela Nabila",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 139,
@@ -1768,9 +1768,9 @@
       "tenant_number": 19,
       "room_number": 8,
       "tenant_name": "Nailah Resendriya Maheswari",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 140,
@@ -1778,9 +1778,9 @@
       "tenant_number": 19,
       "room_number": 8,
       "tenant_name": "Nailah Resendriya Maheswari",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 141,
@@ -1788,9 +1788,9 @@
       "tenant_number": 19,
       "room_number": 8,
       "tenant_name": "Nailah Resendriya Maheswari",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 132,
@@ -1798,9 +1798,9 @@
       "tenant_number": 16,
       "room_number": 1,
       "tenant_name": "Nur Qomaria",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 133,
@@ -1808,9 +1808,9 @@
       "tenant_number": 16,
       "room_number": 1,
       "tenant_name": "Nur Qomaria",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 134,
@@ -1818,9 +1818,9 @@
       "tenant_number": 16,
       "room_number": 1,
       "tenant_name": "Nur Qomaria",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 148,
@@ -1828,9 +1828,9 @@
       "tenant_number": 13,
       "room_number": 9,
       "tenant_name": "Ridha Maghfirah Amin",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
     },
     {
       "id": 138,
@@ -1838,9 +1838,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 131,
@@ -1848,9 +1848,9 @@
       "tenant_number": 11,
       "room_number": 6,
       "tenant_name": "Maulidita",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 130,
@@ -1858,9 +1858,9 @@
       "tenant_number": 12,
       "room_number": 5,
       "tenant_name": "Al Naina",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 128,
@@ -1868,9 +1868,9 @@
       "tenant_number": 13,
       "room_number": 9,
       "tenant_name": "Ridha Maghfirah Amin",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
     },
     {
       "id": 129,
@@ -1878,9 +1878,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 127,
@@ -1888,9 +1888,9 @@
       "tenant_number": 2,
       "room_number": 2,
       "tenant_name": "Meisya Syafira",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 126,
@@ -1898,9 +1898,9 @@
       "tenant_number": 11,
       "room_number": 6,
       "tenant_name": "Maulidita",
-      "amount": 1,
-      "payment_method": "100",
-      "period": "000 \""
+      "amount": 1100000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 123,
@@ -1908,9 +1908,9 @@
       "tenant_number": 13,
       "room_number": 9,
       "tenant_name": "Ridha Maghfirah Amin",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 124,
@@ -1918,9 +1918,9 @@
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
-      "amount": 800,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 800000,
+      "payment_method": "tf",
+      "period": "desember"
     },
     {
       "id": 125,
@@ -1928,9 +1928,9 @@
       "tenant_number": 8,
       "room_number": 8,
       "tenant_name": "Giska Putri",
-      "amount": 900,
-      "payment_method": "000 \"",
-      "period": "tf"
+      "amount": 900000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 156,
@@ -1938,9 +1938,9 @@
       "tenant_number": 12,
       "room_number": 5,
       "tenant_name": "Al Naina",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "april"
     },
     {
       "id": 158,
@@ -1948,9 +1948,9 @@
       "tenant_number": 13,
       "room_number": 9,
       "tenant_name": "Ridha Maghfirah Amin",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "mei"
     },
     {
       "id": 159,
@@ -1958,9 +1958,9 @@
       "tenant_number": 11,
       "room_number": 6,
       "tenant_name": "Maulidita",
-      "amount": 1,
-      "payment_method": "200",
-      "period": "000 \""
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "mei"
     }
   ],
   "summary": {
@@ -1968,23 +1968,32 @@
     "occupied_rooms": 10,
     "total_tenants": 19,
     "active_tenants": 10,
-    "total_income": 72865,
+    "total_income": 150500000,
     "by_month": {
-      "tf": 69800,
-      "cash": 3000,
-      "000 \"": 65
+      "april": 19000000,
+      "mei": 13000000,
+      "maret": 19000000,
+      "februari": 16600000,
+      "januari": 16100000,
+      "juli": 8600000,
+      "juni": 6700000,
+      "agustus": 10800000,
+      "september": 10100000,
+      "oktober": 10300000,
+      "november": 9600000,
+      "desember": 10700000
     },
     "by_room": {
-      "1": 7606,
-      "2": 9503,
-      "3": 5306,
-      "4": 5109,
-      "5": 5109,
-      "6": 8705,
-      "7": 6810,
-      "8": 9803,
-      "9": 5310,
-      "10": 9604
+      "1": 14800000,
+      "2": 13100000,
+      "3": 12500000,
+      "4": 15900000,
+      "5": 15900000,
+      "6": 14600000,
+      "7": 18600000,
+      "8": 13400000,
+      "9": 17300000,
+      "10": 14400000
     }
   }
 }

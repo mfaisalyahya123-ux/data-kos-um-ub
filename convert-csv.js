@@ -27,7 +27,29 @@ const tenantToRoom = {
 // Read CSV
 const csvPath = path.join(__dirname, 'Kos um.csv');
 const csv = fs.readFileSync(csvPath, 'utf8');
-const lines = csv.split('\n').filter(line => line.trim() && !line.startsWith(',,,'));
+const lines = csv.split('\n').filter(line => line.trim());
+
+// Parse CSV with proper quote handling
+function parseCSVLine(line) {
+  const result = [];
+  let current = '';
+  let inQuotes = false;
+  
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    
+    if (char === '"') {
+      inQuotes = !inQuotes;
+    } else if (char === ',' && !inQuotes) {
+      result.push(current.trim());
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+  result.push(current.trim());
+  return result;
+}
 
 // Parse CSV
 const payments = [];
@@ -35,18 +57,22 @@ let id = 1;
 
 for (let i = 1; i < lines.length; i++) {
   const line = lines[i];
-  const parts = line.split(',');
+  if (line.startsWith(',,,')) continue;
+  
+  const parts = parseCSVLine(line);
   
   if (parts.length < 6 || !parts[0].trim()) continue;
   
   const date = parts[0].trim();
   const tenantNumber = parseInt(parts[1]);
   const name = parts[2].trim();
-  const amount = parseInt(parts[3].replace(/[^0-9]/g, ''));
+  const amountStr = parts[3].replace(/[^0-9]/g, '');
+  const amount = parseInt(amountStr) || 0;
   const via = parts[4].trim().toLowerCase();
   const month = parts[5].trim().toLowerCase();
   
   if (!date || !tenantNumber || !name || !amount || !month) continue;
+  if (isNaN(tenantNumber) || isNaN(amount)) continue;
   
   // Get room number from mapping
   const tenant = tenantToRoom[tenantNumber];
