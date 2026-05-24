@@ -423,30 +423,55 @@ const html = `<!DOCTYPE html>
     </header>
     
     <div class="stats">
-      <div class="stat-card">
-        <div class="stat-label">Total Kamar</div>
-        <div class="stat-value">${data.total_rooms}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Kamar Terisi</div>
-        <div class="stat-value">${data.summary.occupied_rooms}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Total Penghuni</div>
-        <div class="stat-value">${data.summary.total_tenants}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Penghuni Aktif</div>
-        <div class="stat-value">${data.summary.active_tenants}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Total Pemasukan</div>
-        <div class="stat-value">${formatRupiah(data.summary.total_income)}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Total Transaksi</div>
-        <div class="stat-value">${data.payments.length}</div>
-      </div>
+      ${(() => {
+        // Calculate current month stats
+        const now = new Date();
+        const currentMonth = now.getMonth() + 1;
+        const currentYear = now.getFullYear();
+        const monthNames = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        
+        // Get payments for current month
+        const currentMonthPayments = data.payments.filter(p => {
+          return p.date.includes(currentYear.toString()) && p.period.toLowerCase() === monthNames[currentMonth].toLowerCase();
+        });
+        const currentMonthIncome = currentMonthPayments.reduce((sum, p) => sum + p.amount, 0);
+        
+        // Count unpaid rooms for current month
+        const unpaidRooms = data.rooms.filter(room => {
+          if (!room.current_tenant) return false;
+          const currentTenant = room.tenants.find(t => t.status === 'aktif');
+          if (!currentTenant) return false;
+          
+          const paymentDay = parseInt(currentTenant.move_in.split('/')[0]);
+          const today = now.getDate();
+          
+          // Check if due date has passed
+          if (today < paymentDay) return false;
+          
+          // Check if paid
+          const paid = currentMonthPayments.some(p => p.room_number === room.room_number);
+          return !paid;
+        }).length;
+        
+        return `
+          <div class="stat-card">
+            <div class="stat-label">Okupansi</div>
+            <div class="stat-value">${data.summary.occupied_rooms}/${data.total_rooms} kamar</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Pemasukan ${monthNames[currentMonth]} ${currentYear}</div>
+            <div class="stat-value">${formatRupiah(currentMonthIncome)}</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Pemasukan</div>
+            <div class="stat-value">${formatRupiah(data.summary.total_income)}</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Belum Bayar (Bulan Ini)</div>
+            <div class="stat-value">${unpaidRooms} kamar</div>
+          </div>
+        `;
+      })()}
     </div>
     
     <div class="section">
