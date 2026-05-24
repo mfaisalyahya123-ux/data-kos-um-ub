@@ -191,7 +191,7 @@ const html = `<!DOCTYPE html>
     
     .payment-history-table th,
     .payment-history-table td {
-      padding: 12px;
+      padding: 8px 12px;
       text-align: left;
       border: 1px solid #ddd;
     }
@@ -200,9 +200,11 @@ const html = `<!DOCTYPE html>
       background: #667eea;
       color: white;
       font-weight: bold;
+      font-size: 1.1em;
       position: sticky;
       top: 0;
       z-index: 10;
+      padding: 10px 12px;
     }
     
     .payment-history-table tbody tr:hover {
