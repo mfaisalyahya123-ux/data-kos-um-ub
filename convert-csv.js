@@ -24,6 +24,19 @@ const tenantToRoom = {
   19: { name: 'Nailah Resendriya Maheswari', room: 8, move_in: '05/03/2026', move_out: null }
 };
 
+// Helper: Parse Indonesian date format
+function parseIndonesianDate(dateStr) {
+  const parts = dateStr.split(' ');
+  const day = parseInt(parts[0]);
+  const monthMap = {
+    'Januari': 0, 'Februari': 1, 'Maret': 2, 'April': 3, 'Mei': 4, 'Juni': 5,
+    'Juli': 6, 'Agustus': 7, 'September': 8, 'Oktober': 9, 'November': 10, 'Desember': 11
+  };
+  const month = monthMap[parts[1]];
+  const year = parseInt(parts[2]);
+  return new Date(year, month, day).getTime();
+}
+
 // Read CSV
 const csvPath = path.join(__dirname, 'Kos um.csv');
 const csv = fs.readFileSync(csvPath, 'utf8');
@@ -86,7 +99,9 @@ for (let i = 1; i < lines.length; i++) {
     tenant_name: name,
     amount,
     payment_method: via,
-    period: month
+    period: month,
+    // Add timestamp for sorting
+    _timestamp: parseIndonesianDate(date)
   });
 }
 
@@ -141,7 +156,11 @@ const data = {
     move_out: tenant.move_out,
     status: tenant.move_out ? 'keluar' : 'aktif'
   })),
-  payments: payments.sort((a, b) => new Date(b.date) - new Date(a.date)),
+  payments: payments.sort((a, b) => b._timestamp - a._timestamp).map(p => {
+    // Remove _timestamp before output
+    const { _timestamp, ...payment } = p;
+    return payment;
+  }),
   summary: {
     total_rooms: 10,
     occupied_rooms: Object.values(rooms).filter(r => r.current_tenant).length,
