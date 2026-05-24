@@ -214,7 +214,7 @@
       ],
       "current_tenant": "Maritza",
       "current_rate": 1200000,
-      "total_income": 13200000
+      "total_income": 14400000
     }
   ],
   "tenants": [
@@ -718,6 +718,16 @@
       "tenant_number": 14,
       "room_number": 7,
       "tenant_name": "Danila Mutiara",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
+    },
+    {
+      "id": 171,
+      "date": "28 Februari 2026",
+      "tenant_number": 10,
+      "room_number": 10,
+      "tenant_name": "Maritza",
       "amount": 1200000,
       "payment_method": "tf",
       "period": "februari"
@@ -2078,12 +2088,12 @@
     "occupied_rooms": 10,
     "total_tenants": 19,
     "active_tenants": 10,
-    "total_income": 163700000,
+    "total_income": 164900000,
     "by_month": {
       "mei": 13000000,
       "april": 19000000,
       "maret": 19000000,
-      "februari": 25000000,
+      "februari": 26200000,
       "januari": 20900000,
       "desember": 10700000,
       "november": 9600000,
@@ -2103,7 +2113,7 @@
       "7": 22200000,
       "8": 13400000,
       "9": 17300000,
-      "10": 13200000
+      "10": 14400000
     }
   }
 }
