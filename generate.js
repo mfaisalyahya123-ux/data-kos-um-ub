@@ -343,7 +343,8 @@ const html = `<!DOCTYPE html>
       color: #dc3545;
     }
     
-    .status-table .status-col.not-applicable {
+    .status-table .status-col.not-applicable,
+    .status-table .status-col.not-due {
       background: #e9ecef;
       color: #6c757d;
     }
@@ -701,12 +702,18 @@ const html = `<!DOCTYPE html>
       
       const paymentStatus = {};
       
+      // Get current date
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      const currentMonth = now.getMonth() + 1;
+      const currentDay = now.getDate();
+      
       // Initialize for active tenants
       roomsData.forEach(room => {
         if (room.current_tenant) {
           const currentTenant = room.tenants.find(t => t.status === 'aktif');
           if (currentTenant) {
-            const paymentDate = currentTenant.move_in.split('/')[0];
+            const paymentDate = parseInt(currentTenant.move_in.split('/')[0]);
             
             // Parse move-in date
             const moveInParts = currentTenant.move_in.split('/');
@@ -714,7 +721,7 @@ const html = `<!DOCTYPE html>
             const moveInMonth = parseInt(moveInParts[1]);
             const moveInYear = parseInt(moveInParts[2]);
             
-            // Initialize months (null = not applicable, false = unpaid, true = paid)
+            // Initialize months (null = not applicable, 'not-due' = belum jatuh tempo, false = unpaid, true = paid)
             const months = {};
             for (let m = 1; m <= 12; m++) {
               // Check if tenant was already living in this month
@@ -723,7 +730,21 @@ const html = `<!DOCTYPE html>
               } else if (year === moveInYear && m < moveInMonth) {
                 months[m] = null; // Belum masuk
               } else {
-                months[m] = false; // Sudah masuk, belum bayar
+                // Check if due date has passed
+                if (year === currentYear) {
+                  // For current year, check if month is due
+                  if (m > currentMonth) {
+                    months[m] = 'not-due'; // Belum jatuh tempo
+                  } else if (m === currentMonth && currentDay < paymentDate) {
+                    months[m] = 'not-due'; // Belum jatuh tempo bulan ini
+                  } else {
+                    months[m] = false; // Sudah jatuh tempo, belum bayar
+                  }
+                } else if (year > currentYear) {
+                  months[m] = 'not-due'; // Tahun depan, belum jatuh tempo
+                } else {
+                  months[m] = false; // Tahun lalu, sudah jatuh tempo
+                }
               }
             }
             
@@ -745,7 +766,10 @@ const html = `<!DOCTYPE html>
           const room = paymentStatus[payment.room_number];
           if (room) {
             const month = monthMap[payment.period.toLowerCase()];
-            if (month && room.months[month] !== null) {
+            if (month && room.months[month] !== null && room.months[month] !== 'not-due') {
+              room.months[month] = true;
+            } else if (month && room.months[month] === 'not-due') {
+              // Bayar lebih awal (sebelum jatuh tempo)
               room.months[month] = true;
             }
           }
@@ -760,11 +784,14 @@ const html = `<!DOCTYPE html>
           if (status === null) {
             // Belum masuk
             return '<td class="status-col not-applicable" data-month="' + month + '">-</td>';
+          } else if (status === 'not-due') {
+            // Belum jatuh tempo
+            return '<td class="status-col not-due" data-month="' + month + '">-</td>';
           } else if (status === true) {
             // Sudah bayar
             return '<td class="status-col paid" data-month="' + month + '">✓</td>';
           } else {
-            // Belum bayar
+            // Belum bayar (sudah jatuh tempo)
             return '<td class="status-col unpaid" data-month="' + month + '">X</td>';
           }
         }).join('');
