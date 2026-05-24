@@ -343,6 +343,11 @@ const html = `<!DOCTYPE html>
       color: #dc3545;
     }
     
+    .status-table .status-col.not-applicable {
+      background: #e9ecef;
+      color: #6c757d;
+    }
+    
     .payment-table-wrapper {
       overflow-x: auto;
       margin: 20px 0;
@@ -498,6 +503,7 @@ const html = `<!DOCTYPE html>
                   'januari': 1, 'februari': 2, 'maret': 3, 'april': 4, 'mei': 5, 'juni': 6,
                   'juli': 7, 'agustus': 8, 'september': 9, 'oktober': 10, 'november': 11, 'desember': 12
                 };
+                const year = 2026;
                 
                 // Initialize for active tenants
                 data.rooms.forEach(room => {
@@ -505,12 +511,29 @@ const html = `<!DOCTYPE html>
                     const currentTenant = room.tenants.find(t => t.status === 'aktif');
                     if (currentTenant) {
                       const paymentDate = currentTenant.move_in.split('/')[0];
+                      
+                      // Parse move-in date
+                      const moveInParts = currentTenant.move_in.split('/');
+                      const moveInMonth = parseInt(moveInParts[1]);
+                      const moveInYear = parseInt(moveInParts[2]);
+                      
+                      // Initialize months
+                      const months = {};
+                      for (let m = 1; m <= 12; m++) {
+                        if (year < moveInYear) {
+                          months[m] = null;
+                        } else if (year === moveInYear && m < moveInMonth) {
+                          months[m] = null;
+                        } else {
+                          months[m] = false;
+                        }
+                      }
+                      
                       paymentStatus[room.room_number] = {
                         room_number: room.room_number,
                         tenant_name: room.current_tenant,
                         payment_date: paymentDate,
-                        months: { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false,
-                                  7: false, 8: false, 9: false, 10: false, 11: false, 12: false }
+                        months: months
                       };
                     }
                   }
@@ -522,7 +545,7 @@ const html = `<!DOCTYPE html>
                     const room = paymentStatus[payment.room_number];
                     if (room) {
                       const month = monthMap[payment.period.toLowerCase()];
-                      if (month) room.months[month] = true;
+                      if (month && room.months[month] !== null) room.months[month] = true;
                     }
                   }
                 });
@@ -532,11 +555,16 @@ const html = `<!DOCTYPE html>
                     <td class="room-col">${room.room_number}</td>
                     <td class="name-col">${room.tenant_name}</td>
                     <td class="date-col">${room.payment_date}</td>
-                    ${[1,2,3,4,5,6,7,8,9,10,11,12].map(month => `
-                      <td class="status-col ${room.months[month] ? 'paid' : 'unpaid'}" data-month="${month}">
-                        ${room.months[month] ? '✓' : '-'}
-                      </td>
-                    `).join('')}
+                    ${[1,2,3,4,5,6,7,8,9,10,11,12].map(month => {
+                      const status = room.months[month];
+                      if (status === null) {
+                        return '<td class="status-col not-applicable" data-month="' + month + '">-</td>';
+                      } else if (status === true) {
+                        return '<td class="status-col paid" data-month="' + month + '">✓</td>';
+                      } else {
+                        return '<td class="status-col unpaid" data-month="' + month + '">X</td>';
+                      }
+                    }).join('')}
                   </tr>
                 `).join('');
               })()}
@@ -679,12 +707,33 @@ const html = `<!DOCTYPE html>
           const currentTenant = room.tenants.find(t => t.status === 'aktif');
           if (currentTenant) {
             const paymentDate = currentTenant.move_in.split('/')[0];
+            
+            // Parse move-in date
+            const moveInParts = currentTenant.move_in.split('/');
+            const moveInDay = parseInt(moveInParts[0]);
+            const moveInMonth = parseInt(moveInParts[1]);
+            const moveInYear = parseInt(moveInParts[2]);
+            
+            // Initialize months (null = not applicable, false = unpaid, true = paid)
+            const months = {};
+            for (let m = 1; m <= 12; m++) {
+              // Check if tenant was already living in this month
+              if (year < moveInYear) {
+                months[m] = null; // Belum masuk
+              } else if (year === moveInYear && m < moveInMonth) {
+                months[m] = null; // Belum masuk
+              } else {
+                months[m] = false; // Sudah masuk, belum bayar
+              }
+            }
+            
             paymentStatus[room.room_number] = {
               room_number: room.room_number,
               tenant_name: room.current_tenant,
               payment_date: paymentDate,
-              months: { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false,
-                        7: false, 8: false, 9: false, 10: false, 11: false, 12: false }
+              move_in_year: moveInYear,
+              move_in_month: moveInMonth,
+              months: months
             };
           }
         }
@@ -696,7 +745,9 @@ const html = `<!DOCTYPE html>
           const room = paymentStatus[payment.room_number];
           if (room) {
             const month = monthMap[payment.period.toLowerCase()];
-            if (month) room.months[month] = true;
+            if (month && room.months[month] !== null) {
+              room.months[month] = true;
+            }
           }
         }
       });
@@ -705,8 +756,17 @@ const html = `<!DOCTYPE html>
       const tbody = document.getElementById('statusTableBody');
       const rows = Object.values(paymentStatus).sort((a, b) => a.room_number - b.room_number).map(room => {
         const monthCells = [1,2,3,4,5,6,7,8,9,10,11,12].map(month => {
-          const isPaid = room.months[month];
-          return '<td class="status-col ' + (isPaid ? 'paid' : 'unpaid') + '" data-month="' + month + '">' + (isPaid ? '✓' : '-') + '</td>';
+          const status = room.months[month];
+          if (status === null) {
+            // Belum masuk
+            return '<td class="status-col not-applicable" data-month="' + month + '">-</td>';
+          } else if (status === true) {
+            // Sudah bayar
+            return '<td class="status-col paid" data-month="' + month + '">✓</td>';
+          } else {
+            // Belum bayar
+            return '<td class="status-col unpaid" data-month="' + month + '">X</td>';
+          }
         }).join('');
         
         return '<tr data-room="' + room.room_number + '">' +
