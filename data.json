@@ -23,7 +23,7 @@
       ],
       "current_tenant": "Nur Qomaria",
       "current_rate": 1200000,
-      "total_income": 14800000
+      "total_income": 18400000
     },
     {
       "room_number": 2,
@@ -67,7 +67,7 @@
       ],
       "current_tenant": "Aniela Nabila",
       "current_rate": 1200000,
-      "total_income": 12500000
+      "total_income": 16100000
     },
     {
       "room_number": 4,
@@ -89,7 +89,7 @@
       ],
       "current_tenant": "Louise Valenza Asbi",
       "current_rate": 1200000,
-      "total_income": 15900000
+      "total_income": 19500000
     },
     {
       "room_number": 5,
@@ -155,7 +155,7 @@
       ],
       "current_tenant": "Danila Mutiara",
       "current_rate": 1200000,
-      "total_income": 18600000
+      "total_income": 22200000
     },
     {
       "room_number": 8,
@@ -214,7 +214,7 @@
       ],
       "current_tenant": "Maritza",
       "current_rate": 1200000,
-      "total_income": 14400000
+      "total_income": 13200000
     }
   ],
   "tenants": [
@@ -373,7 +373,7 @@
   ],
   "payments": [
     {
-      "id": 159,
+      "id": 158,
       "date": "16 Mei 2026",
       "tenant_number": 11,
       "room_number": 6,
@@ -383,7 +383,7 @@
       "period": "mei"
     },
     {
-      "id": 156,
+      "id": 155,
       "date": "05 Mei 2026",
       "tenant_number": 12,
       "room_number": 5,
@@ -393,7 +393,7 @@
       "period": "april"
     },
     {
-      "id": 158,
+      "id": 157,
       "date": "02 Mei 2026",
       "tenant_number": 13,
       "room_number": 9,
@@ -403,7 +403,7 @@
       "period": "mei"
     },
     {
-      "id": 157,
+      "id": 156,
       "date": "28 April 2026",
       "tenant_number": 10,
       "room_number": 10,
@@ -413,7 +413,7 @@
       "period": "april"
     },
     {
-      "id": 154,
+      "id": 153,
       "date": "12 April 2026",
       "tenant_number": 11,
       "room_number": 6,
@@ -423,7 +423,7 @@
       "period": "april"
     },
     {
-      "id": 155,
+      "id": 154,
       "date": "02 April 2026",
       "tenant_number": 13,
       "room_number": 9,
@@ -433,11 +433,21 @@
       "period": "april"
     },
     {
-      "id": 153,
+      "id": 152,
       "date": "30 Maret 2026",
       "tenant_number": 10,
       "room_number": 10,
       "tenant_name": "Maritza",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
+    },
+    {
+      "id": 150,
+      "date": "29 Maret 2026",
+      "tenant_number": 14,
+      "room_number": 7,
+      "tenant_name": "Danila Mutiara",
       "amount": 1200000,
       "payment_method": "tf",
       "period": "maret"
@@ -450,20 +460,10 @@
       "tenant_name": "Danila Mutiara",
       "amount": 1200000,
       "payment_method": "tf",
-      "period": "maret"
-    },
-    {
-      "id": 152,
-      "date": "29 Maret 2026",
-      "tenant_number": 14,
-      "room_number": 7,
-      "tenant_name": "Danila Mutiara",
-      "amount": 1200000,
-      "payment_method": "tf",
       "period": "april"
     },
     {
-      "id": 150,
+      "id": 149,
       "date": "16 Maret 2026",
       "tenant_number": 11,
       "room_number": 6,
@@ -473,11 +473,21 @@
       "period": "maret"
     },
     {
-      "id": 149,
+      "id": 148,
       "date": "14 Maret 2026",
       "tenant_number": 12,
       "room_number": 5,
       "tenant_name": "Al Naina",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "maret"
+    },
+    {
+      "id": 144,
+      "date": "09 Maret 2026",
+      "tenant_number": 18,
+      "room_number": 2,
+      "tenant_name": "Adinda Suci Nurhidaya",
       "amount": 1200000,
       "payment_method": "tf",
       "period": "maret"
@@ -490,7 +500,7 @@
       "tenant_name": "Adinda Suci Nurhidaya",
       "amount": 1200000,
       "payment_method": "tf",
-      "period": "maret"
+      "period": "april"
     },
     {
       "id": 146,
@@ -500,20 +510,10 @@
       "tenant_name": "Adinda Suci Nurhidaya",
       "amount": 1200000,
       "payment_method": "tf",
-      "period": "april"
-    },
-    {
-      "id": 147,
-      "date": "09 Maret 2026",
-      "tenant_number": 18,
-      "room_number": 2,
-      "tenant_name": "Adinda Suci Nurhidaya",
-      "amount": 1200000,
-      "payment_method": "tf",
       "period": "mei"
     },
     {
-      "id": 142,
+      "id": 141,
       "date": "08 Maret 2026",
       "tenant_number": 15,
       "room_number": 4,
@@ -523,7 +523,7 @@
       "period": "februari"
     },
     {
-      "id": 143,
+      "id": 142,
       "date": "08 Maret 2026",
       "tenant_number": 15,
       "room_number": 4,
@@ -533,7 +533,7 @@
       "period": "maret"
     },
     {
-      "id": 144,
+      "id": 143,
       "date": "08 Maret 2026",
       "tenant_number": 15,
       "room_number": 4,
@@ -573,7 +573,7 @@
       "period": "mei"
     },
     {
-      "id": 139,
+      "id": 138,
       "date": "03 Maret 2026",
       "tenant_number": 19,
       "room_number": 8,
@@ -583,7 +583,7 @@
       "period": "maret"
     },
     {
-      "id": 140,
+      "id": 139,
       "date": "03 Maret 2026",
       "tenant_number": 19,
       "room_number": 8,
@@ -593,7 +593,7 @@
       "period": "april"
     },
     {
-      "id": 141,
+      "id": 140,
       "date": "03 Maret 2026",
       "tenant_number": 19,
       "room_number": 8,
@@ -633,7 +633,7 @@
       "period": "april"
     },
     {
-      "id": 148,
+      "id": 147,
       "date": "02 Maret 2026",
       "tenant_number": 13,
       "room_number": 9,
@@ -643,11 +643,81 @@
       "period": "maret"
     },
     {
-      "id": 138,
+      "id": 159,
+      "date": "30 Februari 2026",
+      "tenant_number": 16,
+      "room_number": 1,
+      "tenant_name": "Nur Qomaria",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
+    },
+    {
+      "id": 160,
+      "date": "30 Februari 2026",
+      "tenant_number": 17,
+      "room_number": 3,
+      "tenant_name": "Aniela Nabila",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
+    },
+    {
+      "id": 161,
+      "date": "30 Februari 2026",
+      "tenant_number": 15,
+      "room_number": 4,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
+    },
+    {
+      "id": 162,
+      "date": "30 Februari 2026",
+      "tenant_number": 14,
+      "room_number": 7,
+      "tenant_name": "Danila Mutiara",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
+    },
+    {
+      "id": 164,
       "date": "28 Februari 2026",
-      "tenant_number": 10,
-      "room_number": 10,
-      "tenant_name": "Maritza",
+      "tenant_number": 16,
+      "room_number": 1,
+      "tenant_name": "Nur Qomaria",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
+    },
+    {
+      "id": 166,
+      "date": "28 Februari 2026",
+      "tenant_number": 17,
+      "room_number": 3,
+      "tenant_name": "Aniela Nabila",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
+    },
+    {
+      "id": 168,
+      "date": "28 Februari 2026",
+      "tenant_number": 15,
+      "room_number": 4,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "februari"
+    },
+    {
+      "id": 170,
+      "date": "28 Februari 2026",
+      "tenant_number": 14,
+      "room_number": 7,
+      "tenant_name": "Danila Mutiara",
       "amount": 1200000,
       "payment_method": "tf",
       "period": "februari"
@@ -681,6 +751,46 @@
       "amount": 1200000,
       "payment_method": "tf",
       "period": "februari"
+    },
+    {
+      "id": 163,
+      "date": "30 Januari 2026",
+      "tenant_number": 16,
+      "room_number": 1,
+      "tenant_name": "Nur Qomaria",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "januari"
+    },
+    {
+      "id": 165,
+      "date": "30 Januari 2026",
+      "tenant_number": 17,
+      "room_number": 3,
+      "tenant_name": "Aniela Nabila",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "januari"
+    },
+    {
+      "id": 167,
+      "date": "30 Januari 2026",
+      "tenant_number": 15,
+      "room_number": 4,
+      "tenant_name": "Louise Valenza Asbi",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "januari"
+    },
+    {
+      "id": 169,
+      "date": "30 Januari 2026",
+      "tenant_number": 14,
+      "room_number": 7,
+      "tenant_name": "Danila Mutiara",
+      "amount": 1200000,
+      "payment_method": "tf",
+      "period": "januari"
     },
     {
       "id": 129,
@@ -1968,13 +2078,13 @@
     "occupied_rooms": 10,
     "total_tenants": 19,
     "active_tenants": 10,
-    "total_income": 150500000,
+    "total_income": 163700000,
     "by_month": {
       "mei": 13000000,
       "april": 19000000,
       "maret": 19000000,
-      "februari": 16600000,
-      "januari": 16100000,
+      "februari": 25000000,
+      "januari": 20900000,
       "desember": 10700000,
       "november": 9600000,
       "oktober": 10300000,
@@ -1984,16 +2094,16 @@
       "juni": 6700000
     },
     "by_room": {
-      "1": 14800000,
+      "1": 18400000,
       "2": 13100000,
-      "3": 12500000,
-      "4": 15900000,
+      "3": 16100000,
+      "4": 19500000,
       "5": 15900000,
       "6": 14600000,
-      "7": 18600000,
+      "7": 22200000,
       "8": 13400000,
       "9": 17300000,
-      "10": 14400000
+      "10": 13200000
     }
   }
 }
