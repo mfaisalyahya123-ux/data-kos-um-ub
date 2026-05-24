@@ -219,6 +219,40 @@ const html = `<!DOCTYPE html>
       background: #c82333;
     }
     
+    .period-filter {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .period-filter label {
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .period-btn {
+      padding: 8px 16px;
+      background: #f8f9fa;
+      color: #333;
+      border: 2px solid #667eea;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .period-btn:hover {
+      background: #667eea;
+      color: white;
+    }
+    
+    .period-btn.active {
+      background: #667eea;
+      color: white;
+    }
+    
     .payment-table-wrapper {
       overflow-x: auto;
       margin: 20px 0;
@@ -379,6 +413,15 @@ const html = `<!DOCTYPE html>
           <button onclick="resetFilters()" class="reset-btn">Reset Filter</button>
         </div>
         
+        <div class="period-filter">
+          <label>Tampilkan:</label>
+          <button onclick="filterByPeriod(1)" class="period-btn">1 Bulan</button>
+          <button onclick="filterByPeriod(2)" class="period-btn">2 Bulan</button>
+          <button onclick="filterByPeriod(3)" class="period-btn">3 Bulan</button>
+          <button onclick="filterByPeriod(4)" class="period-btn active">4 Bulan</button>
+          <button onclick="filterByPeriod(0)" class="period-btn">Semua</button>
+        </div>
+        
         <div class="payment-table-wrapper">
           <table class="payment-history-table">
             <thead>
@@ -386,14 +429,26 @@ const html = `<!DOCTYPE html>
                 <th>Tgl Bayar</th>
                 <th>Penghuni No</th>
                 <th>Nama Penghuni</th>
-                <th>Untuk Periode</th>
+                <th>Bulan</th>
                 <th>Jumlah</th>
                 <th>Metode Bayar</th>
               </tr>
             </thead>
             <tbody id="paymentTableBody">
-              ${data.payments.map(payment => `
-                <tr data-tenant="${payment.tenant_number}" data-month="${payment.period.toLowerCase()}">
+              ${data.payments.map((payment, index) => {
+                // Parse date to get timestamp
+                const dateParts = payment.date.split(' ');
+                const day = parseInt(dateParts[0]);
+                const monthMap = {
+                  'Januari': 0, 'Februari': 1, 'Maret': 2, 'April': 3, 'Mei': 4, 'Juni': 5,
+                  'Juli': 6, 'Agustus': 7, 'September': 8, 'Oktober': 9, 'November': 10, 'Desember': 11
+                };
+                const month = monthMap[dateParts[1]];
+                const year = parseInt(dateParts[2]);
+                const timestamp = new Date(year, month, day).getTime();
+                
+                return `
+                <tr data-tenant="${payment.tenant_number}" data-month="${payment.period.toLowerCase()}" data-timestamp="${timestamp}">
                   <td>${formatDate(payment.date)}</td>
                   <td>${payment.tenant_number}</td>
                   <td>${payment.tenant_name}</td>
@@ -401,7 +456,8 @@ const html = `<!DOCTYPE html>
                   <td class="amount">${formatRupiah(payment.amount)}</td>
                   <td class="method">${payment.payment_method.toUpperCase()}</td>
                 </tr>
-              `).join('')}
+                `;
+              }).join('')}
             </tbody>
           </table>
         </div>
@@ -410,6 +466,8 @@ const html = `<!DOCTYPE html>
   </div>
   
   <script>
+    let currentPeriodMonths = 4; // Default 4 bulan
+    
     function toggleSection(sectionId) {
       const content = document.getElementById(sectionId + '-content');
       const icon = document.getElementById(sectionId + '-icon');
@@ -423,14 +481,30 @@ const html = `<!DOCTYPE html>
       const monthFilter = document.getElementById('filterMonth').value;
       const rows = document.querySelectorAll('#paymentTableBody tr');
       
+      // Get latest payment date
+      let latestTimestamp = 0;
+      rows.forEach(row => {
+        const timestamp = parseInt(row.getAttribute('data-timestamp'));
+        if (timestamp > latestTimestamp) {
+          latestTimestamp = timestamp;
+        }
+      });
+      
+      // Calculate cutoff date (N months before latest)
+      const cutoffDate = new Date(latestTimestamp);
+      cutoffDate.setMonth(cutoffDate.getMonth() - currentPeriodMonths);
+      const cutoffTimestamp = cutoffDate.getTime();
+      
       rows.forEach(row => {
         const tenant = row.getAttribute('data-tenant');
         const month = row.getAttribute('data-month');
+        const timestamp = parseInt(row.getAttribute('data-timestamp'));
         
         const tenantMatch = tenantFilter === 'all' || tenant === tenantFilter;
         const monthMatch = monthFilter === 'all' || month === monthFilter;
+        const periodMatch = currentPeriodMonths === 0 || timestamp >= cutoffTimestamp;
         
-        if (tenantMatch && monthMatch) {
+        if (tenantMatch && monthMatch && periodMatch) {
           row.style.display = '';
         } else {
           row.style.display = 'none';
@@ -438,11 +512,28 @@ const html = `<!DOCTYPE html>
       });
     }
     
+    function filterByPeriod(months) {
+      currentPeriodMonths = months;
+      
+      // Update active button
+      document.querySelectorAll('.period-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      
+      filterPayments();
+    }
+    
     function resetFilters() {
       document.getElementById('filterTenant').value = 'all';
       document.getElementById('filterMonth').value = 'all';
       filterPayments();
     }
+    
+    // Apply default 4 months filter on load
+    window.addEventListener('DOMContentLoaded', () => {
+      filterPayments();
+    });
   </script>
 </body>
 </html>`;
