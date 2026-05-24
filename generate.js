@@ -491,7 +491,7 @@ const html = `<!DOCTYPE html>
               <tr>
                 <th>No Kamar</th>
                 <th>Nama Penghuni</th>
-                <th>Tgl Tagihan</th>
+                <th>Jatuh Tempo</th>
                 <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th>
                 <th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th>
               </tr>
@@ -551,11 +551,26 @@ const html = `<!DOCTYPE html>
                   }
                 });
                 
-                return Object.values(paymentStatus).sort((a, b) => a.room_number - b.room_number).map(room => `
+                return Object.values(paymentStatus).sort((a, b) => a.room_number - b.room_number).map(room => {
+                  // Calculate next due date
+                  const now = new Date();
+                  const paymentDay = parseInt(room.payment_date);
+                  let nextDue = new Date(now.getFullYear(), now.getMonth(), paymentDay);
+                  
+                  // If due date this month has passed, move to next month
+                  if (nextDue < now) {
+                    nextDue = new Date(now.getFullYear(), now.getMonth() + 1, paymentDay);
+                  }
+                  
+                  // Calculate days until due
+                  const daysUntil = Math.ceil((nextDue - now) / (1000 * 60 * 60 * 24));
+                  const dueText = paymentDay + ' (' + daysUntil + ' hari)';
+                  
+                  return `
                   <tr data-room="${room.room_number}">
                     <td class="room-col">${room.room_number}</td>
                     <td class="name-col">${room.tenant_name}</td>
-                    <td class="date-col">${room.payment_date}</td>
+                    <td class="date-col">${dueText}</td>
                     ${[1,2,3,4,5,6,7,8,9,10,11,12].map(month => {
                       const status = room.months[month];
                       if (status === null) {
@@ -567,7 +582,8 @@ const html = `<!DOCTYPE html>
                       }
                     }).join('')}
                   </tr>
-                `).join('');
+                  `;
+                }).join('');
               })()}
             </tbody>
           </table>
@@ -779,6 +795,20 @@ const html = `<!DOCTYPE html>
       // Rebuild table body
       const tbody = document.getElementById('statusTableBody');
       const rows = Object.values(paymentStatus).sort((a, b) => a.room_number - b.room_number).map(room => {
+        // Calculate next due date
+        const now = new Date();
+        const paymentDay = room.payment_date;
+        let nextDue = new Date(now.getFullYear(), now.getMonth(), paymentDay);
+        
+        // If due date this month has passed, move to next month
+        if (nextDue < now) {
+          nextDue = new Date(now.getFullYear(), now.getMonth() + 1, paymentDay);
+        }
+        
+        // Calculate days until due
+        const daysUntil = Math.ceil((nextDue - now) / (1000 * 60 * 60 * 24));
+        const dueText = paymentDay + ' (' + daysUntil + ' hari)';
+        
         const monthCells = [1,2,3,4,5,6,7,8,9,10,11,12].map(month => {
           const status = room.months[month];
           if (status === null) {
@@ -799,7 +829,7 @@ const html = `<!DOCTYPE html>
         return '<tr data-room="' + room.room_number + '">' +
           '<td class="room-col">' + room.room_number + '</td>' +
           '<td class="name-col">' + room.tenant_name + '</td>' +
-          '<td class="date-col">' + room.payment_date + '</td>' +
+          '<td class="date-col">' + dueText + '</td>' +
           monthCells +
           '</tr>';
       }).join('');
