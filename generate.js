@@ -876,15 +876,18 @@ const html = `<!DOCTYPE html>
           }
         }).join('');
         
-        return '<tr data-room="' + room.room_number + '">' +
+        return '<tr data-room="' + room.room_number + '" data-payment-date="' + paymentDay + '">' +
           '<td class="room-col">' + room.room_number + '</td>' +
           '<td class="name-col">' + room.tenant_name + '</td>' +
-          '<td class="date-col">' + dueText + '</td>' +
+          '<td class="date-col due-date">' + paymentDay + ' (<span class="countdown">...</span> hari)</td>' +
           monthCells +
           '</tr>';
       }).join('');
       
       tbody.innerHTML = rows;
+      
+      // Update countdowns after rebuilding table
+      updateCountdowns();
     }
     
     function filterPayments() {
@@ -940,6 +943,29 @@ const html = `<!DOCTYPE html>
       document.getElementById('filterMonth').value = 'all';
       filterPayments();
     }
+    
+    // Update countdown for due dates
+    function updateCountdowns() {
+      const now = new Date();
+      document.querySelectorAll('#statusTableBody tr').forEach(row => {
+        const paymentDay = parseInt(row.getAttribute('data-payment-date'));
+        if (paymentDay) {
+          let nextDue = new Date(now.getFullYear(), now.getMonth(), paymentDay);
+          if (nextDue < now) {
+            nextDue = new Date(now.getFullYear(), now.getMonth() + 1, paymentDay);
+          }
+          const daysUntil = Math.ceil((nextDue - now) / (1000 * 60 * 60 * 24));
+          const countdownEl = row.querySelector('.countdown');
+          if (countdownEl) {
+            countdownEl.textContent = daysUntil;
+          }
+        }
+      });
+    }
+    
+    // Update countdowns on page load and every hour
+    updateCountdowns();
+    setInterval(updateCountdowns, 3600000); // Update every hour
     
     // Apply default 4 months filter on load
     window.addEventListener('DOMContentLoaded', () => {
