@@ -1,4 +1,4 @@
-# Data Kos UM/UB - Version 1.0.0
+# Data Kos UM/UB - Version 1.2.0
 
 ## 📋 Fitur Lengkap
 
