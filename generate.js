@@ -1071,3 +1071,4 @@ const html = `<!DOCTYPE html>
 const htmlPath = path.join(__dirname, 'index.html');
 fs.writeFileSync(htmlPath, html);
 console.log('✅ index.html generated successfully!');
+
