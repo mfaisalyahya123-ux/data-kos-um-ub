@@ -268,6 +268,27 @@ const html = `<!DOCTYPE html>
       cursor: pointer;
     }
     
+    .period-btn {
+      padding: 8px 16px;
+      background: #f8f9fa;
+      color: #333;
+      border: 2px solid #667eea;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .period-btn:hover {
+      background: #667eea;
+      color: white;
+    }
+    
+    .period-btn.active {
+      background: #667eea;
+      color: white;
+    }
+    
     table {
       width: 100%;
       border-collapse: collapse;
@@ -395,6 +416,15 @@ const html = `<!DOCTYPE html>
         <span class="toggle-icon" id="payments-icon">▼</span>
       </div>
       <div class="section-content" id="payments-content">
+        <!-- Quick Period Filter -->
+        <div style="margin-bottom: 15px; display: flex; gap: 10px; align-items: center;">
+          <label style="font-weight: bold; color: #333;">Periode:</label>
+          <button class="period-btn" onclick="quickFilter('all')">Semua</button>
+          <button class="period-btn" onclick="quickFilter(1)">1 Bulan</button>
+          <button class="period-btn" onclick="quickFilter(3)">3 Bulan</button>
+          <button class="period-btn" onclick="quickFilter(6)">6 Bulan</button>
+        </div>
+        
         <div class="filter-controls">
           <label>Kamar:</label>
           <select id="room-filter" onchange="filterPayments()">
@@ -792,7 +822,47 @@ const html = `<!DOCTYPE html>
       document.getElementById('year-filter').value = '';
       document.getElementById('month-filter').value = '';
       document.getElementById('sort-filter').value = 'date-desc';
+      
+      // Reset period buttons
+      document.querySelectorAll('.period-btn').forEach(btn => btn.classList.remove('active'));
+      
       renderPaymentHistory();
+    }
+    
+    // Quick period filter
+    function quickFilter(months) {
+      // Update button states
+      document.querySelectorAll('.period-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Reset other filters
+      document.getElementById('room-filter').value = '';
+      document.getElementById('year-filter').value = '';
+      document.getElementById('month-filter').value = '';
+      
+      const now = new Date();
+      const rows = Array.from(document.querySelectorAll('#payments-tbody tr'));
+      
+      if (months === 'all') {
+        // Show all
+        rows.forEach(row => row.style.display = '');
+      } else {
+        // Filter by months
+        const cutoffDate = new Date(now.getFullYear(), now.getMonth() - months + 1, 1);
+        
+        rows.forEach(row => {
+          const dateStr = row.getAttribute('data-date');
+          const paymentDate = parseDate(dateStr);
+          
+          if (paymentDate >= cutoffDate) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      }
+      
+      updateResultCount();
     }
     
     // Toggle section
