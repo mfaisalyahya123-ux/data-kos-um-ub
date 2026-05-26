@@ -11,11 +11,12 @@
           "move_in": "20/01/2025",
           "last_payment": "19/12/2025",
           "total_paid": 14400000,
-          "status": "aktif"
+          "status": "keluar",
+          "move_out": "31/01/2026"
         }
       ],
-      "current_tenant": "Nadiatul",
-      "current_rate": 1200000,
+      "current_tenant": null,
+      "current_rate": 0,
       "total_income": 14400000,
       "last_payment": "19/12/2025"
     },
@@ -59,10 +60,16 @@
           "move_in": "17/01/2025",
           "last_payment": "11/04/2026",
           "total_paid": 21600000,
+          "status": "keluar",
+          "move_out": "31/01/2026"
+        },
+        {
+          "name": "Shafia",
+          "move_in": "01/02/2026",
           "status": "aktif"
         }
       ],
-      "current_tenant": "Desi",
+      "current_tenant": "Shafia",
       "current_rate": 1200000,
       "total_income": 21600000,
       "last_payment": "11/04/2026"
@@ -75,10 +82,16 @@
           "move_in": "07/01/2025",
           "last_payment": "11/10/2025",
           "total_paid": 12000000,
+          "status": "keluar",
+          "move_out": "31/01/2026"
+        },
+        {
+          "name": "Desi",
+          "move_in": "01/02/2026",
           "status": "aktif"
         }
       ],
-      "current_tenant": "Aisyah",
+      "current_tenant": "Desi",
       "current_rate": 1200000,
       "total_income": 12000000,
       "last_payment": "11/10/2025"
@@ -107,11 +120,12 @@
           "move_in": "01/07/2025",
           "last_payment": "03/05/2026",
           "total_paid": 13100000,
-          "status": "aktif"
+          "status": "keluar",
+          "move_out": "31/01/2026"
         }
       ],
-      "current_tenant": "Shafia",
-      "current_rate": 1200000,
+      "current_tenant": null,
+      "current_rate": 0,
       "total_income": 13100000,
       "last_payment": "03/05/2026"
     },
@@ -139,7 +153,8 @@
           "move_in": "26/01/2025",
           "last_payment": "27/10/2025",
           "total_paid": 11900000,
-          "status": "aktif"
+          "status": "keluar",
+          "move_out": "31/01/2026"
         }
       ],
       "current_tenant": "reane",
@@ -283,10 +298,16 @@
           "move_in": "01/01/2025",
           "last_payment": "09/10/2025",
           "total_paid": 6650000,
+          "status": "keluar",
+          "move_out": "31/01/2026"
+        },
+        {
+          "name": "Avril",
+          "move_in": "01/02/2026",
           "status": "aktif"
         }
       ],
-      "current_tenant": "Riris",
+      "current_tenant": "Avril",
       "current_rate": 750000,
       "total_income": 6650000,
       "last_payment": "09/10/2025"
@@ -379,11 +400,12 @@
           "move_in": "05/01/2025",
           "last_payment": "04/05/2026",
           "total_paid": 13500000,
-          "status": "aktif"
+          "status": "keluar",
+          "move_out": "31/01/2026"
         }
       ],
-      "current_tenant": "Avril",
-      "current_rate": 750000,
+      "current_tenant": null,
+      "current_rate": 0,
       "total_income": 13500000,
       "last_payment": "04/05/2026"
     },
@@ -4207,7 +4229,7 @@
   ],
   "summary": {
     "total_rooms": 29,
-    "occupied_rooms": 29,
+    "occupied_rooms": 26,
     "total_income": 405500000,
     "by_month": {
       "mei": 36550000,
