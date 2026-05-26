@@ -146,6 +146,112 @@
       color: white;
     }
     
+    /* Room Cards Grid */
+    .room-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .room-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      padding: 0;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .room-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+    }
+    
+    .room-card.empty {
+      background: linear-gradient(135deg, #999 0%, #666 100%);
+      opacity: 0.8;
+    }
+    
+    .room-card-header {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid rgba(102, 126, 234, 0.3);
+    }
+    
+    .room-card.empty .room-card-header {
+      border-bottom-color: rgba(153, 153, 153, 0.3);
+    }
+    
+    .room-number {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .room-status {
+      font-size: 0.9em;
+      font-weight: 600;
+      padding: 5px 15px;
+      border-radius: 20px;
+      background: #28a745;
+      color: white;
+    }
+    
+    .room-card.empty .room-status {
+      background: #dc3545;
+    }
+    
+    .room-card-body {
+      padding: 20px;
+      color: white;
+    }
+    
+    .room-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .room-info:last-child {
+      border-bottom: none;
+    }
+    
+    .room-info.total {
+      margin-top: 10px;
+      padding-top: 15px;
+      border-top: 2px solid rgba(255, 255, 255, 0.3);
+      border-bottom: none;
+    }
+    
+    .info-label {
+      font-size: 0.9em;
+      opacity: 0.9;
+      font-weight: 500;
+    }
+    
+    .info-value {
+      font-weight: bold;
+      font-size: 1.1em;
+      text-align: right;
+    }
+    
+    .info-value.amount {
+      color: #ffd700;
+      font-size: 1.2em;
+    }
+    
+    @media (max-width: 768px) {
+      .room-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
     .month-format-toggle {
       margin-bottom: 15px;
     }
@@ -379,20 +485,9 @@
         <span class="toggle-icon" id="rooms-icon">▼</span>
       </div>
       <div class="section-content" id="rooms-content">
-        <table>
-          <thead>
-            <tr>
-              <th>Kamar</th>
-              <th>Penghuni</th>
-              <th>Tarif</th>
-              <th>Tgl Bayar</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody id="rooms-tbody">
-            <!-- Will be populated by JavaScript -->
-          </tbody>
-        </table>
+        <div class="room-cards-grid" id="rooms-grid">
+          <!-- Will be populated by JavaScript -->
+        </div>
       </div>
     </div>
     
@@ -667,12 +762,12 @@
       tbody.innerHTML = rows;
     }
     
-    // Render rooms list
+    // Render rooms list as cards
     function renderRoomsList() {
       const html = currentData.rooms.sort((a, b) => a.room_number - b.room_number).map(room => {
         const currentTenant = room.tenants.find(t => t.status === 'aktif');
         const paymentDate = currentTenant ? currentTenant.move_in.split('/')[0] : '-';
-        const status = room.current_tenant ? '🟢' : '🔴';
+        const isEmpty = !room.current_tenant;
         
         // Calculate total income for current tenant only
         let tenantIncome = 0;
@@ -683,16 +778,33 @@
         }
         
         return `
-          <tr>
-            <td class="room-col">${status} ${room.room_number}</td>
-            <td>${room.current_tenant || '<em style="color: #999;">Kosong</em>'}</td>
-            <td class="amount">${room.current_rate ? formatRupiah(room.current_rate) : '-'}</td>
-            <td style="text-align: center;">${paymentDate}</td>
-            <td class="amount">${formatRupiah(tenantIncome)}</td>
-          </tr>
+          <div class="room-card ${isEmpty ? 'empty' : ''}">
+            <div class="room-card-header">
+              <div class="room-number">${isEmpty ? '🔴' : '🟢'} Kamar ${room.room_number}</div>
+              <div class="room-status">${isEmpty ? 'Kosong' : 'Terisi'}</div>
+            </div>
+            <div class="room-card-body">
+              <div class="room-info">
+                <div class="info-label">👤 Penghuni</div>
+                <div class="info-value">${room.current_tenant || '-'}</div>
+              </div>
+              <div class="room-info">
+                <div class="info-label">💰 Tarif/Bulan</div>
+                <div class="info-value amount">${room.current_rate ? formatRupiah(room.current_rate) : '-'}</div>
+              </div>
+              <div class="room-info">
+                <div class="info-label">📅 Tgl Bayar</div>
+                <div class="info-value">${paymentDate}</div>
+              </div>
+              <div class="room-info total">
+                <div class="info-label">📊 Total Pendapatan</div>
+                <div class="info-value amount">${formatRupiah(tenantIncome)}</div>
+              </div>
+            </div>
+          </div>
         `;
       }).join('');
-      document.getElementById('rooms-tbody').innerHTML = html;
+      document.getElementById('rooms-grid').innerHTML = html;
     }
     
     // Render payment history
