@@ -104,11 +104,12 @@
           "move_in": "09/01/2025",
           "last_payment": "03/01/2026",
           "total_paid": 15600000,
-          "status": "aktif"
+          "status": "keluar",
+          "move_out": "05/01/2026"
         }
       ],
-      "current_tenant": "Nadia",
-      "current_rate": 1200000,
+      "current_tenant": null,
+      "current_rate": 0,
       "total_income": 15600000,
       "last_payment": "03/01/2026"
     },
