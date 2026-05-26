@@ -439,6 +439,14 @@
     let currentData = dataUM;
     let currentYear = 2026;
     
+    // Parse date DD/MM/YYYY
+    function parseDate(dateStr) {
+      if (!dateStr || typeof dateStr !== 'string') return new Date(0);
+      const parts = dateStr.split('/');
+      if (parts.length !== 3) return new Date(0);
+      return new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
+    }
+    
     // Initialize
     function init() {
       renderPaymentTable();
@@ -634,24 +642,21 @@
         return paymentDate >= threeMonthsAgo;
       });
       
-      const html = filteredPayments.map(p => `
-        <tr data-room="${p.room_number}" data-period="${p.period}" data-date="${p.date}" data-amount="${p.amount}" data-year="${p.date.split('/')[2]}">
-          <td>${p.date}</td>
-          <td>Kamar ${p.room_number}</td>
-          <td>${p.tenant_name}</td>
-          <td class="amount">${formatRupiah(p.amount)}</td>
-          <td>${p.payment_method}</td>
-          <td>${p.period}</td>
-        </tr>
-      `).join('');
+      const html = filteredPayments.map(p => {
+        const year = p.date ? p.date.split('/')[2] : '';
+        return `
+          <tr data-room="${p.room_number}" data-period="${p.period}" data-date="${p.date}" data-amount="${p.amount}" data-year="${year}">
+            <td>${p.date}</td>
+            <td>Kamar ${p.room_number}</td>
+            <td>${p.tenant_name}</td>
+            <td class="amount">${formatRupiah(p.amount)}</td>
+            <td>${p.payment_method}</td>
+            <td>${p.period}</td>
+          </tr>
+        `;
+      }).join('');
       document.getElementById('payments-tbody').innerHTML = html;
       updateResultCount();
-    }
-    
-    // Parse date DD/MM/YYYY
-    function parseDate(dateStr) {
-      const parts = dateStr.split('/');
-      return new Date(parts[2], parts[1] - 1, parts[0]);
     }
     
     // Populate filters
