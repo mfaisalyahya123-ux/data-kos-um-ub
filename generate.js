@@ -281,6 +281,25 @@ const html = `<!DOCTYPE html>
       color: white;
     }
     
+    .month-format-toggle {
+      margin-bottom: 15px;
+    }
+    
+    .month-format-toggle label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95em;
+      color: #333;
+      cursor: pointer;
+    }
+    
+    .month-format-toggle input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    
     .status-table-wrapper {
       overflow-x: auto;
       margin: 20px 0;
@@ -508,6 +527,13 @@ const html = `<!DOCTYPE html>
         <div class="year-toggle">
           <button onclick="switchYear(2025)" class="year-btn" id="year-2025">2025</button>
           <button onclick="switchYear(2026)" class="year-btn active" id="year-2026">2026</button>
+        </div>
+        
+        <div class="month-format-toggle">
+          <label>
+            <input type="checkbox" id="monthFormatToggle" onchange="toggleMonthFormat()">
+            Tampilkan nama bulan
+          </label>
         </div>
         
         <div class="status-table-wrapper">
@@ -961,6 +987,21 @@ const html = `<!DOCTYPE html>
           }
         }
       });
+    }
+    
+    // Toggle month format between numbers (1-12) and names (Jan-Des)
+    function toggleMonthFormat() {
+      const checkbox = document.getElementById('monthFormatToggle');
+      const headers = document.querySelectorAll('.status-table thead th');
+      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+      
+      // Skip first 3 headers (No Kamar, Nama Penghuni, Jatuh Tempo)
+      for (let i = 3; i < headers.length; i++) {
+        const monthIndex = i - 3;
+        if (monthIndex < 12) {
+          headers[i].textContent = checkbox.checked ? monthNames[monthIndex] : (monthIndex + 1).toString();
+        }
+      }
     }
     
     // Update countdowns on page load and every hour
