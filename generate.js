@@ -374,12 +374,11 @@ const html = `<!DOCTYPE html>
         <table>
           <thead>
             <tr>
-              <th>No Kamar</th>
-              <th>Nama Penghuni</th>
-              <th>Status</th>
-              <th>Tarif/Bulan</th>
-              <th>Tanggal Bayar</th>
-              <th>Total Pendapatan</th>
+              <th>Kamar</th>
+              <th>Penghuni</th>
+              <th>Tarif</th>
+              <th>Tgl Bayar</th>
+              <th>Total</th>
             </tr>
           </thead>
           <tbody id="rooms-tbody">
@@ -597,7 +596,7 @@ const html = `<!DOCTYPE html>
       const html = currentData.rooms.sort((a, b) => a.room_number - b.room_number).map(room => {
         const currentTenant = room.tenants.find(t => t.status === 'aktif');
         const paymentDate = currentTenant ? currentTenant.move_in.split('/')[0] : '-';
-        const status = room.current_tenant ? '🟢 Terisi' : '🔴 Kosong';
+        const status = room.current_tenant ? '🟢' : '🔴';
         
         // Calculate total income for current tenant only
         let tenantIncome = 0;
@@ -609,11 +608,10 @@ const html = `<!DOCTYPE html>
         
         return \`
           <tr>
-            <td class="room-col">\${room.room_number}</td>
-            <td>\${room.current_tenant || '-'}</td>
-            <td>\${status}</td>
+            <td class="room-col">\${status} \${room.room_number}</td>
+            <td>\${room.current_tenant || '<em style="color: #999;">Kosong</em>'}</td>
             <td class="amount">\${room.current_rate ? formatRupiah(room.current_rate) : '-'}</td>
-            <td>\${paymentDate}</td>
+            <td style="text-align: center;">\${paymentDate}</td>
             <td class="amount">\${formatRupiah(tenantIncome)}</td>
           </tr>
         \`;
