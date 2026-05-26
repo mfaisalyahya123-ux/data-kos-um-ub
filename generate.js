@@ -37,11 +37,13 @@ const html = `<!DOCTYPE html>
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       min-height: 100vh;
       padding: 20px;
+      display: block;
     }
     
     .container {
       max-width: 1200px;
       margin: 0 auto;
+      display: block;
     }
     
     header {
@@ -99,6 +101,8 @@ const html = `<!DOCTYPE html>
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       display: block;
       width: 100%;
+      clear: both;
+      float: none;
     }
     
     .section-title {
