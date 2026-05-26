@@ -10,7 +10,8 @@
           "name": "Nadiatul",
           "move_in": "20/01/2025",
           "last_payment": "19/12/2025",
-          "total_paid": 14400000
+          "total_paid": 14400000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Nadiatul",
@@ -25,7 +26,8 @@
           "name": "Amanda",
           "move_in": "30/01/2025",
           "last_payment": "18/04/2026",
-          "total_paid": 18000000
+          "total_paid": 18000000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Amanda",
@@ -40,7 +42,8 @@
           "name": "Drupadi",
           "move_in": "17/01/2025",
           "last_payment": "18/05/2026",
-          "total_paid": 20400000
+          "total_paid": 20400000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Drupadi",
@@ -55,7 +58,8 @@
           "name": "Desi",
           "move_in": "17/01/2025",
           "last_payment": "11/04/2026",
-          "total_paid": 21600000
+          "total_paid": 21600000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Desi",
@@ -70,7 +74,8 @@
           "name": "Aisyah",
           "move_in": "07/01/2025",
           "last_payment": "11/10/2025",
-          "total_paid": 12000000
+          "total_paid": 12000000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Aisyah",
@@ -85,7 +90,8 @@
           "name": "Nadia",
           "move_in": "09/01/2025",
           "last_payment": "03/01/2026",
-          "total_paid": 15600000
+          "total_paid": 15600000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Nadia",
@@ -100,7 +106,8 @@
           "name": "Shafia",
           "move_in": "01/07/2025",
           "last_payment": "03/05/2026",
-          "total_paid": 13100000
+          "total_paid": 13100000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Shafia",
@@ -115,7 +122,8 @@
           "name": "Hanifa",
           "move_in": "12/01/2025",
           "last_payment": "25/11/2025",
-          "total_paid": 10100000
+          "total_paid": 10100000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Hanifa",
@@ -130,7 +138,8 @@
           "name": "reane",
           "move_in": "26/01/2025",
           "last_payment": "27/10/2025",
-          "total_paid": 11900000
+          "total_paid": 11900000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "reane",
@@ -145,7 +154,8 @@
           "name": "Nadya/nayla",
           "move_in": "08/01/2025",
           "last_payment": "02/05/2026",
-          "total_paid": 20400000
+          "total_paid": 20400000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Nadya/nayla",
@@ -160,7 +170,8 @@
           "name": "Shafira",
           "move_in": "06/08/2025",
           "last_payment": "02/05/2026",
-          "total_paid": 20400000
+          "total_paid": 20400000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Shafira",
@@ -175,7 +186,8 @@
           "name": "Rizka(riska)",
           "move_in": "22/01/2025",
           "last_payment": "24/02/2026",
-          "total_paid": 19200000
+          "total_paid": 19200000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Rizka(riska)",
@@ -190,7 +202,8 @@
           "name": "Suci Ramadhani Siregar",
           "move_in": "01/06/2025",
           "last_payment": "12/04/2026",
-          "total_paid": 12600000
+          "total_paid": 12600000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Suci Ramadhani Siregar",
@@ -205,7 +218,8 @@
           "name": "Azalea",
           "move_in": "08/01/2025",
           "last_payment": "11/05/2026",
-          "total_paid": 24000000
+          "total_paid": 24000000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Azalea",
@@ -220,7 +234,8 @@
           "name": "Patricia 2",
           "move_in": "14/01/2025",
           "last_payment": "21/02/2026",
-          "total_paid": 12000000
+          "total_paid": 12000000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Patricia 2",
@@ -235,7 +250,8 @@
           "name": "Talitha",
           "move_in": "21/01/2025",
           "last_payment": "06/05/2026",
-          "total_paid": 12350000
+          "total_paid": 12350000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Talitha",
@@ -250,7 +266,8 @@
           "name": "Najwa Syifa(Ganti nafa feb)",
           "move_in": "11/01/2025",
           "last_payment": "07/05/2026",
-          "total_paid": 12750000
+          "total_paid": 12750000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Najwa Syifa(Ganti nafa feb)",
@@ -265,7 +282,8 @@
           "name": "Riris",
           "move_in": "01/01/2025",
           "last_payment": "09/10/2025",
-          "total_paid": 6650000
+          "total_paid": 6650000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Riris",
@@ -280,7 +298,8 @@
           "name": "Ica(fariza/icha)",
           "move_in": "27/01/2025",
           "last_payment": "21/04/2026",
-          "total_paid": 11900000
+          "total_paid": 11900000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Ica(fariza/icha)",
@@ -295,7 +314,8 @@
           "name": "Sera",
           "move_in": "19/01/2025",
           "last_payment": "08/04/2026",
-          "total_paid": 11200000
+          "total_paid": 11200000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Sera",
@@ -310,7 +330,8 @@
           "name": "Lavie",
           "move_in": "15/01/2025",
           "last_payment": "03/05/2026",
-          "total_paid": 12650000
+          "total_paid": 12650000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Lavie",
@@ -325,7 +346,8 @@
           "name": "Adelle/azizah",
           "move_in": "05/01/2025",
           "last_payment": "03/05/2026",
-          "total_paid": 20000000
+          "total_paid": 20000000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Adelle/azizah",
@@ -340,7 +362,8 @@
           "name": "zara (nura)",
           "move_in": "27/01/2025",
           "last_payment": "19/05/2026",
-          "total_paid": 13100000
+          "total_paid": 13100000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "zara (nura)",
@@ -355,7 +378,8 @@
           "name": "Avril",
           "move_in": "05/01/2025",
           "last_payment": "04/05/2026",
-          "total_paid": 13500000
+          "total_paid": 13500000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Avril",
@@ -370,7 +394,8 @@
           "name": "Putri Z",
           "move_in": "05/01/2025",
           "last_payment": "05/05/2026",
-          "total_paid": 12650000
+          "total_paid": 12650000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Putri Z",
@@ -385,7 +410,8 @@
           "name": "Maghfirah",
           "move_in": "01/08/2025",
           "last_payment": "06/11/2025",
-          "total_paid": 8800000
+          "total_paid": 8800000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Maghfirah",
@@ -400,7 +426,8 @@
           "name": "Anggie Fadhillah",
           "move_in": "14/01/2025",
           "last_payment": "12/09/2025",
-          "total_paid": 6650000
+          "total_paid": 6650000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Anggie Fadhillah",
@@ -415,7 +442,8 @@
           "name": "caca",
           "move_in": "27/07/2025",
           "last_payment": "27/04/2026",
-          "total_paid": 10550000
+          "total_paid": 10550000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "caca",
@@ -430,7 +458,8 @@
           "name": "Yajna aden aunilla azahry",
           "move_in": "15/08/2025",
           "last_payment": "12/05/2026",
-          "total_paid": 7050000
+          "total_paid": 7050000,
+          "status": "aktif"
         }
       ],
       "current_tenant": "Yajna aden aunilla azahry",
