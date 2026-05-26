@@ -364,6 +364,31 @@ const html = `<!DOCTYPE html>
       </div>
     </div>
     
+    <!-- Daftar Kamar -->
+    <div class="section">
+      <div class="section-title" onclick="toggleSection('rooms')">
+        <span>🏠 Daftar Kamar & Status Penghuni</span>
+        <span class="toggle-icon" id="rooms-icon">▼</span>
+      </div>
+      <div class="section-content" id="rooms-content">
+        <table>
+          <thead>
+            <tr>
+              <th>No Kamar</th>
+              <th>Nama Penghuni</th>
+              <th>Status</th>
+              <th>Tarif/Bulan</th>
+              <th>Tanggal Bayar</th>
+              <th>Total Pendapatan</th>
+            </tr>
+          </thead>
+          <tbody id="rooms-tbody">
+            <!-- Will be populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
     <!-- Riwayat Pembayaran -->
     <div class="section">
       <div class="section-title" onclick="toggleSection('payments')">
@@ -414,6 +439,7 @@ const html = `<!DOCTYPE html>
     // Initialize
     function init() {
       renderPaymentTable();
+      renderRoomsList();
       renderPaymentHistory();
       populateFilters();
     }
@@ -435,6 +461,7 @@ const html = `<!DOCTYPE html>
       
       // Re-render
       renderPaymentTable();
+      renderRoomsList();
       renderPaymentHistory();
       populateFilters();
     }
@@ -563,6 +590,27 @@ const html = `<!DOCTYPE html>
       }).join('');
       
       tbody.innerHTML = rows;
+    }
+    
+    // Render rooms list
+    function renderRoomsList() {
+      const html = currentData.rooms.sort((a, b) => a.room_number - b.room_number).map(room => {
+        const currentTenant = room.tenants.find(t => t.status === 'aktif');
+        const paymentDate = currentTenant ? currentTenant.move_in.split('/')[0] : '-';
+        const status = room.current_tenant ? '🟢 Terisi' : '🔴 Kosong';
+        
+        return \`
+          <tr>
+            <td class="room-col">\${room.room_number}</td>
+            <td>\${room.current_tenant || '-'}</td>
+            <td>\${status}</td>
+            <td class="amount">\${room.current_rate ? formatRupiah(room.current_rate) : '-'}</td>
+            <td>\${paymentDate}</td>
+            <td class="amount">\${formatRupiah(room.total_income)}</td>
+          </tr>
+        \`;
+      }).join('');
+      document.getElementById('rooms-tbody').innerHTML = html;
     }
     
     // Render payment history
