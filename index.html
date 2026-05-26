@@ -439,12 +439,46 @@
     let currentData = dataUM;
     let currentYear = 2026;
     
-    // Parse date DD/MM/YYYY
+    // Parse date (support multiple formats)
     function parseDate(dateStr) {
       if (!dateStr || typeof dateStr !== 'string') return new Date(0);
-      const parts = dateStr.split('/');
-      if (parts.length !== 3) return new Date(0);
-      return new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
+      
+      // Format: DD/MM/YYYY
+      if (dateStr.includes('/')) {
+        const parts = dateStr.split('/');
+        if (parts.length === 3) {
+          return new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
+        }
+      }
+      
+      // Format: DD Bulan YYYY (e.g., "02 Mei 2026")
+      const monthMap = {
+        'januari': 0, 'februari': 1, 'maret': 2, 'april': 3, 'mei': 4, 'juni': 5,
+        'juli': 6, 'agustus': 7, 'september': 8, 'oktober': 9, 'november': 10, 'desember': 11
+      };
+      
+      const parts = dateStr.split(' ');
+      if (parts.length === 3) {
+        const day = parseInt(parts[0]);
+        const month = monthMap[parts[1].toLowerCase()];
+        const year = parseInt(parts[2]);
+        if (!isNaN(day) && month !== undefined && !isNaN(year)) {
+          return new Date(year, month, day);
+        }
+      }
+      
+      return new Date(0);
+    }
+    
+    // Extract year from date string
+    function extractYear(dateStr) {
+      if (!dateStr) return '';
+      if (dateStr.includes('/')) {
+        return dateStr.split('/')[2] || '';
+      }
+      // Format: DD Bulan YYYY
+      const parts = dateStr.split(' ');
+      return parts.length === 3 ? parts[2] : '';
     }
     
     // Initialize
@@ -643,7 +677,7 @@
       });
       
       const html = filteredPayments.map(p => {
-        const year = p.date ? p.date.split('/')[2] : '';
+        const year = extractYear(p.date);
         return `
           <tr data-room="${p.room_number}" data-period="${p.period}" data-date="${p.date}" data-amount="${p.amount}" data-year="${year}">
             <td>${p.date}</td>
@@ -669,7 +703,7 @@
         '<option value="">Semua</option>' + roomOptions;
       
       // Year filter
-      const years = [...new Set(currentData.payments.map(p => p.date.split('/')[2]))].sort().reverse();
+      const years = [...new Set(currentData.payments.map(p => extractYear(p.date)))].filter(y => y).sort().reverse();
       const yearOptions = years.map(y => 
         `<option value="${y}">${y}</option>`
       ).join('');
