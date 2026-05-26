@@ -441,7 +441,7 @@ const html = `<!DOCTYPE html>
 <body>
   <div class="container">
     <header>
-      <h1 id="page-title">💰 Data Kos UM</h1>
+      <h1 id="page-title">💰 Data Kos UM <span style="font-size: 0.5em; opacity: 0.7;">v1.2.0</span></h1>
       <p class="subtitle">Monitoring Keuangan & Pembayaran</p>
     </header>
     
@@ -633,8 +633,9 @@ const html = `<!DOCTYPE html>
       currentData = kos === 'um' ? dataUM : dataUB;
       
       // Update title
-      document.getElementById('page-title').textContent = 
-        kos === 'um' ? '💰 Data Kos UM' : '💰 Data Kos UB';
+      const version = '<span style="font-size: 0.5em; opacity: 0.7;">v1.2.0</span>';
+      document.getElementById('page-title').innerHTML = 
+        kos === 'um' ? '\uD83D\uDCB0 Data Kos UM ' + version : '\uD83D\uDCB0 Data Kos UB ' + version;
       
       // Update toggle buttons
       document.querySelectorAll('.toggle-btn').forEach(btn => {
