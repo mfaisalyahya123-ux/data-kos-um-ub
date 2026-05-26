@@ -320,19 +320,6 @@ const html = `<!DOCTYPE html>
       </div>
     </div>
     
-    <!-- Monthly Payment Table -->
-    <div class="section">
-      <div class="section-title" onclick="toggleSection('monthly')">
-        <span>📅 Tabel Pembayaran Bulanan</span>
-        <span class="toggle-icon">▼</span>
-      </div>
-      <div class="section-content" id="monthly-content">
-        <div id="monthly-table-container">
-          <!-- Will be populated by JavaScript -->
-        </div>
-      </div>
-    </div>
-    
     <!-- Payment History -->
     <div class="section">
       <div class="section-title" onclick="toggleSection('payments')">
@@ -386,7 +373,6 @@ const html = `<!DOCTYPE html>
     function init() {
       renderStats();
       renderRooms();
-      renderMonthlyTable();
       renderPayments();
       populateFilters();
     }
@@ -410,7 +396,6 @@ const html = `<!DOCTYPE html>
       // Re-render everything
       renderStats();
       renderRooms();
-      renderMonthlyTable();
       renderPayments();
       populateFilters();
       resetFilters();
@@ -453,74 +438,6 @@ const html = `<!DOCTYPE html>
         </div>
       \`).join('');
       document.getElementById('rooms-grid').innerHTML = html;
-    }
-    
-    // Render monthly payment table
-    function renderMonthlyTable() {
-      // Group payments by room and month
-      const monthlyData = {};
-      const months = [...new Set(currentData.payments.map(p => p.period))].sort();
-      
-      currentData.rooms.forEach(room => {
-        monthlyData[room.room_number] = {
-          tenant: room.current_tenant || 'Kosong',
-          months: {}
-        };
-        months.forEach(month => {
-          monthlyData[room.room_number].months[month] = 0;
-        });
-      });
-      
-      // Fill in payment data
-      currentData.payments.forEach(p => {
-        if (monthlyData[p.room_number]) {
-          monthlyData[p.room_number].months[p.period] += p.amount;
-        }
-      });
-      
-      // Generate table HTML
-      let html = '<div style="overflow-x: auto;"><table><thead><tr>';
-      html += '<th style="position: sticky; left: 0; background: #f8f9fa; z-index: 10;">Kamar</th>';
-      html += '<th style="position: sticky; left: 80px; background: #f8f9fa; z-index: 10;">Penghuni</th>';
-      months.forEach(month => {
-        html += \`<th>\${month}</th>\`;
-      });
-      html += '<th style="background: #e8f5e9;">Total</th>';
-      html += '</tr></thead><tbody>';
-      
-      Object.keys(monthlyData).sort((a, b) => parseInt(a) - parseInt(b)).forEach(roomNum => {
-        const room = monthlyData[roomNum];
-        const total = Object.values(room.months).reduce((sum, val) => sum + val, 0);
-        
-        html += '<tr>';
-        html += \`<td style="position: sticky; left: 0; background: white; font-weight: bold;">\${roomNum}</td>\`;
-        html += \`<td style="position: sticky; left: 80px; background: white; font-size: 0.85em;">\${room.tenant}</td>\`;
-        months.forEach(month => {
-          const amount = room.months[month];
-          if (amount > 0) {
-            html += \`<td class="amount">\${formatRupiah(amount)}</td>\`;
-          } else {
-            html += '<td style="color: #ccc;">-</td>';
-          }
-        });
-        html += \`<td style="background: #e8f5e9; font-weight: bold;">\${formatRupiah(total)}</td>\`;
-        html += '</tr>';
-      });
-      
-      // Add total row
-      html += '<tr style="background: #f0f0f0; font-weight: bold;">';
-      html += '<td colspan="2" style="position: sticky; left: 0; background: #f0f0f0;">Total</td>';
-      months.forEach(month => {
-        const monthTotal = Object.values(monthlyData).reduce((sum, room) => sum + room.months[month], 0);
-        html += \`<td class="amount">\${formatRupiah(monthTotal)}</td>\`;
-      });
-      const grandTotal = Object.values(monthlyData).reduce((sum, room) => 
-        sum + Object.values(room.months).reduce((s, v) => s + v, 0), 0);
-      html += \`<td style="background: #c8e6c9;">\${formatRupiah(grandTotal)}</td>\`;
-      html += '</tr>';
-      
-      html += '</tbody></table></div>';
-      document.getElementById('monthly-table-container').innerHTML = html;
     }
     
     // Render payments
