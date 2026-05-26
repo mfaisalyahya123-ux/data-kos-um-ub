@@ -680,16 +680,8 @@ const html = `<!DOCTYPE html>
     
     // Render payment history
     function renderPaymentHistory() {
-      // Get last 3 months by default
-      const now = new Date();
-      const threeMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 2, 1);
-      
-      const filteredPayments = currentData.payments.filter(p => {
-        const paymentDate = parseDate(p.date);
-        return paymentDate >= threeMonthsAgo;
-      });
-      
-      const html = filteredPayments.map(p => {
+      // Show all payments by default (no date filter)
+      const html = currentData.payments.map(p => {
         const year = extractYear(p.date);
         return \`
           <tr data-room="\${p.room_number}" data-period="\${p.period}" data-date="\${p.date}" data-amount="\${p.amount}" data-year="\${year}">
