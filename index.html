@@ -710,10 +710,16 @@
       document.getElementById('year-filter').innerHTML = 
         '<option value="">Semua</option>' + yearOptions;
       
-      // Month filter
-      const months = [...new Set(currentData.payments.map(p => p.period))];
-      const monthOptions = months.map(m => 
-        `<option value="${m}">${m}</option>`
+      // Month filter (sorted by calendar order)
+      const monthOrder = ['januari', 'februari', 'maret', 'april', 'mei', 'juni', 'juli', 'agustus', 'september', 'oktober', 'november', 'desember'];
+      const months = [...new Set(currentData.payments.map(p => p.period.toLowerCase()))];
+      const sortedMonths = months.sort((a, b) => {
+        const indexA = monthOrder.indexOf(a);
+        const indexB = monthOrder.indexOf(b);
+        return indexA - indexB;
+      });
+      const monthOptions = sortedMonths.map(m => 
+        `<option value="${m}">${m.charAt(0).toUpperCase() + m.slice(1)}</option>`
       ).join('');
       document.getElementById('month-filter').innerHTML = 
         '<option value="">Semua</option>' + monthOptions;
