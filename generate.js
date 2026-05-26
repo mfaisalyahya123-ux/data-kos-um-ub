@@ -599,6 +599,14 @@ const html = `<!DOCTYPE html>
         const paymentDate = currentTenant ? currentTenant.move_in.split('/')[0] : '-';
         const status = room.current_tenant ? '🟢 Terisi' : '🔴 Kosong';
         
+        // Calculate total income for current tenant only
+        let tenantIncome = 0;
+        if (room.current_tenant) {
+          tenantIncome = currentData.payments
+            .filter(p => p.room_number === room.room_number && p.tenant_name === room.current_tenant)
+            .reduce((sum, p) => sum + p.amount, 0);
+        }
+        
         return \`
           <tr>
             <td class="room-col">\${room.room_number}</td>
@@ -606,7 +614,7 @@ const html = `<!DOCTYPE html>
             <td>\${status}</td>
             <td class="amount">\${room.current_rate ? formatRupiah(room.current_rate) : '-'}</td>
             <td>\${paymentDate}</td>
-            <td class="amount">\${formatRupiah(room.total_income)}</td>
+            <td class="amount">\${formatRupiah(tenantIncome)}</td>
           </tr>
         \`;
       }).join('');
