@@ -10,8 +10,12 @@ function formatRupiah(amount) {
   return `Rp ${amount.toLocaleString('id-ID')}`;
 }
 
+// Generate timestamp
+const timestamp = new Date().toISOString();
+
 // Generate HTML with toggle and payment table
 const html = `<!DOCTYPE html>
+<!-- Generated: ${timestamp} -->
 <html lang="id">
 <head>
   <meta charset="UTF-8">
