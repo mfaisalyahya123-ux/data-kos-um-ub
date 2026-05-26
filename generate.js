@@ -97,6 +97,8 @@ const html = `<!DOCTYPE html>
       padding: 25px;
       margin-bottom: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      display: block;
+      width: 100%;
     }
     
     .section-title {
