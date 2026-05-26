@@ -307,19 +307,6 @@ const html = `<!DOCTYPE html>
       <!-- Will be populated by JavaScript -->
     </div>
     
-    <!-- Room Status -->
-    <div class="section">
-      <div class="section-title" onclick="toggleSection('rooms')">
-        <span>🏠 Status Kamar</span>
-        <span class="toggle-icon">▼</span>
-      </div>
-      <div class="section-content" id="rooms-content">
-        <div class="room-grid" id="rooms-grid">
-          <!-- Will be populated by JavaScript -->
-        </div>
-      </div>
-    </div>
-    
     <!-- Payment History -->
     <div class="section">
       <div class="section-title" onclick="toggleSection('payments')">
@@ -372,7 +359,6 @@ const html = `<!DOCTYPE html>
     // Initialize
     function init() {
       renderStats();
-      renderRooms();
       renderPayments();
       populateFilters();
     }
@@ -395,7 +381,6 @@ const html = `<!DOCTYPE html>
       
       // Re-render everything
       renderStats();
-      renderRooms();
       renderPayments();
       populateFilters();
       resetFilters();
@@ -423,21 +408,6 @@ const html = `<!DOCTYPE html>
         </div>
       \`;
       document.getElementById('stats-container').innerHTML = html;
-    }
-    
-    // Render rooms
-    function renderRooms() {
-      const html = currentData.rooms.map(room => \`
-        <div class="room-card \${room.current_tenant ? '' : 'vacant'}">
-          <div class="room-number">Kamar \${room.room_number}</div>
-          <div class="room-tenant">\${room.current_tenant || 'Kosong'}</div>
-          <div class="room-rate">\${formatRupiah(room.current_rate)}/bulan</div>
-          <div style="font-size: 0.85em; color: #666; margin-top: 5px;">
-            Total: \${formatRupiah(room.total_income)}
-          </div>
-        </div>
-      \`).join('');
-      document.getElementById('rooms-grid').innerHTML = html;
     }
     
     // Render payments
