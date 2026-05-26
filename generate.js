@@ -615,7 +615,7 @@ const html = `<!DOCTYPE html>
                   const dueText = paymentDay + ' (' + daysUntil + ' hari)';
                   
                   return `
-                  <tr data-room="${room.room_number}">
+                  <tr data-room="${room.room_number}" data-payment-date="${room.payment_date}">
                     <td class="room-col">${room.room_number}</td>
                     <td class="name-col">${room.tenant_name}</td>
                     <td class="date-col">${dueText}</td>
