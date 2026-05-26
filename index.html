@@ -383,15 +383,32 @@
       </div>
       <div class="section-content" id="payments-content">
         <div class="filter-controls">
-          <label>Filter Kamar:</label>
+          <label>Kamar:</label>
           <select id="room-filter" onchange="filterPayments()">
-            <option value="">Semua Kamar</option>
+            <option value="">Semua</option>
           </select>
           
-          <label>Filter Bulan:</label>
-          <select id="month-filter" onchange="filterPayments()">
-            <option value="">Semua Bulan</option>
+          <label>Tahun:</label>
+          <select id="year-filter" onchange="filterPayments()">
+            <option value="">Semua</option>
           </select>
+          
+          <label>Bulan:</label>
+          <select id="month-filter" onchange="filterPayments()">
+            <option value="">Semua</option>
+          </select>
+          
+          <label>Urutkan:</label>
+          <select id="sort-filter" onchange="filterPayments()">
+            <option value="date-desc">Terbaru</option>
+            <option value="date-asc">Terlama</option>
+            <option value="amount-desc">Jumlah Tertinggi</option>
+            <option value="amount-asc">Jumlah Terendah</option>
+            <option value="room-asc">Kamar (A-Z)</option>
+          </select>
+          
+          <button class="reset-btn" onclick="resetFilters()">Reset</button>
+          <span id="result-count" style="margin-left: 15px; color: #666; font-weight: bold;"></span>
         </div>
         
         <table>
@@ -608,8 +625,17 @@
     
     // Render payment history
     function renderPaymentHistory() {
-      const html = currentData.payments.map(p => `
-        <tr data-room="${p.room_number}" data-period="${p.period}">
+      // Get last 3 months by default
+      const now = new Date();
+      const threeMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 2, 1);
+      
+      const filteredPayments = currentData.payments.filter(p => {
+        const paymentDate = parseDate(p.date);
+        return paymentDate >= threeMonthsAgo;
+      });
+      
+      const html = filteredPayments.map(p => `
+        <tr data-room="${p.room_number}" data-period="${p.period}" data-date="${p.date}" data-amount="${p.amount}" data-year="${p.date.split('/')[2]}">
           <td>${p.date}</td>
           <td>Kamar ${p.room_number}</td>
           <td>${p.tenant_name}</td>
@@ -619,43 +645,104 @@
         </tr>
       `).join('');
       document.getElementById('payments-tbody').innerHTML = html;
+      updateResultCount();
+    }
+    
+    // Parse date DD/MM/YYYY
+    function parseDate(dateStr) {
+      const parts = dateStr.split('/');
+      return new Date(parts[2], parts[1] - 1, parts[0]);
     }
     
     // Populate filters
     function populateFilters() {
+      // Room filter
       const roomOptions = currentData.rooms.map(r => 
         `<option value="${r.room_number}">Kamar ${r.room_number}</option>`
       ).join('');
       document.getElementById('room-filter').innerHTML = 
-        '<option value="">Semua Kamar</option>' + roomOptions;
+        '<option value="">Semua</option>' + roomOptions;
       
+      // Year filter
+      const years = [...new Set(currentData.payments.map(p => p.date.split('/')[2]))].sort().reverse();
+      const yearOptions = years.map(y => 
+        `<option value="${y}">${y}</option>`
+      ).join('');
+      document.getElementById('year-filter').innerHTML = 
+        '<option value="">Semua</option>' + yearOptions;
+      
+      // Month filter
       const months = [...new Set(currentData.payments.map(p => p.period))];
       const monthOptions = months.map(m => 
         `<option value="${m}">${m}</option>`
       ).join('');
       document.getElementById('month-filter').innerHTML = 
-        '<option value="">Semua Bulan</option>' + monthOptions;
+        '<option value="">Semua</option>' + monthOptions;
     }
     
     // Filter payments
     function filterPayments() {
       const roomFilter = document.getElementById('room-filter').value;
+      const yearFilter = document.getElementById('year-filter').value;
       const monthFilter = document.getElementById('month-filter').value;
+      const sortFilter = document.getElementById('sort-filter').value;
       
-      const rows = document.querySelectorAll('#payments-tbody tr');
+      const rows = Array.from(document.querySelectorAll('#payments-tbody tr'));
+      
+      // Filter
       rows.forEach(row => {
         const room = row.getAttribute('data-room');
+        const year = row.getAttribute('data-year');
         const period = row.getAttribute('data-period');
         
         const matchRoom = !roomFilter || room === roomFilter;
+        const matchYear = !yearFilter || year === yearFilter;
         const matchMonth = !monthFilter || period === monthFilter;
         
-        if (matchRoom && matchMonth) {
+        if (matchRoom && matchYear && matchMonth) {
           row.style.display = '';
         } else {
           row.style.display = 'none';
         }
       });
+      
+      // Sort visible rows
+      const visibleRows = rows.filter(row => row.style.display !== 'none');
+      visibleRows.sort((a, b) => {
+        if (sortFilter === 'date-desc') {
+          return parseDate(b.getAttribute('data-date')) - parseDate(a.getAttribute('data-date'));
+        } else if (sortFilter === 'date-asc') {
+          return parseDate(a.getAttribute('data-date')) - parseDate(b.getAttribute('data-date'));
+        } else if (sortFilter === 'amount-desc') {
+          return parseInt(b.getAttribute('data-amount')) - parseInt(a.getAttribute('data-amount'));
+        } else if (sortFilter === 'amount-asc') {
+          return parseInt(a.getAttribute('data-amount')) - parseInt(b.getAttribute('data-amount'));
+        } else if (sortFilter === 'room-asc') {
+          return parseInt(a.getAttribute('data-room')) - parseInt(b.getAttribute('data-room'));
+        }
+        return 0;
+      });
+      
+      // Re-append sorted rows
+      const tbody = document.getElementById('payments-tbody');
+      visibleRows.forEach(row => tbody.appendChild(row));
+      
+      updateResultCount();
+    }
+    
+    // Update result count
+    function updateResultCount() {
+      const visibleRows = Array.from(document.querySelectorAll('#payments-tbody tr')).filter(row => row.style.display !== 'none');
+      document.getElementById('result-count').textContent = `Menampilkan ${visibleRows.length} transaksi`;
+    }
+    
+    // Reset filters
+    function resetFilters() {
+      document.getElementById('room-filter').value = '';
+      document.getElementById('year-filter').value = '';
+      document.getElementById('month-filter').value = '';
+      document.getElementById('sort-filter').value = 'date-desc';
+      renderPaymentHistory();
     }
     
     // Toggle section
