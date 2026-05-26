@@ -5,20 +5,12 @@ const path = require('path');
 const dataUM = JSON.parse(fs.readFileSync(path.join(__dirname, 'data-um.json'), 'utf8'));
 const dataUB = JSON.parse(fs.readFileSync(path.join(__dirname, 'data-ub.json'), 'utf8'));
 
-// Use UM as default for initial render
-const data = dataUM;
-
 // Helper: Format currency
 function formatRupiah(amount) {
   return `Rp ${amount.toLocaleString('id-ID')}`;
 }
 
-// Helper: Format date
-function formatDate(dateStr) {
-  return dateStr;
-}
-
-// Generate HTML
+// Generate HTML with toggle and payment table
 const html = `<!DOCTYPE html>
 <html lang="id">
 <head>
@@ -37,13 +29,11 @@ const html = `<!DOCTYPE html>
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       min-height: 100vh;
       padding: 20px;
-      display: block;
     }
     
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      display: block;
     }
     
     header {
@@ -62,35 +52,42 @@ const html = `<!DOCTYPE html>
       opacity: 0.9;
     }
     
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+    /* Toggle Switch */
+    .toggle-container {
+      display: flex;
+      justify-content: center;
       margin-bottom: 30px;
     }
     
-    .stat-card {
+    .toggle-switch {
       background: white;
-      border-radius: 15px;
-      padding: 25px;
+      border-radius: 50px;
+      padding: 5px;
+      display: flex;
+      gap: 5px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
     }
     
-    .stat-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .stat-label {
-      font-size: 0.9em;
-      color: #666;
-      margin-bottom: 10px;
-    }
-    
-    .stat-value {
-      font-size: 2em;
+    .toggle-btn {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1em;
       font-weight: bold;
-      color: #667eea;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: transparent;
+      color: #666;
+    }
+    
+    .toggle-btn.active {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .toggle-btn:hover:not(.active) {
+      background: #f0f0f0;
     }
     
     .section {
@@ -99,10 +96,6 @@ const html = `<!DOCTYPE html>
       padding: 25px;
       margin-bottom: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      display: block;
-      width: 100%;
-      clear: both;
-      float: none;
     }
     
     .section-title {
@@ -138,130 +131,6 @@ const html = `<!DOCTYPE html>
       max-height: 0;
     }
     
-    .room-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
-    }
-    
-    .room-card {
-      background: #f8f9fa;
-      border-radius: 10px;
-      padding: 15px;
-      border-left: 4px solid #667eea;
-    }
-    
-    .room-card.vacant {
-      border-left-color: #dc3545;
-      opacity: 0.7;
-    }
-    
-    .room-number {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #667eea;
-      margin-bottom: 5px;
-    }
-    
-    .room-tenant {
-      font-size: 0.9em;
-      color: #666;
-      margin-bottom: 10px;
-    }
-    
-    .room-rate {
-      font-size: 1.1em;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 10px;
-    }
-    
-    .payment-schedule {
-      font-size: 0.85em;
-      color: #667eea;
-      font-weight: bold;
-      background: #e8eaf6;
-      padding: 5px 10px;
-      border-radius: 5px;
-      margin-top: 5px;
-    }
-    
-    .filter-controls {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    
-    .filter-controls label {
-      font-weight: bold;
-      color: #333;
-    }
-    
-    .filter-controls select {
-      padding: 8px 12px;
-      border: 2px solid #667eea;
-      border-radius: 5px;
-      font-size: 0.9em;
-      background: white;
-      cursor: pointer;
-    }
-    
-    .filter-controls select:focus {
-      outline: none;
-      border-color: #764ba2;
-    }
-    
-    .reset-btn {
-      padding: 8px 16px;
-      background: #dc3545;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    
-    .reset-btn:hover {
-      background: #c82333;
-    }
-    
-    .period-filter {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-    }
-    
-    .period-filter label {
-      font-weight: bold;
-      color: #333;
-    }
-    
-    .period-btn {
-      padding: 8px 16px;
-      background: #f8f9fa;
-      color: #333;
-      border: 2px solid #667eea;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .period-btn:hover {
-      background: #667eea;
-      color: white;
-    }
-    
-    .period-btn.active {
-      background: #667eea;
-      color: white;
-    }
-    
     .year-toggle {
       display: flex;
       gap: 10px;
@@ -288,44 +157,6 @@ const html = `<!DOCTYPE html>
     .year-btn.active {
       background: #667eea;
       color: white;
-    }
-    
-    /* Toggle Switch for UM/UB */
-    .kos-toggle-container {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 30px;
-    }
-    
-    .kos-toggle-switch {
-      background: white;
-      border-radius: 50px;
-      padding: 5px;
-      display: flex;
-      gap: 5px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-    
-    .kos-toggle-btn {
-      padding: 12px 30px;
-      border: none;
-      border-radius: 50px;
-      font-size: 1.1em;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      background: transparent;
-      color: #666;
-    }
-    
-    .kos-toggle-btn.active {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-    }
-    
-    .kos-toggle-btn:hover:not(.active) {
-      background: #f0f0f0;
     }
     
     .month-format-toggle {
@@ -415,50 +246,54 @@ const html = `<!DOCTYPE html>
       color: #6c757d;
     }
     
-    .payment-table-wrapper {
-      overflow-x: auto;
-      margin: 20px 0;
+    .filter-controls {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
     }
     
-    .payment-history-table {
+    .filter-controls label {
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .filter-controls select {
+      padding: 8px 12px;
+      border: 2px solid #667eea;
+      border-radius: 5px;
+      font-size: 0.9em;
+      background: white;
+      cursor: pointer;
+    }
+    
+    table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
-      font-size: 0.9em;
+      margin-top: 15px;
     }
     
-    .payment-history-table th,
-    .payment-history-table td {
-      padding: 8px 12px;
+    th, td {
+      padding: 12px;
       text-align: left;
-      border: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
     }
     
-    .payment-history-table th {
+    th {
       background: #667eea;
       color: white;
       font-weight: bold;
-      font-size: 1.1em;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      padding: 10px 12px;
     }
     
-    .payment-history-table tbody tr:hover {
+    tr:hover {
       background: #f8f9fa;
     }
     
-    .payment-history-table td.amount {
-      text-align: right;
-      color: #28a745;
+    .amount {
       font-weight: bold;
-    }
-    
-    .payment-history-table td.method {
-      text-align: center;
-      color: #666;
-      font-size: 0.85em;
+      color: #28a745;
+      text-align: right;
     }
     
     @media (max-width: 768px) {
@@ -466,17 +301,12 @@ const html = `<!DOCTYPE html>
         font-size: 1.8em;
       }
       
-      .stats {
-        grid-template-columns: 1fr 1fr;
+      table {
+        font-size: 0.85em;
       }
       
-      .payment-history-table {
-        font-size: 0.75em;
-      }
-      
-      .payment-history-table th,
-      .payment-history-table td {
-        padding: 8px 4px;
+      th, td {
+        padding: 8px;
       }
     }
   </style>
@@ -488,66 +318,15 @@ const html = `<!DOCTYPE html>
       <p class="subtitle">Monitoring Keuangan & Pembayaran</p>
     </header>
     
-    <!-- Toggle Switch UM/UB -->
-    <div class="kos-toggle-container">
-      <div class="kos-toggle-switch">
-        <button class="kos-toggle-btn active" onclick="switchKos('um')🏠 Kos UM</button>
-        <button class="kos-toggle-btn" onclick="switchKos('ub')🏬 Kos UB</button>
+    <!-- Toggle Switch -->
+    <div class="toggle-container">
+      <div class="toggle-switch">
+        <button class="toggle-btn active" onclick="switchKos('um')">🏠 Kos UM</button>
+        <button class="toggle-btn" onclick="switchKos('ub')">🏢 Kos UB</button>
       </div>
     </div>
     
-    <div class="stats">
-      ${(() => {
-        // Calculate current month stats
-        const now = new Date();
-        const currentMonth = now.getMonth() + 1;
-        const currentYear = now.getFullYear();
-        const monthNames = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-        
-        // Get payments for current month
-        const currentMonthPayments = data.payments.filter(p => {
-          return p.date.includes(currentYear.toString()) && p.period.toLowerCase() === monthNames[currentMonth].toLowerCase();
-        });
-        const currentMonthIncome = currentMonthPayments.reduce((sum, p) => sum + p.amount, 0);
-        
-        // Count unpaid rooms for current month
-        const unpaidRooms = data.rooms.filter(room => {
-          if (!room.current_tenant) return false;
-          const currentTenant = room.tenants.find(t => t.status === 'aktif');
-          if (!currentTenant) return false;
-          
-          const paymentDay = parseInt(currentTenant.move_in.split('/')[0]);
-          const today = now.getDate();
-          
-          // Check if due date has passed
-          if (today < paymentDay) return false;
-          
-          // Check if paid
-          const paid = currentMonthPayments.some(p => p.room_number === room.room_number);
-          return !paid;
-        }).length;
-        
-        return `
-          <div class="stat-card">
-            <div class="stat-label">Okupansi</div>
-            <div class="stat-value">${data.summary.occupied_rooms}/${data.total_rooms} kamar</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Pemasukan ${monthNames[currentMonth]} ${currentYear}</div>
-            <div class="stat-value">${formatRupiah(currentMonthIncome)}</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Total Pemasukan</div>
-            <div class="stat-value">${formatRupiah(data.summary.total_income)}</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Belum Bayar (Bulan Ini)</div>
-            <div class="stat-value">${unpaidRooms} kamar</div>
-          </div>
-        `;
-      })()}
-    </div>
-    
+    <!-- Tabel Pembayaran -->
     <div class="section">
       <div class="section-title" onclick="toggleSection('status')">
         <span>📋 Tabel Pembayaran <span id="statusYear">2026</span></span>
@@ -567,7 +346,7 @@ const html = `<!DOCTYPE html>
         </div>
         
         <div class="status-table-wrapper">
-          <table class="status-table">
+          <table class="status-table" id="statusTable">
             <thead>
               <tr>
                 <th>No Kamar</th>
@@ -578,322 +357,153 @@ const html = `<!DOCTYPE html>
               </tr>
             </thead>
             <tbody id="statusTableBody">
-              ${(() => {
-                // Build payment status for 2026 (default)
-                const paymentStatus = {};
-                const monthMap = {
-                  'januari': 1, 'februari': 2, 'maret': 3, 'april': 4, 'mei': 5, 'juni': 6,
-                  'juli': 7, 'agustus': 8, 'september': 9, 'oktober': 10, 'november': 11, 'desember': 12
-                };
-                const year = 2026;
-                
-                // Get current date
-                const now = new Date();
-                const currentYear = now.getFullYear();
-                const currentMonth = now.getMonth() + 1;
-                const currentDay = now.getDate();
-                
-                // Initialize for active tenants
-                data.rooms.forEach(room => {
-                  if (room.current_tenant) {
-                    const currentTenant = room.tenants.find(t => t.status === 'aktif');
-                    if (currentTenant) {
-                      const paymentDate = parseInt(currentTenant.move_in.split('/')[0]);
-                      
-                      // Parse move-in date
-                      const moveInParts = currentTenant.move_in.split('/');
-                      const moveInMonth = parseInt(moveInParts[1]);
-                      const moveInYear = parseInt(moveInParts[2]);
-                      
-                      // Initialize months
-                      const months = {};
-                      for (let m = 1; m <= 12; m++) {
-                        if (year < moveInYear) {
-                          months[m] = null;
-                        } else if (year === moveInYear && m < moveInMonth) {
-                          months[m] = null;
-                        } else {
-                          // Check if due date has passed
-                          if (year === currentYear) {
-                            if (m > currentMonth) {
-                              months[m] = 'not-due';
-                            } else if (m === currentMonth && currentDay < paymentDate) {
-                              months[m] = 'not-due';
-                            } else {
-                              months[m] = false;
-                            }
-                          } else if (year > currentYear) {
-                            months[m] = 'not-due';
-                          } else {
-                            months[m] = false;
-                          }
-                        }
-                      }
-                      
-                      paymentStatus[room.room_number] = {
-                        room_number: room.room_number,
-                        tenant_name: room.current_tenant,
-                        payment_date: paymentDate,
-                        months: months
-                      };
-                    }
-                  }
-                });
-                
-                // Mark paid months for 2026
-                data.payments.forEach(payment => {
-                  if (payment.date.includes('2026')) {
-                    const room = paymentStatus[payment.room_number];
-                    if (room) {
-                      const month = monthMap[payment.period.toLowerCase()];
-                      if (month && room.months[month] !== null && room.months[month] !== 'not-due') {
-                        room.months[month] = true;
-                      } else if (month && room.months[month] === 'not-due') {
-                        room.months[month] = true;
-                      }
-                    }
-                  }
-                });
-                
-                return Object.values(paymentStatus).sort((a, b) => a.room_number - b.room_number).map(room => {
-                  // Calculate next due date
-                  const now = new Date();
-                  const paymentDay = parseInt(room.payment_date);
-                  let nextDue = new Date(now.getFullYear(), now.getMonth(), paymentDay);
-                  
-                  // If due date this month has passed, move to next month
-                  if (nextDue < now) {
-                    nextDue = new Date(now.getFullYear(), now.getMonth() + 1, paymentDay);
-                  }
-                  
-                  // Calculate days until due
-                  const daysUntil = Math.ceil((nextDue - now) / (1000 * 60 * 60 * 24));
-                  const dueText = paymentDay + ' (' + daysUntil + ' hari)';
-                  
-                  return `
-                  <tr data-room="${room.room_number}" data-payment-date="${room.payment_date}">
-                    <td class="room-col">${room.room_number}</td>
-                    <td class="name-col">${room.tenant_name}</td>
-                    <td class="date-col">${dueText}</td>
-                    ${[1,2,3,4,5,6,7,8,9,10,11,12].map(month => {
-                      const status = room.months[month];
-                      if (status === null) {
-                        return '<td class="status-col not-applicable" data-month="' + month + '">-</td>';
-                      } else if (status === 'not-due') {
-                        return '<td class="status-col not-due" data-month="' + month + '">-</td>';
-                      } else if (status === true) {
-                        return '<td class="status-col paid" data-month="' + month + '">✓</td>';
-                      } else {
-                        return '<td class="status-col unpaid" data-month="' + month + '">X</td>';
-                      }
-                    }).join('')}
-                  </tr>
-                  `;
-                }).join('');
-              })()}
+              <!-- Will be populated by JavaScript -->
             </tbody>
           </table>
         </div>
       </div>
     </div>
     
+    <!-- Riwayat Pembayaran -->
     <div class="section">
       <div class="section-title" onclick="toggleSection('payments')">
-        <span>📋 Riwayat Pembayaran</span>
+        <span>📊 Riwayat Pembayaran</span>
         <span class="toggle-icon" id="payments-icon">▼</span>
       </div>
       <div class="section-content" id="payments-content">
         <div class="filter-controls">
-          <label for="filterTenant">Filter Penghuni:</label>
-          <select id="filterTenant" onchange="filterPayments()">
-            <option value="all">Semua Penghuni</option>
-            ${data.tenants.sort((a, b) => a.tenant_number - b.tenant_number).map(tenant => `
-              <option value="${tenant.tenant_number}">${tenant.tenant_number} - ${tenant.name}</option>
-            `).join('')}
+          <label>Filter Kamar:</label>
+          <select id="room-filter" onchange="filterPayments()">
+            <option value="">Semua Kamar</option>
           </select>
           
-          <label for="filterMonth">Filter Bulan:</label>
-          <select id="filterMonth" onchange="filterPayments()">
-            <option value="all">Semua Bulan</option>
-            <option value="januari">Januari</option>
-            <option value="februari">Februari</option>
-            <option value="maret">Maret</option>
-            <option value="april">April</option>
-            <option value="mei">Mei</option>
-            <option value="juni">Juni</option>
-            <option value="juli">Juli</option>
-            <option value="agustus">Agustus</option>
-            <option value="september">September</option>
-            <option value="oktober">Oktober</option>
-            <option value="november">November</option>
-            <option value="desember">Desember</option>
+          <label>Filter Bulan:</label>
+          <select id="month-filter" onchange="filterPayments()">
+            <option value="">Semua Bulan</option>
           </select>
-          
-          <button onclick="resetFilters()" class="reset-btn">Reset Filter</button>
         </div>
         
-        <div class="period-filter">
-          <label>Tampilkan:</label>
-          <button onclick="filterByPeriod(1)" class="period-btn">1 Bulan</button>
-          <button onclick="filterByPeriod(2)" class="period-btn">2 Bulan</button>
-          <button onclick="filterByPeriod(3)" class="period-btn">3 Bulan</button>
-          <button onclick="filterByPeriod(4)" class="period-btn active">4 Bulan</button>
-          <button onclick="filterByPeriod(0)" class="period-btn">Semua</button>
-        </div>
-        
-        <div class="payment-table-wrapper">
-          <table class="payment-history-table">
-            <thead>
-              <tr>
-                <th>Tgl Bayar</th>
-                <th>Penghuni No</th>
-                <th>Nama Penghuni</th>
-                <th>Bulan</th>
-                <th>Jumlah</th>
-                <th>Metode Bayar</th>
-              </tr>
-            </thead>
-            <tbody id="paymentTableBody">
-              ${data.payments.map((payment, index) => {
-                // Parse date to get timestamp
-                const dateParts = payment.date.split(' ');
-                const day = parseInt(dateParts[0]);
-                const monthMap = {
-                  'Januari': 0, 'Februari': 1, 'Maret': 2, 'April': 3, 'Mei': 4, 'Juni': 5,
-                  'Juli': 6, 'Agustus': 7, 'September': 8, 'Oktober': 9, 'November': 10, 'Desember': 11
-                };
-                const month = monthMap[dateParts[1]];
-                const year = parseInt(dateParts[2]);
-                const timestamp = new Date(year, month, day).getTime();
-                
-                return `
-                <tr data-tenant="${payment.tenant_number}" data-month="${payment.period.toLowerCase()}" data-timestamp="${timestamp}">
-                  <td>${formatDate(payment.date)}</td>
-                  <td>${payment.tenant_number}</td>
-                  <td>${payment.tenant_name}</td>
-                  <td>${payment.period.charAt(0).toUpperCase() + payment.period.slice(1)}</td>
-                  <td class="amount">${formatRupiah(payment.amount)}</td>
-                  <td class="method">${payment.payment_method.toUpperCase()}</td>
-                </tr>
-                `;
-              }).join('')}
-            </tbody>
-          </table>
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Kamar</th>
+              <th>Nama</th>
+              <th>Jumlah</th>
+              <th>Via</th>
+              <th>Periode</th>
+            </tr>
+          </thead>
+          <tbody id="payments-tbody">
+            <!-- Will be populated by JavaScript -->
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
   
   <script>
-    let currentPeriodMonths = 4; // Default 4 bulan
-    let currentYear = 2026; // Default year
-    let currentKos = 'um'; // Default kos
-    
-    // Embed both datasets
+    // Embedded data
     const dataUM = ${JSON.stringify(dataUM)};
     const dataUB = ${JSON.stringify(dataUB)};
     
-    // Current active data
-    let paymentsData = dataUM.payments;
-    let roomsData = dataUM.rooms;
+    let currentKos = 'um';
+    let currentData = dataUM;
+    let currentYear = 2026;
+    
+    // Initialize
+    function init() {
+      renderPaymentTable();
+      renderPaymentHistory();
+      populateFilters();
+    }
     
     // Switch between UM and UB
     function switchKos(kos) {
       currentKos = kos;
+      currentData = kos === 'um' ? dataUM : dataUB;
       
       // Update title
       document.getElementById('page-title').textContent = 
         kos === 'um' ? '💰 Data Kos UM' : '💰 Data Kos UB';
       
       // Update toggle buttons
-      document.querySelectorAll('.kos-toggle-btn').forEach(btn => {
+      document.querySelectorAll('.toggle-btn').forEach(btn => {
         btn.classList.remove('active');
       });
       event.target.classList.add('active');
       
-      // Update data
-      const data = kos === 'um' ? dataUM : dataUB;
-      paymentsData = data.payments;
-      roomsData = data.rooms;
-      
-      // Reload page content
-      location.reload();
+      // Re-render
+      renderPaymentTable();
+      renderPaymentHistory();
+      populateFilters();
     }
     
-    function toggleSection(sectionId) {
-      const content = document.getElementById(sectionId + '-content');
-      const icon = document.getElementById(sectionId + '-icon');
-      
-      content.classList.toggle('collapsed');
-      icon.classList.toggle('collapsed');
-    }
-    
+    // Switch year
     function switchYear(year) {
       currentYear = year;
-      
-      // Update title
       document.getElementById('statusYear').textContent = year;
       
-      // Update active button
       document.querySelectorAll('.year-btn').forEach(btn => {
         btn.classList.remove('active');
       });
       document.getElementById('year-' + year).classList.add('active');
       
-      // Rebuild table
-      rebuildStatusTable(year);
+      renderPaymentTable();
     }
     
-    function rebuildStatusTable(year) {
+    // Toggle month format
+    function toggleMonthFormat() {
+      const checked = document.getElementById('monthFormatToggle').checked;
+      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+      
+      const headers = document.querySelectorAll('#statusTable thead th');
+      for (let i = 3; i < 15; i++) {
+        headers[i].textContent = checked ? monthNames[i - 3] : (i - 2);
+      }
+    }
+    
+    // Render payment table
+    function renderPaymentTable() {
       const monthMap = {
         'januari': 1, 'februari': 2, 'maret': 3, 'april': 4, 'mei': 5, 'juni': 6,
         'juli': 7, 'agustus': 8, 'september': 9, 'oktober': 10, 'november': 11, 'desember': 12
       };
       
       const paymentStatus = {};
-      
-      // Get current date
       const now = new Date();
-      const currentYear = now.getFullYear();
       const currentMonth = now.getMonth() + 1;
       const currentDay = now.getDate();
       
       // Initialize for active tenants
-      roomsData.forEach(room => {
+      currentData.rooms.forEach(room => {
         if (room.current_tenant) {
           const currentTenant = room.tenants.find(t => t.status === 'aktif');
           if (currentTenant) {
             const paymentDate = parseInt(currentTenant.move_in.split('/')[0]);
-            
-            // Parse move-in date
             const moveInParts = currentTenant.move_in.split('/');
-            const moveInDay = parseInt(moveInParts[0]);
             const moveInMonth = parseInt(moveInParts[1]);
             const moveInYear = parseInt(moveInParts[2]);
             
-            // Initialize months (null = not applicable, 'not-due' = belum jatuh tempo, false = unpaid, true = paid)
             const months = {};
             for (let m = 1; m <= 12; m++) {
-              // Check if tenant was already living in this month
-              if (year < moveInYear) {
-                months[m] = null; // Belum masuk
-              } else if (year === moveInYear && m < moveInMonth) {
-                months[m] = null; // Belum masuk
+              if (currentYear < moveInYear) {
+                months[m] = null;
+              } else if (currentYear === moveInYear && m < moveInMonth) {
+                months[m] = null;
               } else {
-                // Check if due date has passed
-                if (year === currentYear) {
-                  // For current year, check if month is due
+                if (currentYear === now.getFullYear()) {
                   if (m > currentMonth) {
-                    months[m] = 'not-due'; // Belum jatuh tempo
+                    months[m] = 'not-due';
                   } else if (m === currentMonth && currentDay < paymentDate) {
-                    months[m] = 'not-due'; // Belum jatuh tempo bulan ini
+                    months[m] = 'not-due';
                   } else {
-                    months[m] = false; // Sudah jatuh tempo, belum bayar
+                    months[m] = false;
                   }
-                } else if (year > currentYear) {
-                  months[m] = 'not-due'; // Tahun depan, belum jatuh tempo
+                } else if (currentYear > now.getFullYear()) {
+                  months[m] = 'not-due';
                 } else {
-                  months[m] = false; // Tahun lalu, sudah jatuh tempo
+                  months[m] = false;
                 }
               }
             }
@@ -902,107 +512,104 @@ const html = `<!DOCTYPE html>
               room_number: room.room_number,
               tenant_name: room.current_tenant,
               payment_date: paymentDate,
-              move_in_year: moveInYear,
-              move_in_month: moveInMonth,
               months: months
             };
           }
         }
       });
       
-      // Mark paid months for selected year
-      paymentsData.forEach(payment => {
-        if (payment.date.includes(year.toString())) {
+      // Mark paid months
+      currentData.payments.forEach(payment => {
+        if (payment.date.includes(currentYear.toString())) {
           const room = paymentStatus[payment.room_number];
           if (room) {
             const month = monthMap[payment.period.toLowerCase()];
-            if (month && room.months[month] !== null && room.months[month] !== 'not-due') {
-              room.months[month] = true;
-            } else if (month && room.months[month] === 'not-due') {
-              // Bayar lebih awal (sebelum jatuh tempo)
+            if (month && room.months[month] !== null) {
               room.months[month] = true;
             }
           }
         }
       });
       
-      // Rebuild table body
+      // Generate table rows
       const tbody = document.getElementById('statusTableBody');
       const rows = Object.values(paymentStatus).sort((a, b) => a.room_number - b.room_number).map(room => {
-        // Calculate next due date
-        const now = new Date();
-        const paymentDay = room.payment_date;
-        let nextDue = new Date(now.getFullYear(), now.getMonth(), paymentDay);
-        
-        // If due date this month has passed, move to next month
+        const nextDue = new Date(now.getFullYear(), now.getMonth(), room.payment_date);
         if (nextDue < now) {
-          nextDue = new Date(now.getFullYear(), now.getMonth() + 1, paymentDay);
+          nextDue.setMonth(nextDue.getMonth() + 1);
+        }
+        const daysUntil = Math.ceil((nextDue - now) / (1000 * 60 * 60 * 24));
+        
+        let html = '<tr>';
+        html += \`<td class="room-col">\${room.room_number}</td>\`;
+        html += \`<td class="name-col">\${room.tenant_name}</td>\`;
+        html += \`<td class="date-col">\${room.payment_date} (\${daysUntil} hari)</td>\`;
+        
+        for (let m = 1; m <= 12; m++) {
+          const status = room.months[m];
+          if (status === null) {
+            html += '<td class="status-col not-applicable">-</td>';
+          } else if (status === 'not-due') {
+            html += '<td class="status-col not-due">-</td>';
+          } else if (status === true) {
+            html += '<td class="status-col paid">✓</td>';
+          } else {
+            html += '<td class="status-col unpaid">X</td>';
+          }
         }
         
-        // Calculate days until due
-        const daysUntil = Math.ceil((nextDue - now) / (1000 * 60 * 60 * 24));
-        const dueText = paymentDay + ' (' + daysUntil + ' hari)';
-        
-        const monthCells = [1,2,3,4,5,6,7,8,9,10,11,12].map(month => {
-          const status = room.months[month];
-          if (status === null) {
-            // Belum masuk
-            return '<td class="status-col not-applicable" data-month="' + month + '">-</td>';
-          } else if (status === 'not-due') {
-            // Belum jatuh tempo
-            return '<td class="status-col not-due" data-month="' + month + '">-</td>';
-          } else if (status === true) {
-            // Sudah bayar
-            return '<td class="status-col paid" data-month="' + month + '">✓</td>';
-          } else {
-            // Belum bayar (sudah jatuh tempo)
-            return '<td class="status-col unpaid" data-month="' + month + '">X</td>';
-          }
-        }).join('');
-        
-        return '<tr data-room="' + room.room_number + '" data-payment-date="' + paymentDay + '">' +
-          '<td class="room-col">' + room.room_number + '</td>' +
-          '<td class="name-col">' + room.tenant_name + '</td>' +
-          '<td class="date-col due-date">' + paymentDay + ' (<span class="countdown">...</span> hari)</td>' +
-          monthCells +
-          '</tr>';
+        html += '</tr>';
+        return html;
       }).join('');
       
       tbody.innerHTML = rows;
-      
-      // Update countdowns after rebuilding table
-      updateCountdowns();
     }
     
+    // Render payment history
+    function renderPaymentHistory() {
+      const html = currentData.payments.map(p => \`
+        <tr data-room="\${p.room_number}" data-period="\${p.period}">
+          <td>\${p.date}</td>
+          <td>Kamar \${p.room_number}</td>
+          <td>\${p.tenant_name}</td>
+          <td class="amount">\${formatRupiah(p.amount)}</td>
+          <td>\${p.payment_method}</td>
+          <td>\${p.period}</td>
+        </tr>
+      \`).join('');
+      document.getElementById('payments-tbody').innerHTML = html;
+    }
+    
+    // Populate filters
+    function populateFilters() {
+      const roomOptions = currentData.rooms.map(r => 
+        \`<option value="\${r.room_number}">Kamar \${r.room_number}</option>\`
+      ).join('');
+      document.getElementById('room-filter').innerHTML = 
+        '<option value="">Semua Kamar</option>' + roomOptions;
+      
+      const months = [...new Set(currentData.payments.map(p => p.period))];
+      const monthOptions = months.map(m => 
+        \`<option value="\${m}">\${m}</option>\`
+      ).join('');
+      document.getElementById('month-filter').innerHTML = 
+        '<option value="">Semua Bulan</option>' + monthOptions;
+    }
+    
+    // Filter payments
     function filterPayments() {
-      const tenantFilter = document.getElementById('filterTenant').value;
-      const monthFilter = document.getElementById('filterMonth').value;
-      const rows = document.querySelectorAll('#paymentTableBody tr');
+      const roomFilter = document.getElementById('room-filter').value;
+      const monthFilter = document.getElementById('month-filter').value;
       
-      // Get latest payment date
-      let latestTimestamp = 0;
+      const rows = document.querySelectorAll('#payments-tbody tr');
       rows.forEach(row => {
-        const timestamp = parseInt(row.getAttribute('data-timestamp'));
-        if (timestamp > latestTimestamp) {
-          latestTimestamp = timestamp;
-        }
-      });
-      
-      // Calculate cutoff date (N months before latest)
-      const cutoffDate = new Date(latestTimestamp);
-      cutoffDate.setMonth(cutoffDate.getMonth() - currentPeriodMonths);
-      const cutoffTimestamp = cutoffDate.getTime();
-      
-      rows.forEach(row => {
-        const tenant = row.getAttribute('data-tenant');
-        const month = row.getAttribute('data-month');
-        const timestamp = parseInt(row.getAttribute('data-timestamp'));
+        const room = row.getAttribute('data-room');
+        const period = row.getAttribute('data-period');
         
-        const tenantMatch = tenantFilter === 'all' || tenant === tenantFilter;
-        const monthMatch = monthFilter === 'all' || month === monthFilter;
-        const periodMatch = currentPeriodMonths === 0 || timestamp >= cutoffTimestamp;
+        const matchRoom = !roomFilter || room === roomFilter;
+        const matchMonth = !monthFilter || period === monthFilter;
         
-        if (tenantMatch && monthMatch && periodMatch) {
+        if (matchRoom && matchMonth) {
           row.style.display = '';
         } else {
           row.style.display = 'none';
@@ -1010,71 +617,28 @@ const html = `<!DOCTYPE html>
       });
     }
     
-    function filterByPeriod(months) {
-      currentPeriodMonths = months;
-      
-      // Update active button
-      document.querySelectorAll('.period-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      event.target.classList.add('active');
-      
-      filterPayments();
+    // Toggle section
+    function toggleSection(section) {
+      const content = document.getElementById(section + '-content');
+      const icon = document.getElementById(section + '-icon');
+      content.classList.toggle('collapsed');
+      icon.classList.toggle('collapsed');
     }
     
-    function resetFilters() {
-      document.getElementById('filterTenant').value = 'all';
-      document.getElementById('filterMonth').value = 'all';
-      filterPayments();
+    // Format currency
+    function formatRupiah(amount) {
+      return 'Rp ' + amount.toLocaleString('id-ID');
     }
     
-    // Update countdown for due dates
-    function updateCountdowns() {
-      const now = new Date();
-      document.querySelectorAll('#statusTableBody tr').forEach(row => {
-        const paymentDay = parseInt(row.getAttribute('data-payment-date'));
-        if (paymentDay) {
-          let nextDue = new Date(now.getFullYear(), now.getMonth(), paymentDay);
-          if (nextDue < now) {
-            nextDue = new Date(now.getFullYear(), now.getMonth() + 1, paymentDay);
-          }
-          const daysUntil = Math.ceil((nextDue - now) / (1000 * 60 * 60 * 24));
-          const countdownEl = row.querySelector('.countdown');
-          if (countdownEl) {
-            countdownEl.textContent = daysUntil;
-          }
-        }
-      });
-    }
-    
-    // Toggle month format between numbers (1-12) and names (Jan-Des)
-    function toggleMonthFormat() {
-      const checkbox = document.getElementById('monthFormatToggle');
-      const headers = document.querySelectorAll('.status-table thead th');
-      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
-      
-      // Skip first 3 headers (No Kamar, Nama Penghuni, Jatuh Tempo)
-      for (let i = 3; i < headers.length; i++) {
-        const monthIndex = i - 3;
-        if (monthIndex < 12) {
-          headers[i].textContent = checkbox.checked ? monthNames[monthIndex] : (monthIndex + 1).toString();
-        }
-      }
-    }
-    
-    // Update countdowns on page load and every hour
-    updateCountdowns();
-    setInterval(updateCountdowns, 3600000); // Update every hour
-    
-    // Apply default 4 months filter on load
-    window.addEventListener('DOMContentLoaded', () => {
-      filterPayments();
-    });
+    // Initialize on load
+    init();
   </script>
 </body>
 </html>`;
 
-const htmlPath = path.join(__dirname, 'index.html');
-fs.writeFileSync(htmlPath, html);
-console.log('✅ index.html generated successfully!');
+// Write HTML
+fs.writeFileSync(path.join(__dirname, 'index.html'), html);
 
+console.log('✅ index.html generated with toggle & payment table!');
+console.log(`📊 Kos UM: ${dataUM.payments.length} transaksi, ${dataUM.summary.total_rooms} kamar`);
+console.log(`📊 Kos UB: ${dataUB.payments.length} transaksi, ${dataUB.summary.total_rooms} kamar`);
