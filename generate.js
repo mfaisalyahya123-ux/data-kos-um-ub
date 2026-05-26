@@ -755,7 +755,7 @@ const html = `<!DOCTYPE html>
         
         const matchRoom = !roomFilter || room === roomFilter;
         const matchYear = !yearFilter || year === yearFilter;
-        const matchMonth = !monthFilter || period === monthFilter;
+        const matchMonth = !monthFilter || period.toLowerCase() === monthFilter.toLowerCase();
         
         if (matchRoom && matchYear && matchMonth) {
           row.style.display = '';
