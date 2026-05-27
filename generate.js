@@ -445,7 +445,7 @@ const html = `<!DOCTYPE html>
 <body>
   <div class="container">
     <header>
-      <h1 id="page-title">💰 Data Keuangan <span style="font-size: 0.5em; opacity: 0.7;">v3</span></h1>
+      <h1 id="page-title">💰 Data Keuangan Kos UB <span style="font-size: 0.5em; opacity: 0.7;">v3</span></h1>
       <p class="subtitle">Monitoring Keuangan & Pembayaran</p>
     </header>
     
@@ -645,7 +645,7 @@ const html = `<!DOCTYPE html>
       // Update title
       const version = '<span style="font-size: 0.5em; opacity: 0.7;">v1.2.0</span>';
       document.getElementById('page-title').innerHTML = 
-        kos === 'um' ? '💰 Data Keuangan <span style="font-size: 0.5em; opacity: 0.7;">v3</span> (Kos UM)' : '💰 Data Keuangan <span style="font-size: 0.5em; opacity: 0.7;">v3</span> (Kos UB)';
+        kos === 'um' ? '💰 Data Keuangan Kos UM <span style="font-size: 0.5em; opacity: 0.7;">v3</span>' : '💰 Data Keuangan Kos UB <span style="font-size: 0.5em; opacity: 0.7;">v3</span>';
       
       // Update toggle buttons
       document.querySelectorAll('.toggle-btn').forEach(btn => {
