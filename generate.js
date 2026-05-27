@@ -445,15 +445,15 @@ const html = `<!DOCTYPE html>
 <body>
   <div class="container">
     <header>
-      <h1 id="page-title">💰 Data Kos UM <span style="font-size: 0.5em; opacity: 0.7;">v1.2.0</span></h1>
+      <h1 id="page-title">💰 Data Kos UB <span style="font-size: 0.5em; opacity: 0.7;">v1.2.0</span></h1>
       <p class="subtitle">Monitoring Keuangan & Pembayaran</p>
     </header>
     
     <!-- Toggle Switch -->
     <div class="toggle-container">
       <div class="toggle-switch">
-        <button class="toggle-btn active" onclick="switchKos('um')">🏠 Kos UM</button>
-        <button class="toggle-btn" onclick="switchKos('ub')">🏢 Kos UB</button>
+        <button class="toggle-btn" onclick="switchKos('um')">🏠 Kos UM</button>
+        <button class="toggle-btn active" onclick="switchKos('ub')">🏢 Kos UB</button>
       </div>
     </div>
     
@@ -583,8 +583,8 @@ const html = `<!DOCTYPE html>
     const dataUM = ${JSON.stringify(dataUM)};
     const dataUB = ${JSON.stringify(dataUB)};
     
-    let currentKos = 'um';
-    let currentData = dataUM;
+    let currentKos = 'ub';
+    let currentData = dataUB;
     let currentYear = 2026;
     
     // Parse date (support multiple formats)
