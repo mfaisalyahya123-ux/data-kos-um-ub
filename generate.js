@@ -228,7 +228,7 @@ const html = `<!DOCTYPE html>
     }
     
     .room-card-body {
-      padding: 20px;
+      padding: 24px 20px;
       color: white;
     }
     
@@ -238,6 +238,7 @@ const html = `<!DOCTYPE html>
       align-items: center;
       padding: 12px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      gap: 8px;
     }
     
     .room-info:last-child {
@@ -252,20 +253,25 @@ const html = `<!DOCTYPE html>
     }
     
     .info-label {
-      font-size: 0.9em;
+      font-size: 0.85em;
       opacity: 0.9;
       font-weight: 500;
+      flex-shrink: 0;
     }
     
     .info-value {
       font-weight: bold;
-      font-size: 1.1em;
+      font-size: 0.95em;
       text-align: right;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     
     .info-value.amount {
-      color: #ffd700;
-      font-size: 1.2em;
+      color: white;
+      font-size: 1em;
+      font-weight: 700;
     }
     
     @media (max-width: 1200px) {
