@@ -163,36 +163,7 @@ const html = `<!DOCTYPE html>
       color: white;
     }
     
-    /* Building Tabs (Kos UB) */
-    .building-tabs {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    
-    .building-tab {
-      padding: 10px 20px;
-      background: #f8f9fa;
-      color: #333;
-      border: 2px solid #667eea;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1em;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .building-tab:hover {
-      background: #667eea;
-      color: white;
-    }
-    
-    .building-tab.active {
-      background: #667eea;
-      color: white;
-    }
-    
+    /* Building Panels (Kos UB) */
     .building-panel.hidden {
       display: none;
     }
@@ -878,31 +849,26 @@ const html = `<!DOCTYPE html>
       }
       
       if (currentKos === 'ub') {
-        // Kos UB: tab-based building groups
+        // Kos UB: tab-based building groups (same style as year-toggle)
         const groups = [
           { id: 'baru', name: '🏗️ Bangunan Baru', range: [1, 14] },
           { id: 'lama', name: '🏚️ Bangunan Lama', range: [15, 24] },
           { id: 'induk', name: '🏠 Bangunan Induk', range: [25, 29] }
         ];
-        let tabsHtml = groups.map((g, i) => {
+        let tabsHtml = '';
+        groups.forEach((g, i) => {
           const groupRooms = rooms.filter(r => r.room_number >= g.range[0] && r.room_number <= g.range[1]);
           const activeCount = groupRooms.filter(r => r.current_tenant).length;
-          return \`<button class="building-tab \${i === 0 ? 'active' : ''}" onclick="switchBuilding('\${g.id}')">\${g.name} <span style="font-size:0.75em;opacity:0.7">(\${activeCount}/\${groupRooms.length})</span></button>\`;
-        }).join('');
+          tabsHtml += \`<button class="year-btn \${i === 0 ? 'active' : ''}" onclick="switchBuilding('\${g.id}')">\${g.name} (\${activeCount}/\${groupRooms.length})</button>\`;
+        });
         
-        let panelsHtml = groups.map((g, i) => {
+        let panelsHtml = '';
+        groups.forEach((g, i) => {
           const groupRooms = rooms.filter(r => r.room_number >= g.range[0] && r.room_number <= g.range[1]);
-          return \`
-            <div class="building-panel \${i === 0 ? '' : 'hidden'}" id="panel-\${g.id}">
-              <div class="room-cards-grid">\${groupRooms.map(r => roomCard(r)).join('')}</div>
-            </div>
-          \`;
-        }).join('');
+          panelsHtml += \`<div class="building-panel \${i === 0 ? '' : 'hidden'}" id="panel-\${g.id}"><div class="room-cards-grid">\${groupRooms.map(r => roomCard(r)).join('')}</div></div>\`;
+        });
         
-        const html = \`
-          <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;">\${tabsHtml}</div>
-          \${panelsHtml}
-        \`;
+        const html = \`<div class="year-toggle">\${tabsHtml}</div>\${panelsHtml}\`;
         document.getElementById('rooms-grid').innerHTML = html;
       } else {
         // Kos UM: flat layout
@@ -912,7 +878,7 @@ const html = `<!DOCTYPE html>
     }
     
     function switchBuilding(id) {
-      document.querySelectorAll('.building-tab').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('#rooms-grid .year-btn').forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
       document.querySelectorAll('.building-panel').forEach(p => p.classList.add('hidden'));
       document.getElementById('panel-' + id).classList.remove('hidden');
