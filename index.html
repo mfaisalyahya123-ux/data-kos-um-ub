@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Generated: 2026-05-27T08:10:21.793Z -->
+<!-- Generated: 2026-05-27T08:16:03.223Z -->
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -716,6 +716,7 @@
             paymentStatus[room.room_number] = {
               room_number: room.room_number,
               tenant_name: room.current_tenant,
+              tenant_number: currentTenant.tenant_number,
               payment_date: paymentDate,
               months: months
             };
@@ -726,7 +727,8 @@
       // Mark paid months
       currentData.payments.forEach(payment => {
         if (payment.date.includes(currentYear.toString())) {
-          const room = paymentStatus[payment.room_number];
+          // Find room by tenant_number instead of room_number
+          const room = Object.values(paymentStatus).find(r => r.tenant_number === payment.tenant_number);
           if (room) {
             const month = monthMap[payment.period.toLowerCase()];
             if (month && room.months[month] !== null) {
