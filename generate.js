@@ -701,10 +701,20 @@ const html = `<!DOCTYPE html>
         if (room.current_tenant) {
           const currentTenant = room.tenants.find(t => t.status === 'aktif');
           if (currentTenant) {
-            const paymentDate = parseInt(currentTenant.move_in.split('/')[0]);
-            const moveInParts = currentTenant.move_in.split('/');
-            const moveInMonth = parseInt(moveInParts[1]);
-            const moveInYear = parseInt(moveInParts[2]);
+            // Parse move_in (supports DD/MM/YYYY and "DD Bulan YYYY")
+            let moveInDay, moveInMonth, moveInYear;
+            if (currentTenant.move_in.includes('/')) {
+              const parts = currentTenant.move_in.split('/');
+              moveInDay = parseInt(parts[0]);
+              moveInMonth = parseInt(parts[1]);
+              moveInYear = parseInt(parts[2]);
+            } else {
+              const parts = currentTenant.move_in.split(' ');
+              moveInDay = parseInt(parts[0]);
+              moveInMonth = monthMap[parts[1].toLowerCase()];
+              moveInYear = parseInt(parts[2]);
+            }
+            const paymentDate = moveInDay;
             
             const months = {};
             for (let m = 1; m <= 12; m++) {
