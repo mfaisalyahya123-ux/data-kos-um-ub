@@ -126,7 +126,7 @@ const html = `<!DOCTYPE html>
     }
     
     .section-content {
-      max-height: 2000px;
+      max-height: none;
       overflow: hidden;
       transition: max-height 0.3s ease;
     }
