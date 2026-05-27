@@ -742,11 +742,14 @@ const html = `<!DOCTYPE html>
       
       // Mark paid months
       currentData.payments.forEach(payment => {
-        if (payment.date.includes(currentYear.toString())) {
+        const periodParts = payment.period.toLowerCase().split(' ');
+        const periodYear = parseInt(periodParts[periodParts.length - 1]);
+        if (periodYear === currentYear) {
           // Find room by tenant_number instead of room_number
           const room = Object.values(paymentStatus).find(r => r.tenant_number === payment.tenant_number);
           if (room) {
-            const month = monthMap[payment.period.toLowerCase()];
+            const periodMonth = payment.period.toLowerCase().split(' ')[0];
+            const month = monthMap[periodMonth];
             if (month && room.months[month] !== null) {
               room.months[month] = true;
             }
@@ -882,7 +885,10 @@ const html = `<!DOCTYPE html>
       
       // Month filter (sorted by calendar order)
       const monthOrder = ['januari', 'februari', 'maret', 'april', 'mei', 'juni', 'juli', 'agustus', 'september', 'oktober', 'november', 'desember'];
-      const months = [...new Set(currentData.payments.map(p => p.period.toLowerCase()))];
+      const months = [...new Set(currentData.payments.map(p => {
+        const parts = p.period.toLowerCase().split(' ');
+        return parts[0]; // Just the month name for filter
+      }))];
       const sortedMonths = months.sort((a, b) => {
         const indexA = monthOrder.indexOf(a);
         const indexB = monthOrder.indexOf(b);
@@ -915,7 +921,7 @@ const html = `<!DOCTYPE html>
         const matchRoom = !roomFilter || room === roomFilter;
         const matchTenant = !tenantFilter || tenant === tenantFilter;
         const matchYear = !yearFilter || year === yearFilter;
-        const matchMonth = !monthFilter || period.toLowerCase() === monthFilter.toLowerCase();
+        const matchMonth = !monthFilter || period.toLowerCase().split(' ')[0] === monthFilter.toLowerCase();
         
         if (matchRoom && matchTenant && matchYear && matchMonth) {
           row.style.display = '';
