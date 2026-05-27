@@ -808,9 +808,7 @@ const html = `<!DOCTYPE html>
     
     // Render rooms list as cards
     function renderRoomsList() {
-      const rooms = currentData.rooms.sort((a, b) => a.room_number - b.room_number);
-      
-      function roomCard(room) {
+      const html = currentData.rooms.sort((a, b) => a.room_number - b.room_number).map(room => {
         const currentTenant = room.tenants.find(t => t.status === 'aktif');
         const paymentDate = currentTenant ? currentTenant.move_in.split('/')[0] : '-';
         const isEmpty = !room.current_tenant;
@@ -846,42 +844,8 @@ const html = `<!DOCTYPE html>
             </div>
           </div>
         \`;
-      }
-      
-      if (currentKos === 'ub') {
-        // Kos UB: tab-based building groups (same style as year-toggle)
-        const groups = [
-          { id: 'baru', name: '🏗️ Bangunan Baru', range: [1, 14] },
-          { id: 'lama', name: '🏚️ Bangunan Lama', range: [15, 24] },
-          { id: 'induk', name: '🏠 Bangunan Induk', range: [25, 29] }
-        ];
-        let tabsHtml = '';
-        groups.forEach((g, i) => {
-          const groupRooms = rooms.filter(r => r.room_number >= g.range[0] && r.room_number <= g.range[1]);
-          const activeCount = groupRooms.filter(r => r.current_tenant).length;
-          tabsHtml += \`<button class="year-btn \${i === 0 ? 'active' : ''}" onclick="switchBuilding('\${g.id}')">\${g.name} (\${activeCount}/\${groupRooms.length})</button>\`;
-        });
-        
-        let panelsHtml = '';
-        groups.forEach((g, i) => {
-          const groupRooms = rooms.filter(r => r.room_number >= g.range[0] && r.room_number <= g.range[1]);
-          panelsHtml += \`<div class="building-panel \${i === 0 ? '' : 'hidden'}" id="panel-\${g.id}"><div class="room-cards-grid">\${groupRooms.map(r => roomCard(r)).join('')}</div></div>\`;
-        });
-        
-        const html = \`<div class="year-toggle">\${tabsHtml}</div>\${panelsHtml}\`;
-        document.getElementById('rooms-grid').innerHTML = html;
-      } else {
-        // Kos UM: flat layout
-        const html = \`<div class="room-cards-grid">\${rooms.map(r => roomCard(r)).join('')}</div>\`;
-        document.getElementById('rooms-grid').innerHTML = html;
-      }
-    }
-    
-    function switchBuilding(id) {
-      document.querySelectorAll('#rooms-grid .year-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      document.querySelectorAll('.building-panel').forEach(p => p.classList.add('hidden'));
-      document.getElementById('panel-' + id).classList.remove('hidden');
+      }).join('');
+      document.getElementById('rooms-grid').innerHTML = \`<div class="room-cards-grid">\${html}</div>\`;
     }
     
     // Render payment history
