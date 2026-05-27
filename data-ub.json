@@ -421,12 +421,12 @@
           "tenant_number": "UB027",
           "name": "Anggie Fadhillah",
           "move_in": "14 Januari 2025",
-          "move_out": null,
-          "status": "aktif"
+          "move_out": "27 Mei 2026",
+          "status": "keluar"
         }
       ],
-      "current_tenant": "Anggie Fadhillah",
-      "current_rate": 750000,
+      "current_tenant": null,
+      "current_rate": 0,
       "total_income": 6650000
     },
     {
@@ -4616,6 +4616,6 @@
     "total_income": 405500000,
     "total_transactions": 415,
     "total_rooms": 29,
-    "active_rooms": 23
+    "active_rooms": 22
   }
 }
