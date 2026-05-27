@@ -10,12 +10,12 @@
           "tenant_number": "UB001",
           "name": "Nadiatul",
           "move_in": "20 Januari 2025",
-          "move_out": null,
-          "status": "aktif"
+          "move_out": "27 Mei 2026",
+          "status": "keluar"
         }
       ],
-      "current_tenant": "Nadiatul",
-      "current_rate": 1200000,
+      "current_tenant": null,
+      "current_rate": 0,
       "total_income": 14400000
     },
     {
@@ -70,12 +70,12 @@
           "tenant_number": "UB005",
           "name": "Aisyah",
           "move_in": "7 Januari 2025",
-          "move_out": null,
-          "status": "aktif"
+          "move_out": "27 Mei 2026",
+          "status": "keluar"
         }
       ],
-      "current_tenant": "Aisyah",
-      "current_rate": 1200000,
+      "current_tenant": null,
+      "current_rate": 0,
       "total_income": 12000000
     },
     {
@@ -85,12 +85,12 @@
           "tenant_number": "UB006",
           "name": "Nadia",
           "move_in": "9 Januari 2025",
-          "move_out": null,
-          "status": "aktif"
+          "move_out": "27 Mei 2026",
+          "status": "keluar"
         }
       ],
-      "current_tenant": "Nadia",
-      "current_rate": 1200000,
+      "current_tenant": null,
+      "current_rate": 0,
       "total_income": 15600000
     },
     {
@@ -130,12 +130,12 @@
           "tenant_number": "UB009",
           "name": "reane",
           "move_in": "26 Januari 2025",
-          "move_out": null,
-          "status": "aktif"
+          "move_out": "27 Mei 2026",
+          "status": "keluar"
         }
       ],
-      "current_tenant": "reane",
-      "current_rate": 1200000,
+      "current_tenant": null,
+      "current_rate": 0,
       "total_income": 11900000
     },
     {
@@ -265,12 +265,12 @@
           "tenant_number": "UB018",
           "name": "Riris",
           "move_in": "1 Januari 2025",
-          "move_out": null,
-          "status": "aktif"
+          "move_out": "27 Mei 2026",
+          "status": "keluar"
         }
       ],
-      "current_tenant": "Riris",
-      "current_rate": 750000,
+      "current_tenant": null,
+      "current_rate": 0,
       "total_income": 6650000
     },
     {
@@ -385,12 +385,12 @@
           "tenant_number": "UB026",
           "name": "Maghfirah",
           "move_in": "1 Agustus 2025",
-          "move_out": null,
-          "status": "aktif"
+          "move_out": "27 Mei 2026",
+          "status": "keluar"
         }
       ],
-      "current_tenant": "Maghfirah",
-      "current_rate": 2400000,
+      "current_tenant": null,
+      "current_rate": 0,
       "total_income": 8800000
     },
     {
@@ -4595,6 +4595,6 @@
     "total_income": 405500000,
     "total_transactions": 415,
     "total_rooms": 29,
-    "active_rooms": 29
+    "active_rooms": 23
   }
 }
