@@ -171,7 +171,7 @@ const html = `<!DOCTYPE html>
     /* Room Cards */
     .room-cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(5, 1fr);
       gap: 20px;
       margin-top: 20px;
     }
@@ -268,7 +268,19 @@ const html = `<!DOCTYPE html>
       font-size: 1.2em;
     }
     
+    @media (max-width: 1200px) {
+      .room-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
     @media (max-width: 768px) {
+      .room-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 480px) {
       .room-cards-grid {
         grid-template-columns: 1fr;
       }
