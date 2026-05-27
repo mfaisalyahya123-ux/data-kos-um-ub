@@ -900,7 +900,7 @@ const html = `<!DOCTYPE html>
         }).join('');
         
         const html = \`
-          <div class="building-tabs">\${tabsHtml}</div>
+          <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;">\${tabsHtml}</div>
           \${panelsHtml}
         \`;
         document.getElementById('rooms-grid').innerHTML = html;
