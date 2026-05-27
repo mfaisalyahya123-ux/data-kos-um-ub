@@ -163,7 +163,46 @@ const html = `<!DOCTYPE html>
       color: white;
     }
     
-    /* Room Cards Grid */
+    /* Building Groups (Kos UB) */
+    .building-group {
+      margin-bottom: 15px;
+    }
+    
+    .building-header {
+      background: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin-bottom: 5px;
+    }
+    
+    .building-header:hover {
+      background: #667eea;
+      color: white;
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    }
+    
+    .building-content {
+      max-height: none;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 15px 0;
+    }
+    
+    .building-content.collapsed {
+      max-height: 0;
+      padding: 0;
+    }
+    
+    /* Room Cards */
     .room-cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -803,19 +842,18 @@ const html = `<!DOCTYPE html>
     
     // Render rooms list as cards
     function renderRoomsList() {
-      const html = currentData.rooms.sort((a, b) => a.room_number - b.room_number).map(room => {
+      const rooms = currentData.rooms.sort((a, b) => a.room_number - b.room_number);
+      
+      function roomCard(room) {
         const currentTenant = room.tenants.find(t => t.status === 'aktif');
         const paymentDate = currentTenant ? currentTenant.move_in.split('/')[0] : '-';
         const isEmpty = !room.current_tenant;
-        
-        // Calculate total income for current tenant only
         let tenantIncome = 0;
         if (room.current_tenant) {
           tenantIncome = currentData.payments
             .filter(p => p.room_number === room.room_number && p.tenant_name === room.current_tenant)
             .reduce((sum, p) => sum + p.amount, 0);
         }
-        
         return \`
           <div class="room-card \${isEmpty ? 'empty' : ''}">
             <div class="room-card-header">
@@ -842,8 +880,48 @@ const html = `<!DOCTYPE html>
             </div>
           </div>
         \`;
-      }).join('');
-      document.getElementById('rooms-grid').innerHTML = html;
+      }
+      
+      if (currentKos === 'ub') {
+        // Kos UB: grouped by building
+        const groups = [
+          { name: '🏗️ Bangunan Baru', range: [1, 14] },
+          { name: '🏚️ Bangunan Lama', range: [15, 24] },
+          { name: '🏠 Bangunan Induk', range: [25, 29] }
+        ];
+        let html = '';
+        groups.forEach((g, gi) => {
+          const groupRooms = rooms.filter(r => r.room_number >= g.range[0] && r.room_number <= g.range[1]);
+          const activeCount = groupRooms.filter(r => r.current_tenant).length;
+          const groupIncome = groupRooms.reduce((s, r) => {
+            const tp = currentData.payments.filter(p => p.room_number === r.room_number && p.tenant_name === r.current_tenant);
+            return s + tp.reduce((ss, pp) => ss + pp.amount, 0);
+          }, 0);
+          html += \`
+            <div class="building-group">
+              <div class="building-header" onclick="toggleBuilding('bldg\${gi}')">
+                <span>\${g.name} <span style="font-size:0.8em;opacity:0.7">(Kamar \${g.range[0]}-\${g.range[1]} | \${activeCount}/\${groupRooms.length} terisi)</span></span>
+                <span class="toggle-icon" id="bldg\${gi}-icon">▼</span>
+              </div>
+              <div class="building-content" id="bldg\${gi}-content">
+                <div class="room-cards-grid">\${groupRooms.map(r => roomCard(r)).join('')}</div>
+              </div>
+            </div>
+          \`;
+        });
+        document.getElementById('rooms-grid').innerHTML = html;
+      } else {
+        // Kos UM: flat layout
+        const html = \`<div class="room-cards-grid">\${rooms.map(r => roomCard(r)).join('')}</div>\`;
+        document.getElementById('rooms-grid').innerHTML = html;
+      }
+    }
+    
+    function toggleBuilding(id) {
+      const content = document.getElementById(id + '-content');
+      const icon = document.getElementById(id + '-icon');
+      content.classList.toggle('collapsed');
+      icon.classList.toggle('collapsed');
     }
     
     // Render payment history
