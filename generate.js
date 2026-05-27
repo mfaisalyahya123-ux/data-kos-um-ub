@@ -857,7 +857,7 @@ const html = `<!DOCTYPE html>
           </div>
         \`;
       }).join('');
-      document.getElementById('rooms-grid').innerHTML = \`<div class="room-cards-grid">\${html}</div>\`;
+      document.getElementById('rooms-grid').innerHTML = html;
     }
     
     // Render payment history
