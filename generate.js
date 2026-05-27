@@ -530,6 +530,11 @@ const html = `<!DOCTYPE html>
             <option value="">Semua</option>
           </select>
           
+          <label>Nama:</label>
+          <select id="tenant-filter" onchange="filterPayments()">
+            <option value="">Semua</option>
+          </select>
+          
           <label>Tahun:</label>
           <select id="year-filter" onchange="filterPayments()">
             <option value="">Semua</option>
@@ -558,6 +563,7 @@ const html = `<!DOCTYPE html>
             <tr>
               <th>Tanggal</th>
               <th>Kamar</th>
+              <th>No Penghuni</th>
               <th>Nama</th>
               <th>Jumlah</th>
               <th>Via</th>
@@ -830,10 +836,12 @@ const html = `<!DOCTYPE html>
       // Show all payments by default (no date filter)
       const html = currentData.payments.map(p => {
         const year = extractYear(p.date);
+        const tenantNum = p.tenant_number ? p.tenant_number.replace('UB', '').replace('UM', '') : '-';
         return \`
-          <tr data-room="\${p.room_number}" data-period="\${p.period}" data-date="\${p.date}" data-amount="\${p.amount}" data-year="\${year}">
+          <tr data-room="\${p.room_number}" data-tenant="\${p.tenant_name}" data-period="\${p.period}" data-date="\${p.date}" data-amount="\${p.amount}" data-year="\${year}">
             <td>\${p.date}</td>
             <td>Kamar \${p.room_number}</td>
+            <td>\${tenantNum}</td>
             <td>\${p.tenant_name}</td>
             <td class="amount">\${formatRupiah(p.amount)}</td>
             <td>\${p.payment_method}</td>
@@ -853,6 +861,14 @@ const html = `<!DOCTYPE html>
       ).join('');
       document.getElementById('room-filter').innerHTML = 
         '<option value="">Semua</option>' + roomOptions;
+      
+      // Tenant filter
+      const tenants = [...new Set(currentData.payments.map(p => p.tenant_name))].sort();
+      const tenantOptions = tenants.map(t => 
+        \`<option value="\${t}">\${t}</option>\`
+      ).join('');
+      document.getElementById('tenant-filter').innerHTML = 
+        '<option value="">Semua</option>' + tenantOptions;
       
       // Year filter
       const years = [...new Set(currentData.payments.map(p => extractYear(p.date)))].filter(y => y).sort().reverse();
@@ -880,6 +896,7 @@ const html = `<!DOCTYPE html>
     // Filter payments
     function filterPayments() {
       const roomFilter = document.getElementById('room-filter').value;
+      const tenantFilter = document.getElementById('tenant-filter').value;
       const yearFilter = document.getElementById('year-filter').value;
       const monthFilter = document.getElementById('month-filter').value;
       const sortFilter = document.getElementById('sort-filter').value;
@@ -889,14 +906,16 @@ const html = `<!DOCTYPE html>
       // Filter
       rows.forEach(row => {
         const room = row.getAttribute('data-room');
+        const tenant = row.getAttribute('data-tenant');
         const year = row.getAttribute('data-year');
         const period = row.getAttribute('data-period');
         
         const matchRoom = !roomFilter || room === roomFilter;
+        const matchTenant = !tenantFilter || tenant === tenantFilter;
         const matchYear = !yearFilter || year === yearFilter;
         const matchMonth = !monthFilter || period.toLowerCase() === monthFilter.toLowerCase();
         
-        if (matchRoom && matchYear && matchMonth) {
+        if (matchRoom && matchTenant && matchYear && matchMonth) {
           row.style.display = '';
         } else {
           row.style.display = 'none';
@@ -936,6 +955,7 @@ const html = `<!DOCTYPE html>
     // Reset filters
     function resetFilters() {
       document.getElementById('room-filter').value = '';
+      document.getElementById('tenant-filter').value = '';
       document.getElementById('year-filter').value = '';
       document.getElementById('month-filter').value = '';
       document.getElementById('sort-filter').value = 'date-desc';
