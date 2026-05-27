@@ -208,7 +208,7 @@ const html = `<!DOCTYPE html>
     /* Room Cards */
     .room-cards-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       margin-top: 20px;
     }
@@ -298,8 +298,11 @@ const html = `<!DOCTYPE html>
     
     .info-value {
       font-weight: bold;
-      font-size: 0.95em;
+      font-size: 0.85em;
       text-align: right;
+    }
+    
+    .info-value.truncate {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -311,13 +314,7 @@ const html = `<!DOCTYPE html>
       font-weight: 700;
     }
     
-    @media (max-width: 1200px) {
-      .room-cards-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       .room-cards-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -885,7 +882,7 @@ const html = `<!DOCTYPE html>
             <div class="room-card-body">
               <div class="room-info">
                 <div class="info-label">👤 Penghuni</div>
-                <div class="info-value">\${room.current_tenant || '-'}</div>
+                <div class="info-value truncate">\${room.current_tenant || '-'}</div>
               </div>
               <div class="room-info">
                 <div class="info-label">💰 Tarif/Bulan</div>
@@ -896,7 +893,7 @@ const html = `<!DOCTYPE html>
                 <div class="info-value">\${paymentDate}</div>
               </div>
               <div class="room-info total">
-                <div class="info-label">📊 Total Pendapatan</div>
+                <div class="info-label">📊 Total</div>
                 <div class="info-value amount">\${formatRupiah(tenantIncome)}</div>
               </div>
             </div>
