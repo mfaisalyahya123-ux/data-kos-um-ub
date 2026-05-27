@@ -168,6 +168,43 @@ const html = `<!DOCTYPE html>
       display: none;
     }
     
+    /* Building Filter (Kos UB) */
+    .building-filter {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .bldg-btn {
+      padding: 8px 16px;
+      background: transparent;
+      color: #666;
+      border: 2px solid #ddd;
+      border-radius: 20px;
+      font-size: 0.9em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .bldg-btn:hover {
+      border-color: #667eea;
+      color: #667eea;
+    }
+    
+    .bldg-btn.active {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-color: transparent;
+    }
+    
+    .bldg-range {
+      font-size: 0.75em;
+      opacity: 0.7;
+      margin-left: 2px;
+    }
+    
     /* Room Cards */
     .room-cards-grid {
       display: grid;
@@ -826,7 +863,9 @@ const html = `<!DOCTYPE html>
     
     // Render rooms list as cards
     function renderRoomsList() {
-      const html = currentData.rooms.sort((a, b) => a.room_number - b.room_number).map(room => {
+      const rooms = currentData.rooms.sort((a, b) => a.room_number - b.room_number);
+      
+      function roomCard(room) {
         const currentTenant = room.tenants.find(t => t.status === 'aktif');
         const paymentDate = currentTenant ? currentTenant.move_in.split('/')[0] : '-';
         const isEmpty = !room.current_tenant;
@@ -837,7 +876,7 @@ const html = `<!DOCTYPE html>
             .reduce((sum, p) => sum + p.amount, 0);
         }
         return \`
-          <div class="room-card \${isEmpty ? 'empty' : ''}">
+          <div class="room-card \${isEmpty ? 'empty' : ''}" data-building="\${room.room_number <= 14 ? 'baru' : room.room_number <= 24 ? 'lama' : 'induk'}">
             <div class="room-card-header">
               <div class="room-number">\${isEmpty ? '🔴' : '🟢'} Kamar \${room.room_number}</div>
               <div class="room-status">\${isEmpty ? 'Kosong' : 'Terisi'}</div>
@@ -862,8 +901,35 @@ const html = `<!DOCTYPE html>
             </div>
           </div>
         \`;
-      }).join('');
-      document.getElementById('rooms-grid').innerHTML = html;
+      }
+      
+      const cardsHtml = rooms.map(r => roomCard(r)).join('');
+      
+      if (currentKos === 'ub') {
+        const filterHtml = \`
+          <div class="building-filter">
+            <button class="bldg-btn active" onclick="filterBuilding('all')">🏠 Semua</button>
+            <button class="bldg-btn" onclick="filterBuilding('baru')">🏗️ Bangunan Baru <span class="bldg-range">1-14</span></button>
+            <button class="bldg-btn" onclick="filterBuilding('lama')">🏚️ Bangunan Lama <span class="bldg-range">15-24</span></button>
+            <button class="bldg-btn" onclick="filterBuilding('induk')">🏡 Bangunan Induk <span class="bldg-range">25-29</span></button>
+          </div>
+        \`;
+        document.getElementById('rooms-grid').innerHTML = filterHtml + \`<div class="room-cards-grid">\${cardsHtml}</div>\`;
+      } else {
+        document.getElementById('rooms-grid').innerHTML = \`<div class="room-cards-grid">\${cardsHtml}</div>\`;
+      }
+    }
+    
+    function filterBuilding(type) {
+      document.querySelectorAll('.bldg-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.querySelectorAll('.room-card').forEach(card => {
+        if (type === 'all' || card.dataset.building === type) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     }
     
     // Render payment history
