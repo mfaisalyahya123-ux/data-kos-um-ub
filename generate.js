@@ -562,7 +562,8 @@ const html = `<!DOCTYPE html>
         <span class="toggle-icon" id="rooms-icon">▼</span>
       </div>
       <div class="section-content" id="rooms-content">
-        <div class="room-cards-grid" id="rooms-grid">
+        <div id="building-filters"></div>
+        <div id="rooms-grid">
           <!-- Will be populated by JavaScript -->
         </div>
       </div>
@@ -914,10 +915,11 @@ const html = `<!DOCTYPE html>
             <button class="bldg-btn" onclick="filterBuilding('induk')">🏡 Bangunan Induk <span class="bldg-range">25-29</span></button>
           </div>
         \`;
-        document.getElementById('rooms-grid').innerHTML = filterHtml + \`<div class="room-cards-grid">\${cardsHtml}</div>\`;
+        document.getElementById('building-filters').innerHTML = filterHtml;
       } else {
-        document.getElementById('rooms-grid').innerHTML = \`<div class="room-cards-grid">\${cardsHtml}</div>\`;
+        document.getElementById('building-filters').innerHTML = '';
       }
+      document.getElementById('rooms-grid').innerHTML = \`<div class="room-cards-grid">\${cardsHtml}</div>\`;
     }
     
     function filterBuilding(type) {
